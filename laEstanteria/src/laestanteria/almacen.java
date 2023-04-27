@@ -30,12 +30,12 @@ public class almacen {
         this.seccion = seccion;
     }
     
-    public void consultarPrecio(String subTipo, String marca){
-        
+    public double consultarPrecio(String subTipo, String marca){
+        return 1;
     }
     
-    public void consultarStock(String subTipo, String marca) {
-        
+    public int consultarStock(String subTipo, String marca) {
+        return 1;
     }
     
 }
