@@ -10,6 +10,8 @@ package laestanteria;
  */
 public class ComponentesPc extends Producto{
     
+   
+    
     public ComponentesPc(String tipo, String nombre, int id, int stock) {
         super(tipo, nombre, id, stock);
     }

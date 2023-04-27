@@ -8,6 +8,16 @@ package laestanteria;
  *
  * @author a18jaimejnq
  */
-public class Almacenamiento {
+public class Almacenamiento extends Producto{
+    
+    public Almacenamiento(String tipo, String nombre, int id, int stock) {
+        super(tipo, nombre, id, stock);
+    }
+    
+    @Override
+    public int calcularPrecio() {
+        return super.calcularPrecio();
+    }
+
     
 }

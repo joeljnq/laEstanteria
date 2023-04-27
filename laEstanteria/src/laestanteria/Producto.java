@@ -15,6 +15,17 @@ abstract class Producto {
     private int id;
     private int stock;
 
+    public Producto(String tipo, String nombre, int id, int stock) {
+        this.tipo = tipo;
+        this.nombre = nombre;
+        this.id = id;
+        this.stock = stock;
+    }
+    
+    
+    
+    
+
     public int getStock() {
         return stock;
     }

@@ -8,6 +8,14 @@ package laestanteria;
  *
  * @author a18jaimejnq
  */
-public class Celular {
-    
+public class Celular extends Producto {
+
+    public Celular(String tipo, String nombre, int id, int stock) {
+        super(tipo, nombre, id, stock);
+    }
+
+    @Override
+    public int calcularPrecio() {
+        return super.calcularPrecio();
+    }
 }
