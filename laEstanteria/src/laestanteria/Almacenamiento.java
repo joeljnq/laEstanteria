@@ -20,6 +20,32 @@ public class Almacenamiento extends Producto{
         this.Marca = Marca;
         this.velocidad = velocidad;
     }
+
+    public double getTamaño() {
+        return tamaño;
+    }
+
+    public String getMarca() {
+        return Marca;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public void setTamaño(double tamaño) {
+        this.tamaño = tamaño;
+    }
+
+    public void setMarca(String Marca) {
+        this.Marca = Marca;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+    
+    
     
   
     

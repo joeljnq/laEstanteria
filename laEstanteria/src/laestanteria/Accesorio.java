@@ -20,8 +20,34 @@ public class Accesorio extends Producto{
         this.velocidad = velocidad;
         this.subTipo = subTipo;
     }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public String getSubTipo() {
+        return subTipo;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public void setSubTipo(String subTipo) {
+        this.subTipo = subTipo;
+    }
     
   
+    
+    
     
     @Override
     public int calcularPrecio() {
