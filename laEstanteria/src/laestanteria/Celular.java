@@ -9,6 +9,11 @@ package laestanteria;
  * @author a18jaimejnq
  */
 public class Celular extends Producto {
+    
+    private double tamaño;
+    private String marca;
+    private String subTipo;
+    private double velocidad;
 
     public Celular(String tipo, String nombre, int id, int stock) {
         super(tipo, nombre, id, stock);
