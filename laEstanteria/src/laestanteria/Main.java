@@ -1,17 +1,17 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package laestanteria;
 
 /**
  *
- * @author a18jaimejnq
+ * @author a22davidma
  */
-public class Main extends javax.swing.JPanel {
+public class Main extends javax.swing.JFrame {
 
     /**
-     * Creates new form Main
+     * Creates new form NMain
      */
     public Main() {
         initComponents();
@@ -26,19 +26,227 @@ public class Main extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        loginPanel = new javax.swing.JPanel();
+        usuario = new javax.swing.JLabel();
+        campoUsuario = new javax.swing.JTextField();
+        contraseña = new javax.swing.JLabel();
+        campoContraseña = new javax.swing.JTextField();
+        botonLogin = new javax.swing.JButton();
+        crearCuentaPanel = new javax.swing.JPanel();
+        correoUsu = new javax.swing.JLabel();
+        campoNombre = new javax.swing.JTextField();
+        campoCorreo = new javax.swing.JTextField();
+        nombreUsu = new javax.swing.JLabel();
+        confirmarContraseña = new javax.swing.JLabel();
+        contraseñaUsu = new javax.swing.JLabel();
+        campoConfirmarContraseña = new javax.swing.JPasswordField();
+        campoConteraseñaUsu = new javax.swing.JPasswordField();
+        botonCrearCuenta = new javax.swing.JButton();
+        menuPrincipal = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        accesoPrograma = new javax.swing.JMenu();
+        login = new javax.swing.JMenuItem();
+        crearCuenta = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.CardLayout());
+
+        usuario.setText("Usuario");
+
+        contraseña.setText("Contraseña");
+
+        botonLogin.setText("Enviar");
+
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(contraseña)
+                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(70, Short.MAX_VALUE))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(botonLogin)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contraseña)
+                    .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(botonLogin)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(loginPanel, "card2");
+
+        correoUsu.setText("Correo");
+
+        nombreUsu.setText("Nombre de Usuario");
+
+        confirmarContraseña.setText("Confirmar Contraseña");
+
+        contraseñaUsu.setText("Contraseña");
+
+        botonCrearCuenta.setText("Crear Cuenta");
+
+        javax.swing.GroupLayout crearCuentaPanelLayout = new javax.swing.GroupLayout(crearCuentaPanel);
+        crearCuentaPanel.setLayout(crearCuentaPanelLayout);
+        crearCuentaPanelLayout.setHorizontalGroup(
+            crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crearCuentaPanelLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nombreUsu)
+                    .addComponent(correoUsu)
+                    .addComponent(confirmarContraseña)
+                    .addComponent(contraseñaUsu))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonCrearCuenta)
+                    .addComponent(campoCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoConfirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoConteraseñaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+        crearCuentaPanelLayout.setVerticalGroup(
+            crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crearCuentaPanelLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(correoUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contraseñaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoConteraseñaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoConfirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(botonCrearCuenta)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(crearCuentaPanel, "card3");
+
+        javax.swing.GroupLayout menuPrincipalLayout = new javax.swing.GroupLayout(menuPrincipal);
+        menuPrincipal.setLayout(menuPrincipalLayout);
+        menuPrincipalLayout.setHorizontalGroup(
+            menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        menuPrincipalLayout.setVerticalGroup(
+            menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 277, Short.MAX_VALUE)
         );
+
+        getContentPane().add(menuPrincipal, "card4");
+
+        accesoPrograma.setText("Acceso");
+
+        login.setText("Login");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
+        accesoPrograma.add(login);
+
+        crearCuenta.setText("Crear cuenta");
+        accesoPrograma.add(crearCuenta);
+
+        jMenuBar1.add(accesoPrograma);
+
+        setJMenuBar(jMenuBar1);
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Main().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu accesoPrograma;
+    private javax.swing.JButton botonCrearCuenta;
+    private javax.swing.JButton botonLogin;
+    private javax.swing.JPasswordField campoConfirmarContraseña;
+    private javax.swing.JPasswordField campoConteraseñaUsu;
+    private javax.swing.JTextField campoContraseña;
+    private javax.swing.JTextField campoCorreo;
+    private javax.swing.JTextField campoNombre;
+    private javax.swing.JTextField campoUsuario;
+    private javax.swing.JLabel confirmarContraseña;
+    private javax.swing.JLabel contraseña;
+    private javax.swing.JLabel contraseñaUsu;
+    private javax.swing.JLabel correoUsu;
+    private javax.swing.JMenuItem crearCuenta;
+    private javax.swing.JPanel crearCuentaPanel;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem login;
+    private javax.swing.JPanel loginPanel;
+    private javax.swing.JPanel menuPrincipal;
+    private javax.swing.JLabel nombreUsu;
+    private javax.swing.JLabel usuario;
     // End of variables declaration//GEN-END:variables
 }
