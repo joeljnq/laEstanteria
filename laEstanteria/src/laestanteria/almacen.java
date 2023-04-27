@@ -30,7 +30,9 @@ public class almacen {
         this.seccion = seccion;
     }
     
-    
+    public void consultarPrecio(String subTipo, String marca){
+        
+    }
     
     public void consultarStock(String subTipo, String marca) {
         
