@@ -37,7 +37,8 @@ abstract class Producto {
     
     
     public int calcularPrecio(){
-        return 1;
+        int toret = 0;
+        return toret;
     }
     
     
