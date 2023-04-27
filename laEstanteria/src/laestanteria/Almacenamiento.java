@@ -10,9 +10,18 @@ package laestanteria;
  */
 public class Almacenamiento extends Producto{
     
-    public Almacenamiento(String tipo, String nombre, int id, int stock) {
+    private double tamaño;
+    private String Marca;
+    private int velocidad;
+
+    public Almacenamiento(double tamaño, String Marca, int velocidad, String tipo, String nombre, int id, int stock) {
         super(tipo, nombre, id, stock);
+        this.tamaño = tamaño;
+        this.Marca = Marca;
+        this.velocidad = velocidad;
     }
+    
+  
     
     @Override
     public int calcularPrecio() {

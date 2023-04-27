@@ -10,9 +10,18 @@ package laestanteria;
  */
 public class Accesorio extends Producto{
     
-    public Accesorio(String tipo, String nombre, int id, int stock) {
+    private String marca;
+    private int velocidad;
+    private String subTipo;
+
+    public Accesorio(String marca, int velocidad, String subTipo, String tipo, String nombre, int id, int stock) {
         super(tipo, nombre, id, stock);
+        this.marca = marca;
+        this.velocidad = velocidad;
+        this.subTipo = subTipo;
     }
+    
+  
     
     @Override
     public int calcularPrecio() {
