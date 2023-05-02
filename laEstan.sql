@@ -9,6 +9,7 @@ nombre varchar(30) not null,
 pago varchar(10) not null,
 tipo enum('administrador','usuario') not null,
 contraseña varchar(30),
+correo varchar(50),
 primary key(dni)
 )engine = InnoDB;
 
