@@ -43,6 +43,10 @@ public class Main extends javax.swing.JFrame {
         campoConteraseñaUsu = new javax.swing.JPasswordField();
         botonCrearCuenta = new javax.swing.JButton();
         menuPrincipal = new javax.swing.JPanel();
+        catalogoButton = new javax.swing.JToggleButton();
+        pagosButton = new javax.swing.JToggleButton();
+        historialButton = new javax.swing.JToggleButton();
+        cuentaButton = new javax.swing.JToggleButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -153,15 +157,41 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(crearCuentaPanel, "card3");
 
+        catalogoButton.setText("Catálogo");
+
+        pagosButton.setText("Pagos");
+
+        historialButton.setText("Historial");
+
+        cuentaButton.setText("Cuenta");
+
         javax.swing.GroupLayout menuPrincipalLayout = new javax.swing.GroupLayout(menuPrincipal);
         menuPrincipal.setLayout(menuPrincipalLayout);
         menuPrincipalLayout.setHorizontalGroup(
             menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(menuPrincipalLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(catalogoButton)
+                    .addComponent(historialButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cuentaButton)
+                    .addComponent(pagosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
         );
         menuPrincipalLayout.setVerticalGroup(
             menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(menuPrincipalLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(catalogoButton)
+                    .addComponent(pagosButton))
+                .addGap(31, 31, 31)
+                .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(historialButton)
+                    .addComponent(cuentaButton))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         getContentPane().add(menuPrincipal, "card4");
@@ -236,17 +266,21 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField campoCorreo;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoUsuario;
+    private javax.swing.JToggleButton catalogoButton;
     private javax.swing.JLabel confirmarContraseña;
     private javax.swing.JLabel contraseña;
     private javax.swing.JLabel contraseñaUsu;
     private javax.swing.JLabel correoUsu;
     private javax.swing.JMenuItem crearCuenta;
     private javax.swing.JPanel crearCuentaPanel;
+    private javax.swing.JToggleButton cuentaButton;
+    private javax.swing.JToggleButton historialButton;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel menuPrincipal;
     private javax.swing.JLabel nombreUsu;
+    private javax.swing.JToggleButton pagosButton;
     private javax.swing.JLabel usuario;
     // End of variables declaration//GEN-END:variables
 }
