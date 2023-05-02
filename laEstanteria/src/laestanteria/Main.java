@@ -47,6 +47,8 @@ public class Main extends javax.swing.JFrame {
         pagosButton = new javax.swing.JToggleButton();
         historialButton = new javax.swing.JToggleButton();
         cuentaButton = new javax.swing.JToggleButton();
+        cuentaPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -196,6 +198,27 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(menuPrincipal, "card4");
 
+        jLabel1.setText("Información de la cuenta");
+
+        javax.swing.GroupLayout cuentaPanelLayout = new javax.swing.GroupLayout(cuentaPanel);
+        cuentaPanel.setLayout(cuentaPanelLayout);
+        cuentaPanelLayout.setHorizontalGroup(
+            cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cuentaPanelLayout.createSequentialGroup()
+                .addGap(129, 129, 129)
+                .addComponent(jLabel1)
+                .addContainerGap(136, Short.MAX_VALUE))
+        );
+        cuentaPanelLayout.setVerticalGroup(
+            cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cuentaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(255, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(cuentaPanel, "card5");
+
         accesoPrograma.setText("Acceso");
 
         login.setText("Login");
@@ -274,7 +297,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem crearCuenta;
     private javax.swing.JPanel crearCuentaPanel;
     private javax.swing.JToggleButton cuentaButton;
+    private javax.swing.JPanel cuentaPanel;
     private javax.swing.JToggleButton historialButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
