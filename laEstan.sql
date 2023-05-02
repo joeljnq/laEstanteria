@@ -64,5 +64,10 @@ INSERT INTO almacen (idAlmacen, nombre, seccion) VALUES
     (2, 'Teléfono'),
     (3, 'Almacenaje'),
     (4, 'Otros');
+    INSERT INTO pedido (numeroPedido, factura, estado) VALUES
+    (1, 123, 'confirmado');
+
+	UPDATE producto SET stock = stock - 2 WHERE idProducto IN (1, 4);
+
     
     
