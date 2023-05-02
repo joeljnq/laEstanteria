@@ -72,9 +72,10 @@ public class Main extends javax.swing.JFrame {
         componentesPcButton = new javax.swing.JButton();
         volverButton03 = new javax.swing.JButton();
         celularesPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        celularLista = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        infoButton = new javax.swing.JButton();
+        volverButton04 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -412,9 +413,11 @@ public class Main extends javax.swing.JFrame {
                 "Celular", "Precio"
             }
         ));
-        jScrollPane1.setViewportView(jTable2);
+        celularLista.setViewportView(jTable2);
 
-        jButton1.setText("I");
+        infoButton.setText("Info");
+
+        volverButton04.setText("Volver");
 
         javax.swing.GroupLayout celularesPanelLayout = new javax.swing.GroupLayout(celularesPanel);
         celularesPanel.setLayout(celularesPanelLayout);
@@ -422,19 +425,25 @@ public class Main extends javax.swing.JFrame {
             celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(celularesPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(infoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volverButton04))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         celularesPanelLayout.setVerticalGroup(
             celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, celularesPanelLayout.createSequentialGroup()
                 .addContainerGap(39, Short.MAX_VALUE)
-                .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
+            .addGroup(celularesPanelLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(infoButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton04)
+                .addGap(47, 47, 47))
         );
 
         getContentPane().add(celularesPanel, "card8");
@@ -514,6 +523,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton catalogoButton;
     private javax.swing.JLabel catalogoLabel;
     private javax.swing.JPanel catalogoPanel;
+    private javax.swing.JScrollPane celularLista;
     private javax.swing.JToggleButton celularesButton;
     private javax.swing.JPanel celularesPanel;
     private javax.swing.JButton componentesPcButton;
@@ -532,10 +542,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton historialButton;
     private javax.swing.JToggleButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
+    private javax.swing.JButton infoButton;
     private javax.swing.JLabel infoPanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JMenuItem login;
@@ -553,5 +562,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton volverButton01;
     private javax.swing.JToggleButton volverButton02;
     private javax.swing.JButton volverButton03;
+    private javax.swing.JButton volverButton04;
     // End of variables declaration//GEN-END:variables
 }
