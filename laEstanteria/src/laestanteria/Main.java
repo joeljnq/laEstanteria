@@ -74,8 +74,13 @@ public class Main extends javax.swing.JFrame {
         celularesPanel = new javax.swing.JPanel();
         celularLista = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        infoButton = new javax.swing.JButton();
+        infoCelularesButton = new javax.swing.JButton();
         volverButton04 = new javax.swing.JButton();
+        accesoriosPanel = new javax.swing.JPanel();
+        accesorioLista = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        infoAccesoriosButton = new javax.swing.JButton();
+        volverButton05 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -415,7 +420,7 @@ public class Main extends javax.swing.JFrame {
         ));
         celularLista.setViewportView(jTable2);
 
-        infoButton.setText("Info");
+        infoCelularesButton.setText("Info");
 
         volverButton04.setText("Volver");
 
@@ -428,7 +433,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(infoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infoCelularesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton04))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -440,13 +445,59 @@ public class Main extends javax.swing.JFrame {
                 .addGap(38, 38, 38))
             .addGroup(celularesPanelLayout.createSequentialGroup()
                 .addGap(95, 95, 95)
-                .addComponent(infoButton)
+                .addComponent(infoCelularesButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(volverButton04)
                 .addGap(47, 47, 47))
         );
 
         getContentPane().add(celularesPanel, "card8");
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Accesorio", "Precio"
+            }
+        ));
+        accesorioLista.setViewportView(jTable3);
+
+        infoAccesoriosButton.setText("Info");
+
+        volverButton05.setText("Volver");
+
+        javax.swing.GroupLayout accesoriosPanelLayout = new javax.swing.GroupLayout(accesoriosPanel);
+        accesoriosPanel.setLayout(accesoriosPanelLayout);
+        accesoriosPanelLayout.setHorizontalGroup(
+            accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(accesoriosPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(accesorioLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(infoAccesoriosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volverButton05))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        accesoriosPanelLayout.setVerticalGroup(
+            accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, accesoriosPanelLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(accesorioLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(accesoriosPanelLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(infoAccesoriosButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton05)
+                .addGap(47, 47, 47))
+        );
+
+        getContentPane().add(accesoriosPanel, "card8");
 
         accesoPrograma.setText("Acceso");
 
@@ -510,7 +561,9 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accesoPrograma;
+    private javax.swing.JScrollPane accesorioLista;
     private javax.swing.JToggleButton accesoriosButton;
+    private javax.swing.JPanel accesoriosPanel;
     private javax.swing.JToggleButton almacenamientoButton;
     private javax.swing.JButton botonCrearCuenta;
     private javax.swing.JButton botonLogin;
@@ -542,11 +595,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton historialButton;
     private javax.swing.JToggleButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
-    private javax.swing.JButton infoButton;
+    private javax.swing.JButton infoAccesoriosButton;
+    private javax.swing.JButton infoCelularesButton;
     private javax.swing.JLabel infoPanel;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel menuPrincipal;
@@ -563,5 +618,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton volverButton02;
     private javax.swing.JButton volverButton03;
     private javax.swing.JButton volverButton04;
+    private javax.swing.JButton volverButton05;
     // End of variables declaration//GEN-END:variables
 }
