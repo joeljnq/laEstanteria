@@ -60,6 +60,10 @@ public class Main extends javax.swing.JFrame {
         historialPagosButton = new javax.swing.JToggleButton();
         volverButton = new javax.swing.JToggleButton();
         historialPagosPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaPagosList = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -283,15 +287,31 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(cuentaPanel, "card5");
 
+        historialPagosPanel.setPreferredSize(new java.awt.Dimension(400, 277));
+
+        jScrollPane1.setViewportView(listaPagosList);
+
+        jScrollPane2.setViewportView(jList1);
+
         javax.swing.GroupLayout historialPagosPanelLayout = new javax.swing.GroupLayout(historialPagosPanel);
         historialPagosPanel.setLayout(historialPagosPanelLayout);
         historialPagosPanelLayout.setHorizontalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(historialPagosPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         historialPagosPanelLayout.setVerticalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historialPagosPanelLayout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
+                .addGroup(historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         getContentPane().add(historialPagosPanel, "card6");
@@ -383,7 +403,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
     private javax.swing.JLabel infoPanel;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList<String> listaPagosList;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel menuPrincipal;
