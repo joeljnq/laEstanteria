@@ -49,6 +49,10 @@ public class Main extends javax.swing.JFrame {
         cuentaButton = new javax.swing.JToggleButton();
         cuentaPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -200,13 +204,30 @@ public class Main extends javax.swing.JFrame {
 
         jLabel1.setText("Información de la cuenta");
 
+        jLabel2.setText("Nombre de usuario");
+
+        jLabel3.setText("Saldo");
+
+        jLabel4.setText("Dni");
+
+        jLabel5.setText("Gmail");
+
         javax.swing.GroupLayout cuentaPanelLayout = new javax.swing.GroupLayout(cuentaPanel);
         cuentaPanel.setLayout(cuentaPanelLayout);
         cuentaPanelLayout.setHorizontalGroup(
             cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cuentaPanelLayout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(jLabel1)
+                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cuentaPanelLayout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(jLabel1))
+                    .addGroup(cuentaPanelLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         cuentaPanelLayout.setVerticalGroup(
@@ -214,7 +235,15 @@ public class Main extends javax.swing.JFrame {
             .addGroup(cuentaPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         getContentPane().add(cuentaPanel, "card5");
@@ -300,6 +329,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel cuentaPanel;
     private javax.swing.JToggleButton historialButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
