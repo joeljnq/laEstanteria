@@ -503,7 +503,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="catalogoPanel">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
           <CardConstraints cardName="card7"/>
@@ -517,7 +517,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                          <Component id="catalogoPanel" min="-2" max="-2" attributes="0"/>
+                          <Component id="catalogoLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -548,7 +548,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Component id="catalogoPanel" min="-2" max="-2" attributes="0"/>
+                  <Component id="catalogoLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="celularesButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -568,7 +568,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="catalogoPanel">
+        <Component class="javax.swing.JLabel" name="catalogoLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cat&#xe1;logo"/>
           </Properties>

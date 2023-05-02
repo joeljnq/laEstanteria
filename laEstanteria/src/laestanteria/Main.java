@@ -63,8 +63,8 @@ public class Main extends javax.swing.JFrame {
         volverButton02 = new javax.swing.JToggleButton();
         pagosTable = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        catalogoPanel = new javax.swing.JLabel();
+        catalogoPanel = new javax.swing.JPanel();
+        catalogoLabel = new javax.swing.JLabel();
         celularesButton = new javax.swing.JToggleButton();
         accesoriosButton = new javax.swing.JToggleButton();
         almacenamientoButton = new javax.swing.JToggleButton();
@@ -336,7 +336,7 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(historialPagosPanel, "card6");
 
-        catalogoPanel.setText("Catálogo");
+        catalogoLabel.setText("Catálogo");
 
         celularesButton.setText("Celulares");
 
@@ -350,44 +350,44 @@ public class Main extends javax.swing.JFrame {
 
         volverButton03.setText("Volver");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout catalogoPanelLayout = new javax.swing.GroupLayout(catalogoPanel);
+        catalogoPanel.setLayout(catalogoPanelLayout);
+        catalogoPanelLayout.setHorizontalGroup(
+            catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(catalogoPanelLayout.createSequentialGroup()
+                .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(catalogoPanelLayout.createSequentialGroup()
                         .addGap(170, 170, 170)
-                        .addComponent(catalogoPanel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(catalogoLabel))
+                    .addGroup(catalogoPanelLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(celularesButton)
                             .addComponent(pcButton))
                         .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(catalogoPanelLayout.createSequentialGroup()
                                 .addComponent(accesoriosButton)
                                 .addGap(26, 26, 26)
                                 .addComponent(almacenamientoButton))
                             .addComponent(componentesPcButton)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(catalogoPanelLayout.createSequentialGroup()
                         .addGap(157, 157, 157)
                         .addComponent(volverButton03)))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        catalogoPanelLayout.setVerticalGroup(
+            catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(catalogoPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(catalogoPanel)
+                .addComponent(catalogoLabel)
                 .addGap(67, 67, 67)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(celularesButton)
                     .addComponent(accesoriosButton)
                     .addComponent(almacenamientoButton))
                 .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pcButton)
                     .addComponent(componentesPcButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
@@ -395,7 +395,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, "card7");
+        getContentPane().add(catalogoPanel, "card7");
 
         accesoPrograma.setText("Acceso");
 
@@ -470,7 +470,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoUsuario;
     private javax.swing.JToggleButton catalogoButton;
-    private javax.swing.JLabel catalogoPanel;
+    private javax.swing.JLabel catalogoLabel;
+    private javax.swing.JPanel catalogoPanel;
     private javax.swing.JToggleButton celularesButton;
     private javax.swing.JButton componentesPcButton;
     private javax.swing.JLabel confirmarContraseña;
@@ -490,7 +491,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel historialPagosPanel;
     private javax.swing.JLabel infoPanel;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JTable jTable1;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
