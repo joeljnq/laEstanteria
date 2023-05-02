@@ -81,6 +81,11 @@ public class Main extends javax.swing.JFrame {
         jTable3 = new javax.swing.JTable();
         infoAccesoriosButton = new javax.swing.JButton();
         volverButton05 = new javax.swing.JButton();
+        almacenamientoPanel = new javax.swing.JPanel();
+        almacenamientoLista = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        infoAlmacenamientoButton = new javax.swing.JButton();
+        volverButton06 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -499,6 +504,52 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(accesoriosPanel, "card8");
 
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Almacenamiento", "Precio"
+            }
+        ));
+        almacenamientoLista.setViewportView(jTable4);
+
+        infoAlmacenamientoButton.setText("Info");
+
+        volverButton06.setText("Volver");
+
+        javax.swing.GroupLayout almacenamientoPanelLayout = new javax.swing.GroupLayout(almacenamientoPanel);
+        almacenamientoPanel.setLayout(almacenamientoPanelLayout);
+        almacenamientoPanelLayout.setHorizontalGroup(
+            almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(almacenamientoPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(almacenamientoLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(infoAlmacenamientoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volverButton06))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        almacenamientoPanelLayout.setVerticalGroup(
+            almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, almacenamientoPanelLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(almacenamientoLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(almacenamientoPanelLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(infoAlmacenamientoButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton06)
+                .addGap(47, 47, 47))
+        );
+
+        getContentPane().add(almacenamientoPanel, "card8");
+
         accesoPrograma.setText("Acceso");
 
         login.setText("Login");
@@ -565,6 +616,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton accesoriosButton;
     private javax.swing.JPanel accesoriosPanel;
     private javax.swing.JToggleButton almacenamientoButton;
+    private javax.swing.JScrollPane almacenamientoLista;
+    private javax.swing.JPanel almacenamientoPanel;
     private javax.swing.JButton botonCrearCuenta;
     private javax.swing.JButton botonLogin;
     private javax.swing.JPasswordField campoConfirmarContraseña;
@@ -596,12 +649,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
     private javax.swing.JButton infoAccesoriosButton;
+    private javax.swing.JButton infoAlmacenamientoButton;
     private javax.swing.JButton infoCelularesButton;
     private javax.swing.JLabel infoPanel;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel menuPrincipal;
@@ -619,5 +674,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton volverButton03;
     private javax.swing.JButton volverButton04;
     private javax.swing.JButton volverButton05;
+    private javax.swing.JButton volverButton06;
     // End of variables declaration//GEN-END:variables
 }
