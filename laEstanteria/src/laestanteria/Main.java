@@ -57,6 +57,9 @@ public class Main extends javax.swing.JFrame {
         gmailResPanel = new javax.swing.JLabel();
         dniResPanel = new javax.swing.JLabel();
         saldoResPanel = new javax.swing.JLabel();
+        historialPagosButton = new javax.swing.JToggleButton();
+        volverButton = new javax.swing.JToggleButton();
+        historialPagosPanel = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -216,6 +219,10 @@ public class Main extends javax.swing.JFrame {
 
         gmailPanel.setText("Gmail");
 
+        historialPagosButton.setText("Historial de Pagos");
+
+        volverButton.setText("Volver");
+
         javax.swing.GroupLayout cuentaPanelLayout = new javax.swing.GroupLayout(cuentaPanel);
         cuentaPanel.setLayout(cuentaPanelLayout);
         cuentaPanelLayout.setHorizontalGroup(
@@ -239,6 +246,12 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(dniResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(saldoResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))))
                 .addGap(83, 83, 83))
+            .addGroup(cuentaPanelLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(historialPagosButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton)
+                .addGap(47, 47, 47))
         );
         cuentaPanelLayout.setVerticalGroup(
             cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,10 +274,27 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saldoPanel)
                     .addComponent(saldoResPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(historialPagosButton)
+                    .addComponent(volverButton))
+                .addGap(34, 34, 34))
         );
 
         getContentPane().add(cuentaPanel, "card5");
+
+        javax.swing.GroupLayout historialPagosPanelLayout = new javax.swing.GroupLayout(historialPagosPanel);
+        historialPagosPanel.setLayout(historialPagosPanelLayout);
+        historialPagosPanelLayout.setHorizontalGroup(
+            historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        historialPagosPanelLayout.setVerticalGroup(
+            historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(historialPagosPanel, "card6");
 
         accesoPrograma.setText("Acceso");
 
@@ -350,6 +380,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel gmailPanel;
     private javax.swing.JLabel gmailResPanel;
     private javax.swing.JToggleButton historialButton;
+    private javax.swing.JToggleButton historialPagosButton;
+    private javax.swing.JPanel historialPagosPanel;
     private javax.swing.JLabel infoPanel;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem login;
@@ -362,5 +394,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel saldoPanel;
     private javax.swing.JLabel saldoResPanel;
     private javax.swing.JLabel usuario;
+    private javax.swing.JToggleButton volverButton;
     // End of variables declaration//GEN-END:variables
 }
