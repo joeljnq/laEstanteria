@@ -48,11 +48,15 @@ public class Main extends javax.swing.JFrame {
         historialButton = new javax.swing.JToggleButton();
         cuentaButton = new javax.swing.JToggleButton();
         cuentaPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        infoPanel = new javax.swing.JLabel();
+        nombreUsuPanel = new javax.swing.JLabel();
+        saldoPanel = new javax.swing.JLabel();
+        dniPanel = new javax.swing.JLabel();
+        gmailPanel = new javax.swing.JLabel();
+        nombreResPanel = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -202,15 +206,15 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(menuPrincipal, "card4");
 
-        jLabel1.setText("Información de la cuenta");
+        infoPanel.setText("Información de la cuenta");
 
-        jLabel2.setText("Nombre de usuario");
+        nombreUsuPanel.setText("Nombre de usuario");
 
-        jLabel3.setText("Saldo");
+        saldoPanel.setText("Saldo");
 
-        jLabel4.setText("Dni");
+        dniPanel.setText("Dni");
 
-        jLabel5.setText("Gmail");
+        gmailPanel.setText("Gmail");
 
         javax.swing.GroupLayout cuentaPanelLayout = new javax.swing.GroupLayout(cuentaPanel);
         cuentaPanel.setLayout(cuentaPanelLayout);
@@ -220,29 +224,43 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cuentaPanelLayout.createSequentialGroup()
                         .addGap(129, 129, 129)
-                        .addComponent(jLabel1))
+                        .addComponent(infoPanel))
                     .addGroup(cuentaPanelLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))))
-                .addContainerGap(136, Short.MAX_VALUE))
+                            .addComponent(nombreUsuPanel)
+                            .addComponent(gmailPanel)
+                            .addComponent(dniPanel)
+                            .addComponent(saldoPanel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                        .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nombreResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))))
+                .addGap(83, 83, 83))
         );
         cuentaPanelLayout.setVerticalGroup(
             cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cuentaPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(infoPanel)
                 .addGap(36, 36, 36)
-                .addComponent(jLabel2)
+                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nombreUsuPanel)
+                    .addComponent(nombreResPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(gmailPanel)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dniPanel)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5)
+                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(saldoPanel)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(101, Short.MAX_VALUE))
         );
 
@@ -327,18 +345,22 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel crearCuentaPanel;
     private javax.swing.JToggleButton cuentaButton;
     private javax.swing.JPanel cuentaPanel;
+    private javax.swing.JLabel dniPanel;
+    private javax.swing.JLabel gmailPanel;
     private javax.swing.JToggleButton historialButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel infoPanel;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel menuPrincipal;
+    private javax.swing.JLabel nombreResPanel;
     private javax.swing.JLabel nombreUsu;
+    private javax.swing.JLabel nombreUsuPanel;
     private javax.swing.JToggleButton pagosButton;
+    private javax.swing.JLabel saldoPanel;
     private javax.swing.JLabel usuario;
     // End of variables declaration//GEN-END:variables
 }
