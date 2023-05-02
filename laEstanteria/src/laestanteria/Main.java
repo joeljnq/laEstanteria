@@ -86,6 +86,11 @@ public class Main extends javax.swing.JFrame {
         jTable4 = new javax.swing.JTable();
         infoAlmacenamientoButton = new javax.swing.JButton();
         volverButton06 = new javax.swing.JButton();
+        pcPanel = new javax.swing.JPanel();
+        pcLista = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        infoPcButton = new javax.swing.JButton();
+        volverButton07 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -550,6 +555,52 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(almacenamientoPanel, "card8");
 
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Celular", "Precio"
+            }
+        ));
+        pcLista.setViewportView(jTable5);
+
+        infoPcButton.setText("Info");
+
+        volverButton07.setText("Volver");
+
+        javax.swing.GroupLayout pcPanelLayout = new javax.swing.GroupLayout(pcPanel);
+        pcPanel.setLayout(pcPanelLayout);
+        pcPanelLayout.setHorizontalGroup(
+            pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pcPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(pcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(infoPcButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volverButton07))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        pcPanelLayout.setVerticalGroup(
+            pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pcPanelLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(pcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(pcPanelLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(infoPcButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton07)
+                .addGap(47, 47, 47))
+        );
+
+        getContentPane().add(pcPanel, "card8");
+
         accesoPrograma.setText("Acceso");
 
         login.setText("Login");
@@ -652,11 +703,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton infoAlmacenamientoButton;
     private javax.swing.JButton infoCelularesButton;
     private javax.swing.JLabel infoPanel;
+    private javax.swing.JButton infoPcButton;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel menuPrincipal;
@@ -666,6 +719,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton pagosButton;
     private javax.swing.JScrollPane pagosTable;
     private javax.swing.JToggleButton pcButton;
+    private javax.swing.JScrollPane pcLista;
+    private javax.swing.JPanel pcPanel;
     private javax.swing.JLabel saldoPanel;
     private javax.swing.JLabel saldoResPanel;
     private javax.swing.JLabel usuario;
@@ -675,5 +730,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton volverButton04;
     private javax.swing.JButton volverButton05;
     private javax.swing.JButton volverButton06;
+    private javax.swing.JButton volverButton07;
     // End of variables declaration//GEN-END:variables
 }
