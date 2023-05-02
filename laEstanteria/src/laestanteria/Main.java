@@ -71,6 +71,10 @@ public class Main extends javax.swing.JFrame {
         pcButton = new javax.swing.JToggleButton();
         componentesPcButton = new javax.swing.JButton();
         volverButton03 = new javax.swing.JButton();
+        celularesPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -327,7 +331,7 @@ public class Main extends javax.swing.JFrame {
         historialPagosPanelLayout.setVerticalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historialPagosPanelLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addComponent(pagosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(volverButton02, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -396,6 +400,44 @@ public class Main extends javax.swing.JFrame {
         );
 
         getContentPane().add(catalogoPanel, "card7");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Celular", "Precio"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable2);
+
+        jButton1.setText("I");
+
+        javax.swing.GroupLayout celularesPanelLayout = new javax.swing.GroupLayout(celularesPanel);
+        celularesPanel.setLayout(celularesPanelLayout);
+        celularesPanelLayout.setHorizontalGroup(
+            celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(celularesPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        celularesPanelLayout.setVerticalGroup(
+            celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, celularesPanelLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38))
+        );
+
+        getContentPane().add(celularesPanel, "card8");
 
         accesoPrograma.setText("Acceso");
 
@@ -473,6 +515,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel catalogoLabel;
     private javax.swing.JPanel catalogoPanel;
     private javax.swing.JToggleButton celularesButton;
+    private javax.swing.JPanel celularesPanel;
     private javax.swing.JButton componentesPcButton;
     private javax.swing.JLabel confirmarContraseña;
     private javax.swing.JLabel contraseña;
@@ -490,8 +533,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
     private javax.swing.JLabel infoPanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel menuPrincipal;
