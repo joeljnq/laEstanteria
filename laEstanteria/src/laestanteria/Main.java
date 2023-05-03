@@ -62,7 +62,7 @@ public class Main extends javax.swing.JFrame {
         campoConfirmarContraseña = new javax.swing.JPasswordField();
         campoConteraseñaUsu = new javax.swing.JPasswordField();
         botonCrearCuenta = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        labelDni = new javax.swing.JLabel();
         dniUsuario = new javax.swing.JTextField();
         menuPrincipal = new javax.swing.JPanel();
         catalogoButton = new javax.swing.JToggleButton();
@@ -118,6 +118,11 @@ public class Main extends javax.swing.JFrame {
         jTable6 = new javax.swing.JTable();
         infoComponentesPcButton = new javax.swing.JButton();
         volverButton08 = new javax.swing.JButton();
+        añadirProducto = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        botonAñadir = new javax.swing.JButton();
+        idProducto = new javax.swing.JTextField();
+        cantidadProducto = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -193,7 +198,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Dni");
+        labelDni.setText("Dni");
 
         dniUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,7 +217,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(confirmarContraseña)
                     .addComponent(contraseñaUsu)
                     .addComponent(nombreUsu)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelDni, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonCrearCuenta)
@@ -229,7 +234,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dniUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(labelDni))
                 .addGap(13, 13, 13)
                 .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -699,6 +704,50 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(componentesPcPanel, "card8");
 
+        jLabel4.setText("Añadir Producto");
+
+        botonAñadir.setText("añadir");
+        botonAñadir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAñadirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout añadirProductoLayout = new javax.swing.GroupLayout(añadirProducto);
+        añadirProducto.setLayout(añadirProductoLayout);
+        añadirProductoLayout.setHorizontalGroup(
+            añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(añadirProductoLayout.createSequentialGroup()
+                .addGroup(añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(añadirProductoLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68)
+                        .addComponent(cantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(añadirProductoLayout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(jLabel4))
+                    .addGroup(añadirProductoLayout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addComponent(botonAñadir)))
+                .addContainerGap(131, Short.MAX_VALUE))
+        );
+        añadirProductoLayout.setVerticalGroup(
+            añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(añadirProductoLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel4)
+                .addGap(41, 41, 41)
+                .addGroup(añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
+                .addComponent(botonAñadir)
+                .addContainerGap(90, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(añadirProducto, "card7");
+
         accesoPrograma.setText("Acceso");
 
         login.setText("Login");
@@ -806,6 +855,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton almacenamientoButton;
     private javax.swing.JScrollPane almacenamientoLista;
     private javax.swing.JPanel almacenamientoPanel;
+    private javax.swing.JPanel añadirProducto;
+    private javax.swing.JButton botonAñadir;
     private javax.swing.JButton botonCrearCuenta;
     private javax.swing.JButton botonLogin;
     private javax.swing.JPasswordField campoConfirmarContraseña;
@@ -840,12 +891,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton historialButton;
     private javax.swing.JToggleButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
+    private javax.swing.JTextField idProducto;
     private javax.swing.JButton infoAccesoriosButton;
     private javax.swing.JButton infoAlmacenamientoButton;
     private javax.swing.JButton infoCelularesButton;
     private javax.swing.JButton infoComponentesPcButton;
     private javax.swing.JLabel infoPanel;
     private javax.swing.JButton infoPcButton;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
@@ -853,6 +906,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
+    private javax.swing.JLabel labelDni;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel menuPrincipal;

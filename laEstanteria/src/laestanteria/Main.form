@@ -150,7 +150,7 @@
                       <Component id="confirmarContraseña" min="-2" max="-2" attributes="0"/>
                       <Component id="contraseñaUsu" min="-2" max="-2" attributes="0"/>
                       <Component id="nombreUsu" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                      <Component id="labelDni" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -171,7 +171,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="dniUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelDni" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -237,7 +237,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCrearCuentaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="labelDni">
           <Properties>
             <Property name="text" type="java.lang.String" value="Dni"/>
           </Properties>
