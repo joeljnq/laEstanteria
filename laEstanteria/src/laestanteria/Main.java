@@ -85,8 +85,9 @@ public class Main extends javax.swing.JFrame {
         historialButton = new javax.swing.JButton();
         cuentaButton = new javax.swing.JButton();
         pagosButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         cuentaPanel = new javax.swing.JPanel();
-        infoPanel = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
         nombreUsuPanel = new javax.swing.JLabel();
         saldoPanel = new javax.swing.JLabel();
         dniPanel = new javax.swing.JLabel();
@@ -134,11 +135,12 @@ public class Main extends javax.swing.JFrame {
         jTable6 = new javax.swing.JTable();
         infoComponentesPcButton = new javax.swing.JButton();
         volverButton08 = new javax.swing.JButton();
-        añadirProducto = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        infoPanel = new javax.swing.JPanel();
+        añadirLabel = new javax.swing.JLabel();
         botonAñadir = new javax.swing.JButton();
-        idProducto = new javax.swing.JTextField();
-        cantidadProducto = new javax.swing.JTextField();
+        volverButton09 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable7 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -181,7 +183,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(112, 112, 112)
                         .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
             .addGroup(loginPanelLayout.createSequentialGroup()
                 .addGap(155, 155, 155)
                 .addComponent(botonLogin)
@@ -248,7 +250,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(campoConfirmarContraseña)
                     .addComponent(campoConteraseñaUsu)
                     .addComponent(dniUsuario))
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(369, Short.MAX_VALUE))
         );
         crearCuentaPanelLayout.setVerticalGroup(
             crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,20 +310,29 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Cesta");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout menuPrincipalLayout = new javax.swing.GroupLayout(menuPrincipal);
         menuPrincipal.setLayout(menuPrincipalLayout);
         menuPrincipalLayout.setHorizontalGroup(
             menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPrincipalLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(37, 37, 37)
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(catalogoButton)
                     .addComponent(historialButton))
-                .addGap(138, 138, 138)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pagosButton)
-                    .addComponent(cuentaButton))
-                .addContainerGap(71, Short.MAX_VALUE))
+                    .addComponent(cuentaButton)
+                    .addComponent(pagosButton))
+                .addContainerGap(315, Short.MAX_VALUE))
         );
         menuPrincipalLayout.setVerticalGroup(
             menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,7 +340,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(90, 90, 90)
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(catalogoButton)
-                    .addComponent(pagosButton))
+                    .addComponent(pagosButton)
+                    .addComponent(jButton1))
                 .addGap(31, 31, 31)
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(historialButton)
@@ -339,7 +351,7 @@ public class Main extends javax.swing.JFrame {
 
         mainPanel.add(menuPrincipal, "menuPanel");
 
-        infoPanel.setText("Información de la cuenta");
+        infoLabel.setText("Información de la cuenta");
 
         nombreUsuPanel.setText("Nombre de usuario");
 
@@ -371,7 +383,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cuentaPanelLayout.createSequentialGroup()
                         .addGap(129, 129, 129)
-                        .addComponent(infoPanel))
+                        .addComponent(infoLabel))
                     .addGroup(cuentaPanelLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,7 +411,7 @@ public class Main extends javax.swing.JFrame {
             cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cuentaPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(infoPanel)
+                .addComponent(infoLabel)
                 .addGap(36, 36, 36)
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nombreResPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -459,7 +471,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(historialPagosPanelLayout.createSequentialGroup()
                         .addGap(168, 168, 168)
                         .addComponent(volverButton02)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(245, Short.MAX_VALUE))
         );
         historialPagosPanelLayout.setVerticalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -536,7 +548,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(componentesPcButton)
                             .addGroup(catalogoPanelLayout.createSequentialGroup()
                                 .addComponent(accesoriosButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
                                 .addComponent(almacenamientoButton)))))
                 .addGap(21, 21, 21))
             .addGroup(catalogoPanelLayout.createSequentialGroup()
@@ -558,7 +570,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(componentesPcButton)
                     .addComponent(pcButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(volverButton03)
                 .addGap(27, 27, 27))
         );
@@ -598,7 +610,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoCelularesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton04))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         celularesPanelLayout.setVerticalGroup(
             celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -649,7 +661,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoAccesoriosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton05))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         accesoriosPanelLayout.setVerticalGroup(
             accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -700,7 +712,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoAlmacenamientoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton06))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         almacenamientoPanelLayout.setVerticalGroup(
             almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -751,7 +763,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoPcButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton07))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         pcPanelLayout.setVerticalGroup(
             pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -802,7 +814,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoComponentesPcButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton08))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         componentesPcPanelLayout.setVerticalGroup(
             componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -820,49 +832,70 @@ public class Main extends javax.swing.JFrame {
 
         mainPanel.add(componentesPcPanel, "componentesPcPanel");
 
-        jLabel4.setText("Añadir Producto");
+        añadirLabel.setText("Info de producto");
 
-        botonAñadir.setText("añadir");
+        botonAñadir.setText("Añadir a cesta");
         botonAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAñadirActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout añadirProductoLayout = new javax.swing.GroupLayout(añadirProducto);
-        añadirProducto.setLayout(añadirProductoLayout);
-        añadirProductoLayout.setHorizontalGroup(
-            añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(añadirProductoLayout.createSequentialGroup()
-                .addGroup(añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(añadirProductoLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(cantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(añadirProductoLayout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jLabel4))
-                    .addGroup(añadirProductoLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(botonAñadir)))
-                .addContainerGap(131, Short.MAX_VALUE))
-        );
-        añadirProductoLayout.setVerticalGroup(
-            añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(añadirProductoLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel4)
-                .addGap(41, 41, 41)
-                .addGroup(añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
+        volverButton09.setText("Volver");
+        volverButton09.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton09ActionPerformed(evt);
+            }
+        });
+
+        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable7);
+
+        javax.swing.GroupLayout infoPanelLayout = new javax.swing.GroupLayout(infoPanel);
+        infoPanel.setLayout(infoPanelLayout);
+        infoPanelLayout.setHorizontalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoPanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addComponent(botonAñadir)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton09)
+                .addGap(422, 422, 422))
+            .addGroup(infoPanelLayout.createSequentialGroup()
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(añadirLabel))
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        infoPanelLayout.setVerticalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(añadirLabel)
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonAñadir)
+                    .addComponent(volverButton09))
+                .addGap(15, 15, 15))
         );
 
-        mainPanel.add(añadirProducto, "card7");
+        mainPanel.add(infoPanel, "card7");
 
         accesoPrograma.setText("Acceso");
 
@@ -903,11 +936,6 @@ public class Main extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         cambiarPanel("loginPanel");
     }//GEN-LAST:event_loginActionPerformed
-
-    private void botonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_botonAñadirActionPerformed
 
     private void campoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuarioActionPerformed
         // TODO add your handling code here:
@@ -1007,6 +1035,18 @@ public class Main extends javax.swing.JFrame {
         cambiarPanel("pcPanel");
     }//GEN-LAST:event_pcButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        cambiarPanel("pcPanel");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void volverButton09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton09ActionPerformed
+        cambiarPanel("pcPanel");
+    }//GEN-LAST:event_volverButton09ActionPerformed
+
+    private void botonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAñadirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1047,7 +1087,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton almacenamientoButton;
     private javax.swing.JScrollPane almacenamientoLista;
     private javax.swing.JPanel almacenamientoPanel;
-    private javax.swing.JPanel añadirProducto;
+    private javax.swing.JLabel añadirLabel;
     private javax.swing.JButton botonAñadir;
     private javax.swing.JButton botonCrearCuenta;
     private javax.swing.JButton botonLogin;
@@ -1057,7 +1097,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField campoCorreo;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoUsuario;
-    private javax.swing.JTextField cantidadProducto;
     private javax.swing.JButton catalogoButton;
     private javax.swing.JLabel catalogoLabel;
     private javax.swing.JPanel catalogoPanel;
@@ -1083,21 +1122,23 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton historialButton;
     private javax.swing.JButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
-    private javax.swing.JTextField idProducto;
     private javax.swing.JButton infoAccesoriosButton;
     private javax.swing.JButton infoAlmacenamientoButton;
     private javax.swing.JButton infoCelularesButton;
     private javax.swing.JButton infoComponentesPcButton;
-    private javax.swing.JLabel infoPanel;
+    private javax.swing.JLabel infoLabel;
+    private javax.swing.JPanel infoPanel;
     private javax.swing.JButton infoPcButton;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
+    private javax.swing.JTable jTable7;
     private javax.swing.JLabel labelDni;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
@@ -1122,5 +1163,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton volverButton06;
     private javax.swing.JButton volverButton07;
     private javax.swing.JButton volverButton08;
+    private javax.swing.JButton volverButton09;
     // End of variables declaration//GEN-END:variables
 }
