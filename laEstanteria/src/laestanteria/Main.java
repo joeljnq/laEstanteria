@@ -46,7 +46,7 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
         loginPanel = new javax.swing.JPanel();
         usuario = new javax.swing.JLabel();
         campoUsuario = new javax.swing.JTextField();
@@ -131,7 +131,7 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new java.awt.CardLayout());
+        mainPanel.setLayout(new java.awt.CardLayout());
 
         usuario.setText("Usuario");
 
@@ -183,7 +183,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        jPanel1.add(loginPanel, "card2");
+        mainPanel.add(loginPanel, "card2");
 
         correoUsu.setText("Correo");
 
@@ -258,7 +258,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jPanel1.add(crearCuentaPanel, "card3");
+        mainPanel.add(crearCuentaPanel, "card3");
 
         catalogoButton.setText("Catálogo");
 
@@ -297,7 +297,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(100, Short.MAX_VALUE))
         );
 
-        jPanel1.add(menuPrincipal, "card4");
+        mainPanel.add(menuPrincipal, "card4");
 
         infoPanel.setText("Información de la cuenta");
 
@@ -371,7 +371,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(34, 34, 34))
         );
 
-        jPanel1.add(cuentaPanel, "card5");
+        mainPanel.add(cuentaPanel, "card5");
 
         historialPagosPanel.setPreferredSize(new java.awt.Dimension(400, 277));
 
@@ -413,7 +413,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(5, 5, 5))
         );
 
-        jPanel1.add(historialPagosPanel, "card6");
+        mainPanel.add(historialPagosPanel, "card6");
 
         catalogoLabel.setText("Catálogo");
 
@@ -474,7 +474,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(catalogoPanel, "card7");
+        mainPanel.add(catalogoPanel, "card7");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -520,7 +520,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        jPanel1.add(celularesPanel, "card8");
+        mainPanel.add(celularesPanel, "card8");
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -566,7 +566,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        jPanel1.add(accesoriosPanel, "card8");
+        mainPanel.add(accesoriosPanel, "card8");
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -612,7 +612,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        jPanel1.add(almacenamientoPanel, "card8");
+        mainPanel.add(almacenamientoPanel, "card8");
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -658,7 +658,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        jPanel1.add(pcPanel, "card8");
+        mainPanel.add(pcPanel, "card8");
 
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -704,7 +704,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        jPanel1.add(componentesPcPanel, "card8");
+        mainPanel.add(componentesPcPanel, "card8");
 
         jLabel4.setText("Añadir Producto");
 
@@ -748,7 +748,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
-        jPanel1.add(añadirProducto, "card7");
+        mainPanel.add(añadirProducto, "card7");
 
         accesoPrograma.setText("Acceso");
 
@@ -776,11 +776,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -913,7 +913,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton infoPcButton;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
@@ -923,6 +922,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel labelDni;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel menuPrincipal;
     private javax.swing.JLabel nombreResPanel;
     private javax.swing.JLabel nombreUsu;
