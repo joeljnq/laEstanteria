@@ -4,6 +4,12 @@
  */
 package laestanteria;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author a18jaimejnq
@@ -21,6 +27,21 @@ public class Cliente {
         this.nombre = nombre;
         this.correo = correo;
         this.contraseña = contraseña;
+       
+          String consulta = "CREATE USER "+dni+"@'localhost' IDENTIFIED BY "+contraseña;
+        try ( Connection conexion = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/traballadores", "root", "ciff2Oc-"); 
+                PreparedStatement ps = conexion.prepareStatement(consulta)) {
+         
+            
+            System.out.println("Conexion OK");
+            
+        } catch (SQLException e) {
+            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
+        }
+        
     }
     
     

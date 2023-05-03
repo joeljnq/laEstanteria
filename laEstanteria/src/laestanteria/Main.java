@@ -36,6 +36,7 @@ public class Main extends javax.swing.JFrame {
         String contraUsuario = campoContraseña.getText();
         String confirContraseña = confirmarContraseña.getText();
         Cliente prueba = new Cliente(dni, nombre, correo, contraUsuario);
+        
     }
 
     private void showError(String text) {
@@ -870,7 +871,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_dniUsuarioActionPerformed
 
     private void botonCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearCuentaActionPerformed
-    if (campoConteraseñaUsu.getText().equals(campoConfirmarContraseña.getText())) {
+    if (campoConteraseñaUsu.equals(campoConfirmarContraseña)) {
             crearUsuario();
             showMessage("Usuario creado :)");
             cambiarPanel("menuPanel");
