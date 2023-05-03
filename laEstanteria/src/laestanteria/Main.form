@@ -605,12 +605,13 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                              <Component id="volverButton03" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                      <Component id="volverButton03" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -630,9 +631,9 @@
                           <Component id="componentesPcButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="pcButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Component id="volverButton03" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

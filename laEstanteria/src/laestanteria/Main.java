@@ -534,11 +534,12 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(catalogoPanelLayout.createSequentialGroup()
                                 .addComponent(accesoriosButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                                .addComponent(almacenamientoButton))))
-                    .addGroup(catalogoPanelLayout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(volverButton03)))
+                                .addComponent(almacenamientoButton)))))
                 .addGap(21, 21, 21))
+            .addGroup(catalogoPanelLayout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(volverButton03)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         catalogoPanelLayout.setVerticalGroup(
             catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -554,9 +555,9 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(componentesPcButton)
                     .addComponent(pcButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(volverButton03)
-                .addGap(65, 65, 65))
+                .addGap(27, 27, 27))
         );
 
         mainPanel.add(catalogoPanel, "catalogoPanel");
