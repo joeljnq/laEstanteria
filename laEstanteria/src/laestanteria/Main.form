@@ -21,6 +21,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear cuenta"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="crearCuentaActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -112,6 +115,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="campoUsuario">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoUsuarioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="contrase&#xf1;a">
           <Properties>
@@ -137,21 +143,23 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="nombreUsu" min="-2" max="-2" attributes="0"/>
                       <Component id="correoUsu" min="-2" max="-2" attributes="0"/>
                       <Component id="confirmarContraseña" min="-2" max="-2" attributes="0"/>
                       <Component id="contraseñaUsu" min="-2" max="-2" attributes="0"/>
+                      <Component id="nombreUsu" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel5" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="botonCrearCuenta" min="-2" max="-2" attributes="0"/>
-                      <Component id="campoCorreo" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="campoNombre" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="campoConfirmarContraseña" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="campoConteraseñaUsu" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="campoCorreo" pref="100" max="32767" attributes="0"/>
+                      <Component id="campoNombre" pref="100" max="32767" attributes="0"/>
+                      <Component id="campoConfirmarContraseña" pref="100" max="32767" attributes="0"/>
+                      <Component id="campoConteraseñaUsu" pref="100" max="32767" attributes="0"/>
+                      <Component id="dniUsuario" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="144" max="32767" attributes="0"/>
               </Group>
@@ -160,7 +168,12 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="dniUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="campoNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="nombreUsu" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
@@ -220,6 +233,19 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Crear Cuenta"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCrearCuentaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dni"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="dniUsuario">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dniUsuarioActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -553,6 +579,74 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Volver"/>
           </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="a&#xf1;adirProducto">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+          <CardConstraints cardName="card7"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="idProducto" min="-2" pref="93" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                          <Component id="cantidadProducto" min="-2" pref="56" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="botonAñadir" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="131" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="idProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cantidadProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                  <Component id="botonAñadir" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="90" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="A&#xf1;adir Producto"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="botonA&#xf1;adir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="a&#xf1;adir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonA&#xf1;adirActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="idProducto">
+        </Component>
+        <Component class="javax.swing.JTextField" name="cantidadProducto">
         </Component>
       </SubComponents>
     </Container>

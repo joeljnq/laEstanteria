@@ -11,8 +11,19 @@ package laestanteria;
 public class Cliente {
     private String dni;
     private String nombre;
+    private String correo;
+    private String contraseña;
     private int saldoTarjeta;
     private char tipoCliente;
+
+    public Cliente(String dni, String nombre, String correo, String contraseña) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contraseña = contraseña;
+    }
+    
+    
 
     public Cliente(String dni, String nombre, int saldoTarjeta) {
         this.dni = dni;
