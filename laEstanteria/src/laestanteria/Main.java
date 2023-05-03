@@ -16,6 +16,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -295,9 +296,9 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(infoPanel)
                 .addGap(36, 36, 36)
-                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nombreUsuPanel)
-                    .addComponent(nombreResPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nombreResPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreUsuPanel))
                 .addGap(18, 18, 18)
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gmailPanel)
