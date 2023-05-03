@@ -15,13 +15,16 @@ import java.sql.SQLException;
  * @author a18jaimejnq
  */
 public class Dao {
-   
+
     private String usuario;
     private String contraseña;
+    private String cadeaConexion;
 
     public Dao(String usuario, String contraseña) {
         this.usuario = usuario;
         this.contraseña = contraseña;
+        
+         
     }
 
     public boolean crearUsuario() {
@@ -31,11 +34,11 @@ public class Dao {
                 "jdbc:mysql://localhost:3306/laestanteria", "root",
                 "ciff2Oc-");  PreparedStatement ps
                 = conexion.prepareStatement(consulta)) {
-            
+
             ps.setString(1, usuario);
             ps.setString(2, contraseña);
             ResultSet resultado = ps.executeQuery();
-            
+
             resultado.next();
             System.out.println("Conexion OK");
             toret = true;
@@ -45,5 +48,5 @@ public class Dao {
                     + "Mensaje: " + e.getMessage() + "\n");
         }
         return toret;
-    } 
+    }
 }
