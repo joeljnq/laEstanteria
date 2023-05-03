@@ -9,6 +9,7 @@ nombre varchar(30) not null,
 pago varchar(10) not null,
 tipo enum('administrador','usuario') not null,
 contraseña varchar(30),
+correo varchar(50),
 primary key(dni)
 )engine = InnoDB;
 
@@ -64,5 +65,10 @@ INSERT INTO almacen (idAlmacen, nombre, seccion) VALUES
     (2, 'Teléfono'),
     (3, 'Almacenaje'),
     (4, 'Otros');
+    INSERT INTO pedido (numeroPedido, factura, estado) VALUES
+    (1, 123, 'confirmado');
+
+	UPDATE producto SET stock = stock - 2 WHERE idProducto IN (1, 4);
+
     
     

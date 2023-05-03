@@ -21,6 +21,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -79,8 +80,9 @@ public class Main extends javax.swing.JFrame {
         dniResPanel = new javax.swing.JLabel();
         saldoResPanel = new javax.swing.JLabel();
         historialPagosButton = new javax.swing.JToggleButton();
-        volverButton = new javax.swing.JToggleButton();
+        volverButton01 = new javax.swing.JToggleButton();
         historialPagosPanel = new javax.swing.JPanel();
+<<<<<<< HEAD
         jScrollPane1 = new javax.swing.JScrollPane();
         listaPagosList = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -96,6 +98,44 @@ public class Main extends javax.swing.JFrame {
         botonAñadir = new javax.swing.JButton();
         idProducto = new javax.swing.JTextField();
         cantidadProducto = new javax.swing.JTextField();
+=======
+        volverButton02 = new javax.swing.JToggleButton();
+        pagosTable = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        catalogoPanel = new javax.swing.JPanel();
+        catalogoLabel = new javax.swing.JLabel();
+        celularesButton = new javax.swing.JToggleButton();
+        accesoriosButton = new javax.swing.JToggleButton();
+        almacenamientoButton = new javax.swing.JToggleButton();
+        pcButton = new javax.swing.JToggleButton();
+        componentesPcButton = new javax.swing.JButton();
+        volverButton03 = new javax.swing.JButton();
+        celularesPanel = new javax.swing.JPanel();
+        celularLista = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        infoCelularesButton = new javax.swing.JButton();
+        volverButton04 = new javax.swing.JButton();
+        accesoriosPanel = new javax.swing.JPanel();
+        accesorioLista = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        infoAccesoriosButton = new javax.swing.JButton();
+        volverButton05 = new javax.swing.JButton();
+        almacenamientoPanel = new javax.swing.JPanel();
+        almacenamientoLista = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        infoAlmacenamientoButton = new javax.swing.JButton();
+        volverButton06 = new javax.swing.JButton();
+        pcPanel = new javax.swing.JPanel();
+        pcLista = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        infoPcButton = new javax.swing.JButton();
+        volverButton07 = new javax.swing.JButton();
+        componentesPcPanel = new javax.swing.JPanel();
+        componentesPcLista = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        infoComponentesPcButton = new javax.swing.JButton();
+        volverButton08 = new javax.swing.JButton();
+>>>>>>> 4fa5b47161f43a6c451cd955d364d8e89b0fe4ac
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -248,11 +288,11 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(catalogoButton)
                     .addComponent(historialButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
-                .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(138, 138, 138)
+                .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(cuentaButton)
-                    .addComponent(pagosButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(59, 59, 59))
+                    .addComponent(pagosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         menuPrincipalLayout.setVerticalGroup(
             menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,7 +322,7 @@ public class Main extends javax.swing.JFrame {
 
         historialPagosButton.setText("Historial de Pagos");
 
-        volverButton.setText("Volver");
+        volverButton01.setText("Volver");
 
         javax.swing.GroupLayout cuentaPanelLayout = new javax.swing.GroupLayout(cuentaPanel);
         cuentaPanel.setLayout(cuentaPanelLayout);
@@ -311,7 +351,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(59, 59, 59)
                 .addComponent(historialPagosButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(volverButton)
+                .addComponent(volverButton01)
                 .addGap(47, 47, 47))
         );
         cuentaPanelLayout.setVerticalGroup(
@@ -338,7 +378,7 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(historialPagosButton)
-                    .addComponent(volverButton))
+                    .addComponent(volverButton01))
                 .addGap(34, 34, 34))
         );
 
@@ -346,63 +386,47 @@ public class Main extends javax.swing.JFrame {
 
         historialPagosPanel.setPreferredSize(new java.awt.Dimension(400, 277));
 
-        jScrollPane1.setViewportView(listaPagosList);
+        volverButton02.setText("Volver");
 
-        jScrollPane2.setViewportView(jList1);
-
-        jScrollPane3.setViewportView(jList2);
-
-        jLabel1.setText("Pagos");
-
-        jLabel2.setText("Fecha");
-
-        jLabel3.setText("Datos");
-
-        jToggleButton1.setText("Volver");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Pago", "Fecha", "Datos"
+            }
+        ));
+        pagosTable.setViewportView(jTable1);
 
         javax.swing.GroupLayout historialPagosPanelLayout = new javax.swing.GroupLayout(historialPagosPanel);
         historialPagosPanel.setLayout(historialPagosPanelLayout);
         historialPagosPanelLayout.setHorizontalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(historialPagosPanelLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(45, 45, 45)
-                .addGroup(historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addGroup(historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(26, 26, 26))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historialPagosPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
+                .addComponent(volverButton02)
                 .addGap(163, 163, 163))
+            .addGroup(historialPagosPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(pagosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         historialPagosPanelLayout.setVerticalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historialPagosPanelLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addGroup(historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addGap(20, 20, 20)
-                .addGroup(historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(pagosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(volverButton02, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5))
         );
 
         getContentPane().add(historialPagosPanel, "card6");
 
+<<<<<<< HEAD
         jLabel4.setText("Añadir Producto");
 
         botonAñadir.setText("añadir");
@@ -446,6 +470,298 @@ public class Main extends javax.swing.JFrame {
         );
 
         getContentPane().add(añadirProducto, "card7");
+=======
+        catalogoLabel.setText("Catálogo");
+
+        celularesButton.setText("Celulares");
+
+        accesoriosButton.setText("Accesorios");
+
+        almacenamientoButton.setText("Almacenamiento");
+
+        pcButton.setText("Pc");
+
+        componentesPcButton.setText("Componentes Pc");
+
+        volverButton03.setText("Volver");
+
+        javax.swing.GroupLayout catalogoPanelLayout = new javax.swing.GroupLayout(catalogoPanel);
+        catalogoPanel.setLayout(catalogoPanelLayout);
+        catalogoPanelLayout.setHorizontalGroup(
+            catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(catalogoPanelLayout.createSequentialGroup()
+                .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(catalogoPanelLayout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(catalogoLabel))
+                    .addGroup(catalogoPanelLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(celularesButton)
+                            .addComponent(pcButton))
+                        .addGap(26, 26, 26)
+                        .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(catalogoPanelLayout.createSequentialGroup()
+                                .addComponent(accesoriosButton)
+                                .addGap(26, 26, 26)
+                                .addComponent(almacenamientoButton))
+                            .addComponent(componentesPcButton)))
+                    .addGroup(catalogoPanelLayout.createSequentialGroup()
+                        .addGap(157, 157, 157)
+                        .addComponent(volverButton03)))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        catalogoPanelLayout.setVerticalGroup(
+            catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(catalogoPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(catalogoLabel)
+                .addGap(67, 67, 67)
+                .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(celularesButton)
+                    .addComponent(accesoriosButton)
+                    .addComponent(almacenamientoButton))
+                .addGap(32, 32, 32)
+                .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pcButton)
+                    .addComponent(componentesPcButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(volverButton03)
+                .addContainerGap())
+        );
+
+        getContentPane().add(catalogoPanel, "card7");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Celular", "Precio"
+            }
+        ));
+        celularLista.setViewportView(jTable2);
+
+        infoCelularesButton.setText("Info");
+
+        volverButton04.setText("Volver");
+
+        javax.swing.GroupLayout celularesPanelLayout = new javax.swing.GroupLayout(celularesPanel);
+        celularesPanel.setLayout(celularesPanelLayout);
+        celularesPanelLayout.setHorizontalGroup(
+            celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(celularesPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(infoCelularesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volverButton04))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        celularesPanelLayout.setVerticalGroup(
+            celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, celularesPanelLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(celularesPanelLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(infoCelularesButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton04)
+                .addGap(47, 47, 47))
+        );
+
+        getContentPane().add(celularesPanel, "card8");
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Accesorio", "Precio"
+            }
+        ));
+        accesorioLista.setViewportView(jTable3);
+
+        infoAccesoriosButton.setText("Info");
+
+        volverButton05.setText("Volver");
+
+        javax.swing.GroupLayout accesoriosPanelLayout = new javax.swing.GroupLayout(accesoriosPanel);
+        accesoriosPanel.setLayout(accesoriosPanelLayout);
+        accesoriosPanelLayout.setHorizontalGroup(
+            accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(accesoriosPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(accesorioLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(infoAccesoriosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volverButton05))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        accesoriosPanelLayout.setVerticalGroup(
+            accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, accesoriosPanelLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(accesorioLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(accesoriosPanelLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(infoAccesoriosButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton05)
+                .addGap(47, 47, 47))
+        );
+
+        getContentPane().add(accesoriosPanel, "card8");
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Almacenamiento", "Precio"
+            }
+        ));
+        almacenamientoLista.setViewportView(jTable4);
+
+        infoAlmacenamientoButton.setText("Info");
+
+        volverButton06.setText("Volver");
+
+        javax.swing.GroupLayout almacenamientoPanelLayout = new javax.swing.GroupLayout(almacenamientoPanel);
+        almacenamientoPanel.setLayout(almacenamientoPanelLayout);
+        almacenamientoPanelLayout.setHorizontalGroup(
+            almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(almacenamientoPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(almacenamientoLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(infoAlmacenamientoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volverButton06))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        almacenamientoPanelLayout.setVerticalGroup(
+            almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, almacenamientoPanelLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(almacenamientoLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(almacenamientoPanelLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(infoAlmacenamientoButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton06)
+                .addGap(47, 47, 47))
+        );
+
+        getContentPane().add(almacenamientoPanel, "card8");
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Pc", "Precio"
+            }
+        ));
+        pcLista.setViewportView(jTable5);
+
+        infoPcButton.setText("Info");
+
+        volverButton07.setText("Volver");
+
+        javax.swing.GroupLayout pcPanelLayout = new javax.swing.GroupLayout(pcPanel);
+        pcPanel.setLayout(pcPanelLayout);
+        pcPanelLayout.setHorizontalGroup(
+            pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pcPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(pcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(infoPcButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volverButton07))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        pcPanelLayout.setVerticalGroup(
+            pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pcPanelLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(pcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(pcPanelLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(infoPcButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton07)
+                .addGap(47, 47, 47))
+        );
+
+        getContentPane().add(pcPanel, "card8");
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Componente", "Precio"
+            }
+        ));
+        componentesPcLista.setViewportView(jTable6);
+
+        infoComponentesPcButton.setText("Info");
+
+        volverButton08.setText("Volver");
+
+        javax.swing.GroupLayout componentesPcPanelLayout = new javax.swing.GroupLayout(componentesPcPanel);
+        componentesPcPanel.setLayout(componentesPcPanelLayout);
+        componentesPcPanelLayout.setHorizontalGroup(
+            componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(componentesPcPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(componentesPcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(infoComponentesPcButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volverButton08))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        componentesPcPanelLayout.setVerticalGroup(
+            componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, componentesPcPanelLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(componentesPcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(componentesPcPanelLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(infoComponentesPcButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton08)
+                .addGap(47, 47, 47))
+        );
+
+        getContentPane().add(componentesPcPanel, "card8");
+>>>>>>> 4fa5b47161f43a6c451cd955d364d8e89b0fe4ac
 
         accesoPrograma.setText("Acceso");
 
@@ -548,8 +864,17 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accesoPrograma;
+<<<<<<< HEAD
     private javax.swing.JPanel añadirProducto;
     private javax.swing.JButton botonAñadir;
+=======
+    private javax.swing.JScrollPane accesorioLista;
+    private javax.swing.JToggleButton accesoriosButton;
+    private javax.swing.JPanel accesoriosPanel;
+    private javax.swing.JToggleButton almacenamientoButton;
+    private javax.swing.JScrollPane almacenamientoLista;
+    private javax.swing.JPanel almacenamientoPanel;
+>>>>>>> 4fa5b47161f43a6c451cd955d364d8e89b0fe4ac
     private javax.swing.JButton botonCrearCuenta;
     private javax.swing.JButton botonLogin;
     private javax.swing.JPasswordField campoConfirmarContraseña;
@@ -560,6 +885,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField campoUsuario;
     private javax.swing.JTextField cantidadProducto;
     private javax.swing.JToggleButton catalogoButton;
+    private javax.swing.JLabel catalogoLabel;
+    private javax.swing.JPanel catalogoPanel;
+    private javax.swing.JScrollPane celularLista;
+    private javax.swing.JToggleButton celularesButton;
+    private javax.swing.JPanel celularesPanel;
+    private javax.swing.JButton componentesPcButton;
+    private javax.swing.JScrollPane componentesPcLista;
+    private javax.swing.JPanel componentesPcPanel;
     private javax.swing.JLabel confirmarContraseña;
     private javax.swing.JLabel contraseña;
     private javax.swing.JLabel contraseñaUsu;
@@ -576,6 +909,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton historialButton;
     private javax.swing.JToggleButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
+<<<<<<< HEAD
     private javax.swing.JTextField idProducto;
     private javax.swing.JLabel infoPanel;
     private javax.swing.JLabel jLabel1;
@@ -585,12 +919,21 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
+=======
+    private javax.swing.JButton infoAccesoriosButton;
+    private javax.swing.JButton infoAlmacenamientoButton;
+    private javax.swing.JButton infoCelularesButton;
+    private javax.swing.JButton infoComponentesPcButton;
+    private javax.swing.JLabel infoPanel;
+    private javax.swing.JButton infoPcButton;
+>>>>>>> 4fa5b47161f43a6c451cd955d364d8e89b0fe4ac
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JList<String> listaPagosList;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
     private javax.swing.JMenuItem login;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel menuPrincipal;
@@ -598,9 +941,20 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel nombreUsu;
     private javax.swing.JLabel nombreUsuPanel;
     private javax.swing.JToggleButton pagosButton;
+    private javax.swing.JScrollPane pagosTable;
+    private javax.swing.JToggleButton pcButton;
+    private javax.swing.JScrollPane pcLista;
+    private javax.swing.JPanel pcPanel;
     private javax.swing.JLabel saldoPanel;
     private javax.swing.JLabel saldoResPanel;
     private javax.swing.JLabel usuario;
-    private javax.swing.JToggleButton volverButton;
+    private javax.swing.JToggleButton volverButton01;
+    private javax.swing.JToggleButton volverButton02;
+    private javax.swing.JButton volverButton03;
+    private javax.swing.JButton volverButton04;
+    private javax.swing.JButton volverButton05;
+    private javax.swing.JButton volverButton06;
+    private javax.swing.JButton volverButton07;
+    private javax.swing.JButton volverButton08;
     // End of variables declaration//GEN-END:variables
 }
