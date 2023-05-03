@@ -841,6 +841,12 @@ public class Main extends javax.swing.JFrame {
 
     private void botonCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearCuentaActionPerformed
     if (campoConteraseñaUsu.getText().equals(campoConfirmarContraseña.getText())) {
+    if (campoContraseña.getText().equals(confirmarContraseña.getText())) {
+            crearUsuario();
+            cambiarPanel("menuPanel");
+        // TODO add your handling code here:
+
+        if (campoConteraseñaUsu.getText().equals(campoConfirmarContraseña.getText())) {
             crearUsuario();
             showMessage("Usuario Creado");
         } else {
