@@ -346,8 +346,18 @@ public class Main extends javax.swing.JFrame {
         gmailPanel.setText("Gmail");
 
         historialPagosButton.setText("Historial de Pagos");
+        historialPagosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                historialPagosButtonActionPerformed(evt);
+            }
+        });
 
         volverButton01.setText("Volver");
+        volverButton01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton01ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cuentaPanelLayout = new javax.swing.GroupLayout(cuentaPanel);
         cuentaPanel.setLayout(cuentaPanelLayout);
@@ -412,6 +422,11 @@ public class Main extends javax.swing.JFrame {
         historialPagosPanel.setPreferredSize(new java.awt.Dimension(400, 277));
 
         volverButton02.setText("Volver");
+        volverButton02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton02ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -454,10 +469,25 @@ public class Main extends javax.swing.JFrame {
         catalogoLabel.setText("Catálogo");
 
         celularesButton.setText("Celulares");
+        celularesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                celularesButtonActionPerformed(evt);
+            }
+        });
 
         accesoriosButton.setText("Accesorios");
+        accesoriosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accesoriosButtonActionPerformed(evt);
+            }
+        });
 
         almacenamientoButton.setText("Almacenamiento");
+        almacenamientoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                almacenamientoButtonActionPerformed(evt);
+            }
+        });
 
         pcButton.setText("Pc");
 
@@ -556,7 +586,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        mainPanel.add(celularesPanel, "card8");
+        mainPanel.add(celularesPanel, "celularesPanel");
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -602,7 +632,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        mainPanel.add(accesoriosPanel, "card8");
+        mainPanel.add(accesoriosPanel, "accesooriosPanel");
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -648,7 +678,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        mainPanel.add(almacenamientoPanel, "card8");
+        mainPanel.add(almacenamientoPanel, "almacenamientoPanel");
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -862,7 +892,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_pagosButtonActionPerformed
 
     private void historialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historialButtonActionPerformed
-        cambiarPanel("historialPagosPanel");
+        cambiarPanel("historialCuentaPanel");
     }//GEN-LAST:event_historialButtonActionPerformed
 
     private void cuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuentaButtonActionPerformed
@@ -872,6 +902,30 @@ public class Main extends javax.swing.JFrame {
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
         cambiarPanel("menuPanel");
     }//GEN-LAST:event_botonLoginActionPerformed
+
+    private void volverButton01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton01ActionPerformed
+        cambiarPanel("menuPanel");
+    }//GEN-LAST:event_volverButton01ActionPerformed
+
+    private void historialPagosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historialPagosButtonActionPerformed
+        cambiarPanel("historialPagosPanel");
+    }//GEN-LAST:event_historialPagosButtonActionPerformed
+
+    private void volverButton02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton02ActionPerformed
+        cambiarPanel("cuentaPanel");
+    }//GEN-LAST:event_volverButton02ActionPerformed
+
+    private void celularesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularesButtonActionPerformed
+        cambiarPanel("celularesPanel");
+    }//GEN-LAST:event_celularesButtonActionPerformed
+
+    private void accesoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoriosButtonActionPerformed
+        cambiarPanel("accesoriosPanel");
+    }//GEN-LAST:event_accesoriosButtonActionPerformed
+
+    private void almacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almacenamientoButtonActionPerformed
+        cambiarPanel("almacenamientoPanel");
+    }//GEN-LAST:event_almacenamientoButtonActionPerformed
 
     /**
      * @param args the command line arguments
