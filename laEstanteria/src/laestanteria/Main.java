@@ -82,23 +82,6 @@ public class Main extends javax.swing.JFrame {
         historialPagosButton = new javax.swing.JToggleButton();
         volverButton01 = new javax.swing.JToggleButton();
         historialPagosPanel = new javax.swing.JPanel();
-<<<<<<< HEAD
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listaPagosList = new javax.swing.JList<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        añadirProducto = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        botonAñadir = new javax.swing.JButton();
-        idProducto = new javax.swing.JTextField();
-        cantidadProducto = new javax.swing.JTextField();
-=======
         volverButton02 = new javax.swing.JToggleButton();
         pagosTable = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -135,7 +118,6 @@ public class Main extends javax.swing.JFrame {
         jTable6 = new javax.swing.JTable();
         infoComponentesPcButton = new javax.swing.JButton();
         volverButton08 = new javax.swing.JButton();
->>>>>>> 4fa5b47161f43a6c451cd955d364d8e89b0fe4ac
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -426,51 +408,6 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(historialPagosPanel, "card6");
 
-<<<<<<< HEAD
-        jLabel4.setText("Añadir Producto");
-
-        botonAñadir.setText("añadir");
-        botonAñadir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAñadirActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout añadirProductoLayout = new javax.swing.GroupLayout(añadirProducto);
-        añadirProducto.setLayout(añadirProductoLayout);
-        añadirProductoLayout.setHorizontalGroup(
-            añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(añadirProductoLayout.createSequentialGroup()
-                .addGroup(añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(añadirProductoLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(cantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(añadirProductoLayout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jLabel4))
-                    .addGroup(añadirProductoLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(botonAñadir)))
-                .addContainerGap(131, Short.MAX_VALUE))
-        );
-        añadirProductoLayout.setVerticalGroup(
-            añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(añadirProductoLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel4)
-                .addGap(41, 41, 41)
-                .addGroup(añadirProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
-                .addComponent(botonAñadir)
-                .addContainerGap(90, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(añadirProducto, "card7");
-=======
         catalogoLabel.setText("Catálogo");
 
         celularesButton.setText("Celulares");
@@ -761,7 +698,6 @@ public class Main extends javax.swing.JFrame {
         );
 
         getContentPane().add(componentesPcPanel, "card8");
->>>>>>> 4fa5b47161f43a6c451cd955d364d8e89b0fe4ac
 
         accesoPrograma.setText("Acceso");
 
@@ -864,17 +800,12 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accesoPrograma;
-<<<<<<< HEAD
-    private javax.swing.JPanel añadirProducto;
-    private javax.swing.JButton botonAñadir;
-=======
     private javax.swing.JScrollPane accesorioLista;
     private javax.swing.JToggleButton accesoriosButton;
     private javax.swing.JPanel accesoriosPanel;
     private javax.swing.JToggleButton almacenamientoButton;
     private javax.swing.JScrollPane almacenamientoLista;
     private javax.swing.JPanel almacenamientoPanel;
->>>>>>> 4fa5b47161f43a6c451cd955d364d8e89b0fe4ac
     private javax.swing.JButton botonCrearCuenta;
     private javax.swing.JButton botonLogin;
     private javax.swing.JPasswordField campoConfirmarContraseña;
@@ -909,24 +840,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JToggleButton historialButton;
     private javax.swing.JToggleButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
-<<<<<<< HEAD
-    private javax.swing.JTextField idProducto;
-    private javax.swing.JLabel infoPanel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-=======
     private javax.swing.JButton infoAccesoriosButton;
     private javax.swing.JButton infoAlmacenamientoButton;
     private javax.swing.JButton infoCelularesButton;
     private javax.swing.JButton infoComponentesPcButton;
     private javax.swing.JLabel infoPanel;
     private javax.swing.JButton infoPcButton;
->>>>>>> 4fa5b47161f43a6c451cd955d364d8e89b0fe4ac
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
