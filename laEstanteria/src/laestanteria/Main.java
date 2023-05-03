@@ -268,12 +268,32 @@ public class Main extends javax.swing.JFrame {
         mainPanel.add(crearCuentaPanel, "crearCuentaPanel");
 
         catalogoButton.setText("Catálogo");
+        catalogoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                catalogoButtonActionPerformed(evt);
+            }
+        });
 
         pagosButton.setText("Pagos");
+        pagosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagosButtonActionPerformed(evt);
+            }
+        });
 
         historialButton.setText("Historial");
+        historialButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                historialButtonActionPerformed(evt);
+            }
+        });
 
         cuentaButton.setText("Cuenta");
+        cuentaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cuentaButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menuPrincipalLayout = new javax.swing.GroupLayout(menuPrincipal);
         menuPrincipal.setLayout(menuPrincipalLayout);
@@ -378,7 +398,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(34, 34, 34))
         );
 
-        mainPanel.add(cuentaPanel, "card5");
+        mainPanel.add(cuentaPanel, "cuentaPanel");
 
         historialPagosPanel.setPreferredSize(new java.awt.Dimension(400, 277));
 
@@ -420,7 +440,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(5, 5, 5))
         );
 
-        mainPanel.add(historialPagosPanel, "card6");
+        mainPanel.add(historialPagosPanel, "historialPagosPanel");
 
         catalogoLabel.setText("Catálogo");
 
@@ -481,7 +501,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        mainPanel.add(catalogoPanel, "card7");
+        mainPanel.add(catalogoPanel, "catalogoPanel");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -821,6 +841,22 @@ public class Main extends javax.swing.JFrame {
     private void crearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaActionPerformed
         cambiarPanel("crearCuentaPanel");
     }//GEN-LAST:event_crearCuentaActionPerformed
+
+    private void catalogoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catalogoButtonActionPerformed
+        cambiarPanel("catalogoPanel");
+    }//GEN-LAST:event_catalogoButtonActionPerformed
+
+    private void pagosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagosButtonActionPerformed
+        cambiarPanel("pagosPanel");
+    }//GEN-LAST:event_pagosButtonActionPerformed
+
+    private void historialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historialButtonActionPerformed
+        cambiarPanel("historialPagosPanel");
+    }//GEN-LAST:event_historialButtonActionPerformed
+
+    private void cuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuentaButtonActionPerformed
+        cambiarPanel("cuentaPanel");
+    }//GEN-LAST:event_cuentaButtonActionPerformed
 
     /**
      * @param args the command line arguments

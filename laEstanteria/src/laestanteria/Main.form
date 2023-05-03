@@ -311,28 +311,40 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cat&#xe1;logo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="catalogoButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JToggleButton" name="pagosButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Pagos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagosButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JToggleButton" name="historialButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Historial"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="historialButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JToggleButton" name="cuentaButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cuenta"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cuentaButtonActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="cuentaPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="card5"/>
+              <CardConstraints cardName="cuentaPanel"/>
             </Constraint>
           </Constraints>
 
@@ -462,7 +474,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="card6"/>
+              <CardConstraints cardName="historialPagosPanel"/>
             </Constraint>
           </Constraints>
 
@@ -546,7 +558,7 @@
         <Container class="javax.swing.JPanel" name="catalogoPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="card7"/>
+              <CardConstraints cardName="catalogoPanel"/>
             </Constraint>
           </Constraints>
 
