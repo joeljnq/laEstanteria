@@ -281,7 +281,7 @@
                           <Component id="historialButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="cestaButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="cuentaButton" min="-2" max="-2" attributes="0"/>
@@ -298,7 +298,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="catalogoButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="pagosButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cestaButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -343,12 +343,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagosButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="cestaButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cesta"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cestaButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -783,6 +783,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoCelularesButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton04">
               <Properties>
@@ -874,6 +877,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoAccesoriosButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton05">
               <Properties>
@@ -965,6 +971,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoAlmacenamientoButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton06">
               <Properties>
@@ -1056,6 +1065,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoPcButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton07">
               <Properties>
@@ -1147,6 +1159,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoComponentesPcButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton08">
               <Properties>
@@ -1161,7 +1176,7 @@
         <Container class="javax.swing.JPanel" name="infoPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="card7"/>
+              <CardConstraints cardName="infoPanel"/>
             </Constraint>
           </Constraints>
 
