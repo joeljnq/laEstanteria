@@ -37,8 +37,8 @@ public class Main extends javax.swing.JFrame {
         String confirContraseña = confirmarContraseña.getText();
         Cliente prueba = new Cliente(dni, nombre, correo, contraUsuario);
         
-        /*Dao crearUsu = new Dao(dni, contraUsuario);
-        crearUsu.crearUsuario();*/
+        Dao crearUsu = new Dao(dni, contraUsuario);
+        crearUsu.crearUsuario();
         
     }
 

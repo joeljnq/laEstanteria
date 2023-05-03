@@ -18,28 +18,25 @@ public class Dao {
 
     private String usuario;
     private String contraseña;
-    private String cadeaConexion;
 
     public Dao(String usuario, String contraseña) {
         this.usuario = usuario;
         this.contraseña = contraseña;
-        
-         
     }
 
     public boolean crearUsuario() {
         boolean toret = false;
-        String consulta = "CREATE USER ?@'localhost' IDENTIFIED BY ?";
+        String consulta = "CREATE USER proba@'localhost' IDENTIFIED BY abc123.";
         try ( Connection conexion = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/laestanteria", "root",
-                "ciff2Oc-");  PreparedStatement ps
+                "jdbc:mysql://localhost:3306/traballadores", "root",
+                "root");
+                PreparedStatement ps
                 = conexion.prepareStatement(consulta)) {
 
-            ps.setString(1, usuario);
-            ps.setString(2, contraseña);
-            ResultSet resultado = ps.executeQuery();
-
-            resultado.next();
+         /*   ps.setString(1, usuario);
+            ps.setString(2, contraseña);*/
+            ps.executeUpdate(consulta);
+            
             System.out.println("Conexion OK");
             toret = true;
         } catch (SQLException e) {
