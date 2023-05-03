@@ -151,6 +151,11 @@ public class Main extends javax.swing.JFrame {
         contraseña.setText("Contraseña");
 
         botonLogin.setText("Enviar");
+        botonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
@@ -324,7 +329,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(100, Short.MAX_VALUE))
         );
 
-        mainPanel.add(menuPrincipal, "card4");
+        mainPanel.add(menuPrincipal, "menuPanel");
 
         infoPanel.setText("Información de la cuenta");
 
@@ -833,6 +838,7 @@ public class Main extends javax.swing.JFrame {
     private void botonCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearCuentaActionPerformed
     if (campoContraseña.getText().equals(confirmarContraseña.getText())) {
             crearUsuario();
+            cambiarPanel("menuPanel");
         } else {
             showError("La contraseña no coincide");
         }
@@ -857,6 +863,10 @@ public class Main extends javax.swing.JFrame {
     private void cuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuentaButtonActionPerformed
         cambiarPanel("cuentaPanel");
     }//GEN-LAST:event_cuentaButtonActionPerformed
+
+    private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
+        cambiarPanel("menuPanel");
+    }//GEN-LAST:event_botonLoginActionPerformed
 
     /**
      * @param args the command line arguments
