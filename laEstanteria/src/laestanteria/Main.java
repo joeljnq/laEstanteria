@@ -78,10 +78,10 @@ public class Main extends javax.swing.JFrame {
         labelDni = new javax.swing.JLabel();
         dniUsuario = new javax.swing.JTextField();
         menuPrincipal = new javax.swing.JPanel();
-        catalogoButton = new javax.swing.JToggleButton();
-        pagosButton = new javax.swing.JToggleButton();
-        historialButton = new javax.swing.JToggleButton();
-        cuentaButton = new javax.swing.JToggleButton();
+        catalogoButton = new javax.swing.JButton();
+        historialButton = new javax.swing.JButton();
+        cuentaButton = new javax.swing.JButton();
+        pagosButton = new javax.swing.JButton();
         cuentaPanel = new javax.swing.JPanel();
         infoPanel = new javax.swing.JLabel();
         nombreUsuPanel = new javax.swing.JLabel();
@@ -92,20 +92,20 @@ public class Main extends javax.swing.JFrame {
         gmailResPanel = new javax.swing.JLabel();
         dniResPanel = new javax.swing.JLabel();
         saldoResPanel = new javax.swing.JLabel();
-        historialPagosButton = new javax.swing.JToggleButton();
-        volverButton01 = new javax.swing.JToggleButton();
+        volverButton01 = new javax.swing.JButton();
+        historialPagosButton = new javax.swing.JButton();
         historialPagosPanel = new javax.swing.JPanel();
-        volverButton02 = new javax.swing.JToggleButton();
         pagosTable = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        volverButton02 = new javax.swing.JButton();
         catalogoPanel = new javax.swing.JPanel();
         catalogoLabel = new javax.swing.JLabel();
-        celularesButton = new javax.swing.JToggleButton();
-        accesoriosButton = new javax.swing.JToggleButton();
-        almacenamientoButton = new javax.swing.JToggleButton();
-        pcButton = new javax.swing.JToggleButton();
         componentesPcButton = new javax.swing.JButton();
         volverButton03 = new javax.swing.JButton();
+        celularesButton = new javax.swing.JButton();
+        accesoriosButton = new javax.swing.JButton();
+        almacenamientoButton = new javax.swing.JButton();
+        pcButton = new javax.swing.JButton();
         celularesPanel = new javax.swing.JPanel();
         celularLista = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -284,13 +284,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        pagosButton.setText("Pagos");
-        pagosButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pagosButtonActionPerformed(evt);
-            }
-        });
-
         historialButton.setText("Historial");
         historialButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,6 +298,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        pagosButton.setText("Pagos");
+        pagosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagosButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout menuPrincipalLayout = new javax.swing.GroupLayout(menuPrincipal);
         menuPrincipal.setLayout(menuPrincipalLayout);
         menuPrincipalLayout.setHorizontalGroup(
@@ -315,9 +315,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(catalogoButton)
                     .addComponent(historialButton))
                 .addGap(138, 138, 138)
-                .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cuentaButton)
-                    .addComponent(pagosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pagosButton)
+                    .addComponent(cuentaButton))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         menuPrincipalLayout.setVerticalGroup(
@@ -346,17 +346,17 @@ public class Main extends javax.swing.JFrame {
 
         gmailPanel.setText("Gmail");
 
-        historialPagosButton.setText("Historial de Pagos");
-        historialPagosButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                historialPagosButtonActionPerformed(evt);
-            }
-        });
-
         volverButton01.setText("Volver");
         volverButton01.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 volverButton01ActionPerformed(evt);
+            }
+        });
+
+        historialPagosButton.setText("Historial de Pagos");
+        historialPagosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                historialPagosButtonActionPerformed(evt);
             }
         });
 
@@ -376,19 +376,21 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(gmailPanel)
                             .addComponent(dniPanel)
                             .addComponent(saldoPanel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nombreResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(gmailResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(dniResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(saldoResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))))
+                            .addGroup(cuentaPanelLayout.createSequentialGroup()
+                                .addGap(136, 136, 136)
+                                .addComponent(saldoResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)))))
                 .addGap(83, 83, 83))
-            .addGroup(cuentaPanelLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cuentaPanelLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
                 .addComponent(historialPagosButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(volverButton01)
-                .addGap(47, 47, 47))
+                .addGap(36, 36, 36))
         );
         cuentaPanelLayout.setVerticalGroup(
             cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -413,21 +415,14 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(saldoResPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(historialPagosButton)
-                    .addComponent(volverButton01))
+                    .addComponent(volverButton01)
+                    .addComponent(historialPagosButton))
                 .addGap(34, 34, 34))
         );
 
         mainPanel.add(cuentaPanel, "cuentaPanel");
 
         historialPagosPanel.setPreferredSize(new java.awt.Dimension(400, 277));
-
-        volverButton02.setText("Volver");
-        volverButton02.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                volverButton02ActionPerformed(evt);
-            }
-        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -442,32 +437,54 @@ public class Main extends javax.swing.JFrame {
         ));
         pagosTable.setViewportView(jTable1);
 
+        volverButton02.setText("Volver");
+        volverButton02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton02ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout historialPagosPanelLayout = new javax.swing.GroupLayout(historialPagosPanel);
         historialPagosPanel.setLayout(historialPagosPanelLayout);
         historialPagosPanelLayout.setHorizontalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(historialPagosPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(volverButton02)
-                .addGap(163, 163, 163))
-            .addGroup(historialPagosPanelLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(pagosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(historialPagosPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(pagosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(historialPagosPanelLayout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(volverButton02)))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         historialPagosPanelLayout.setVerticalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historialPagosPanelLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pagosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(volverButton02, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5))
+                .addGap(12, 12, 12))
         );
 
         mainPanel.add(historialPagosPanel, "historialPagosPanel");
 
         catalogoLabel.setText("Catálogo");
+
+        componentesPcButton.setText("Componentes Pc");
+        componentesPcButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                componentesPcButtonActionPerformed(evt);
+            }
+        });
+
+        volverButton03.setText("Volver");
+        volverButton03.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton03ActionPerformed(evt);
+            }
+        });
 
         celularesButton.setText("Celulares");
         celularesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -491,10 +508,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         pcButton.setText("Pc");
-
-        componentesPcButton.setText("Componentes Pc");
-
-        volverButton03.setText("Volver");
+        pcButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pcButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout catalogoPanelLayout = new javax.swing.GroupLayout(catalogoPanel);
         catalogoPanel.setLayout(catalogoPanelLayout);
@@ -512,15 +530,15 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(pcButton))
                         .addGap(26, 26, 26)
                         .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(componentesPcButton)
                             .addGroup(catalogoPanelLayout.createSequentialGroup()
                                 .addComponent(accesoriosButton)
-                                .addGap(26, 26, 26)
-                                .addComponent(almacenamientoButton))
-                            .addComponent(componentesPcButton)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                                .addComponent(almacenamientoButton))))
                     .addGroup(catalogoPanelLayout.createSequentialGroup()
                         .addGap(157, 157, 157)
                         .addComponent(volverButton03)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
         catalogoPanelLayout.setVerticalGroup(
             catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -534,11 +552,11 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(almacenamientoButton))
                 .addGap(32, 32, 32)
                 .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pcButton)
-                    .addComponent(componentesPcButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                    .addComponent(componentesPcButton)
+                    .addComponent(pcButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(volverButton03)
-                .addContainerGap())
+                .addGap(65, 65, 65))
         );
 
         mainPanel.add(catalogoPanel, "catalogoPanel");
@@ -559,6 +577,11 @@ public class Main extends javax.swing.JFrame {
         infoCelularesButton.setText("Info");
 
         volverButton04.setText("Volver");
+        volverButton04.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton04ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout celularesPanelLayout = new javax.swing.GroupLayout(celularesPanel);
         celularesPanel.setLayout(celularesPanelLayout);
@@ -605,6 +628,11 @@ public class Main extends javax.swing.JFrame {
         infoAccesoriosButton.setText("Info");
 
         volverButton05.setText("Volver");
+        volverButton05.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton05ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout accesoriosPanelLayout = new javax.swing.GroupLayout(accesoriosPanel);
         accesoriosPanel.setLayout(accesoriosPanelLayout);
@@ -633,7 +661,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        mainPanel.add(accesoriosPanel, "accesooriosPanel");
+        mainPanel.add(accesoriosPanel, "accesoriosPanel");
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -651,6 +679,11 @@ public class Main extends javax.swing.JFrame {
         infoAlmacenamientoButton.setText("Info");
 
         volverButton06.setText("Volver");
+        volverButton06.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton06ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout almacenamientoPanelLayout = new javax.swing.GroupLayout(almacenamientoPanel);
         almacenamientoPanel.setLayout(almacenamientoPanelLayout);
@@ -697,6 +730,11 @@ public class Main extends javax.swing.JFrame {
         infoPcButton.setText("Info");
 
         volverButton07.setText("Volver");
+        volverButton07.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton07ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pcPanelLayout = new javax.swing.GroupLayout(pcPanel);
         pcPanel.setLayout(pcPanelLayout);
@@ -725,7 +763,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        mainPanel.add(pcPanel, "card8");
+        mainPanel.add(pcPanel, "pcPanel");
 
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -743,6 +781,11 @@ public class Main extends javax.swing.JFrame {
         infoComponentesPcButton.setText("Info");
 
         volverButton08.setText("Volver");
+        volverButton08.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton08ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout componentesPcPanelLayout = new javax.swing.GroupLayout(componentesPcPanel);
         componentesPcPanel.setLayout(componentesPcPanelLayout);
@@ -771,7 +814,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        mainPanel.add(componentesPcPanel, "card8");
+        mainPanel.add(componentesPcPanel, "componentesPcPanel");
 
         jLabel4.setText("Añadir Producto");
 
@@ -884,13 +927,41 @@ public class Main extends javax.swing.JFrame {
         cambiarPanel("crearCuentaPanel");
     }//GEN-LAST:event_crearCuentaActionPerformed
 
+    private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
+        cambiarPanel("menuPanel");
+    }//GEN-LAST:event_botonLoginActionPerformed
+
+    private void componentesPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_componentesPcButtonActionPerformed
+        cambiarPanel("componentesPcPanel");
+    }//GEN-LAST:event_componentesPcButtonActionPerformed
+
+    private void volverButton04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton04ActionPerformed
+        cambiarPanel("catalogoPanel");
+    }//GEN-LAST:event_volverButton04ActionPerformed
+
+    private void volverButton05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton05ActionPerformed
+        cambiarPanel("catalogoPanel");
+    }//GEN-LAST:event_volverButton05ActionPerformed
+
+    private void volverButton06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton06ActionPerformed
+        cambiarPanel("catalogoPanel");
+    }//GEN-LAST:event_volverButton06ActionPerformed
+
+    private void volverButton07ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton07ActionPerformed
+        cambiarPanel("catalogoPanel");
+    }//GEN-LAST:event_volverButton07ActionPerformed
+
+    private void volverButton08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton08ActionPerformed
+        cambiarPanel("catalogoPanel");
+    }//GEN-LAST:event_volverButton08ActionPerformed
+
+    private void volverButton03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton03ActionPerformed
+        cambiarPanel("menuPanel");
+    }//GEN-LAST:event_volverButton03ActionPerformed
+
     private void catalogoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catalogoButtonActionPerformed
         cambiarPanel("catalogoPanel");
     }//GEN-LAST:event_catalogoButtonActionPerformed
-
-    private void pagosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagosButtonActionPerformed
-        cambiarPanel("pagosPanel");
-    }//GEN-LAST:event_pagosButtonActionPerformed
 
     private void historialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historialButtonActionPerformed
         cambiarPanel("historialCuentaPanel");
@@ -900,9 +971,9 @@ public class Main extends javax.swing.JFrame {
         cambiarPanel("cuentaPanel");
     }//GEN-LAST:event_cuentaButtonActionPerformed
 
-    private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
-        cambiarPanel("menuPanel");
-    }//GEN-LAST:event_botonLoginActionPerformed
+    private void pagosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagosButtonActionPerformed
+        cambiarPanel("pagosPanel");
+    }//GEN-LAST:event_pagosButtonActionPerformed
 
     private void volverButton01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton01ActionPerformed
         cambiarPanel("menuPanel");
@@ -927,6 +998,10 @@ public class Main extends javax.swing.JFrame {
     private void almacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almacenamientoButtonActionPerformed
         cambiarPanel("almacenamientoPanel");
     }//GEN-LAST:event_almacenamientoButtonActionPerformed
+
+    private void pcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcButtonActionPerformed
+        cambiarPanel("pcPanel");
+    }//GEN-LAST:event_pcButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -963,9 +1038,9 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accesoPrograma;
     private javax.swing.JScrollPane accesorioLista;
-    private javax.swing.JToggleButton accesoriosButton;
+    private javax.swing.JButton accesoriosButton;
     private javax.swing.JPanel accesoriosPanel;
-    private javax.swing.JToggleButton almacenamientoButton;
+    private javax.swing.JButton almacenamientoButton;
     private javax.swing.JScrollPane almacenamientoLista;
     private javax.swing.JPanel almacenamientoPanel;
     private javax.swing.JPanel añadirProducto;
@@ -979,11 +1054,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoUsuario;
     private javax.swing.JTextField cantidadProducto;
-    private javax.swing.JToggleButton catalogoButton;
+    private javax.swing.JButton catalogoButton;
     private javax.swing.JLabel catalogoLabel;
     private javax.swing.JPanel catalogoPanel;
     private javax.swing.JScrollPane celularLista;
-    private javax.swing.JToggleButton celularesButton;
+    private javax.swing.JButton celularesButton;
     private javax.swing.JPanel celularesPanel;
     private javax.swing.JButton componentesPcButton;
     private javax.swing.JScrollPane componentesPcLista;
@@ -994,15 +1069,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel correoUsu;
     private javax.swing.JMenuItem crearCuenta;
     private javax.swing.JPanel crearCuentaPanel;
-    private javax.swing.JToggleButton cuentaButton;
+    private javax.swing.JButton cuentaButton;
     private javax.swing.JPanel cuentaPanel;
     private javax.swing.JLabel dniPanel;
     private javax.swing.JLabel dniResPanel;
     private javax.swing.JTextField dniUsuario;
     private javax.swing.JLabel gmailPanel;
     private javax.swing.JLabel gmailResPanel;
-    private javax.swing.JToggleButton historialButton;
-    private javax.swing.JToggleButton historialPagosButton;
+    private javax.swing.JButton historialButton;
+    private javax.swing.JButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
     private javax.swing.JTextField idProducto;
     private javax.swing.JButton infoAccesoriosButton;
@@ -1027,16 +1102,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel nombreResPanel;
     private javax.swing.JLabel nombreUsu;
     private javax.swing.JLabel nombreUsuPanel;
-    private javax.swing.JToggleButton pagosButton;
+    private javax.swing.JButton pagosButton;
     private javax.swing.JScrollPane pagosTable;
-    private javax.swing.JToggleButton pcButton;
+    private javax.swing.JButton pcButton;
     private javax.swing.JScrollPane pcLista;
     private javax.swing.JPanel pcPanel;
     private javax.swing.JLabel saldoPanel;
     private javax.swing.JLabel saldoResPanel;
     private javax.swing.JLabel usuario;
-    private javax.swing.JToggleButton volverButton01;
-    private javax.swing.JToggleButton volverButton02;
+    private javax.swing.JButton volverButton01;
+    private javax.swing.JButton volverButton02;
     private javax.swing.JButton volverButton03;
     private javax.swing.JButton volverButton04;
     private javax.swing.JButton volverButton05;
