@@ -41,6 +41,10 @@ public class Main extends javax.swing.JFrame {
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
     }
+    
+    private void showMessage(String text) {
+        JOptionPane.showMessageDialog(this, text, "information", JOptionPane.INFORMATION_MESSAGE);
+    }
 
     @SuppressWarnings("unchecked")
     
@@ -836,9 +840,17 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_dniUsuarioActionPerformed
 
     private void botonCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearCuentaActionPerformed
+<<<<<<< Updated upstream
     if (campoContraseña.getText().equals(confirmarContraseña.getText())) {
             crearUsuario();
             cambiarPanel("menuPanel");
+=======
+        // TODO add your handling code here:
+
+        if (campoConteraseñaUsu.getText().equals(campoConfirmarContraseña.getText())) {
+            crearUsuario();
+            showMessage("Usuario Creado");
+>>>>>>> Stashed changes
         } else {
             showError("La contraseña no coincide");
         }
