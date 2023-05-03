@@ -4,6 +4,7 @@
  */
 package laestanteria;
 
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 
 /**
@@ -42,6 +43,13 @@ public class Main extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    
+    private void cambiarPanel(String nomeTarxeta) {
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+    card.show(mainPanel, nomeTarxeta);
+    }
+    
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -182,7 +190,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        mainPanel.add(loginPanel, "card2");
+        mainPanel.add(loginPanel, "loginPanel");
 
         correoUsu.setText("Correo");
 
@@ -257,7 +265,7 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        mainPanel.add(crearCuentaPanel, "card3");
+        mainPanel.add(crearCuentaPanel, "crearCuentaPanel");
 
         catalogoButton.setText("Catálogo");
 
@@ -786,7 +794,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        // TODO add your handling code here:
+        cambiarPanel("loginPanel");
     }//GEN-LAST:event_loginActionPerformed
 
     private void botonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirActionPerformed
@@ -813,13 +821,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearCuentaActionPerformed
 
     private void crearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaActionPerformed
-        // TODO add your handling code here:
-        
-     
-        
-        
-        
-
+        cambiarPanel("crearCuentaPanel");
     }//GEN-LAST:event_crearCuentaActionPerformed
 
     /**
