@@ -38,7 +38,7 @@ public class Main extends javax.swing.JFrame {
         Cliente prueba = new Cliente(dni, nombre, correo, contraUsuario);
         
         Dao crearUsu = new Dao(dni, contraUsuario);
-        crearUsu.crearUsuario();
+     crearUsu.crearUsuario(prueba);
         
     }
 
@@ -85,7 +85,7 @@ public class Main extends javax.swing.JFrame {
         historialButton = new javax.swing.JButton();
         cuentaButton = new javax.swing.JButton();
         pagosButton = new javax.swing.JButton();
-        cestaButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         cuentaPanel = new javax.swing.JPanel();
         infoLabel = new javax.swing.JLabel();
         nombreUsuPanel = new javax.swing.JLabel();
@@ -172,20 +172,22 @@ public class Main extends javax.swing.JFrame {
         loginPanelLayout.setHorizontalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(contraseña)
+                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(contraseña)
-                            .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(71, 71, 71)
-                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(botonLogin)))
-                .addContainerGap(123, Short.MAX_VALUE))
+                        .addGap(112, 112, 112)
+                        .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(267, Short.MAX_VALUE))
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(botonLogin)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +250,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(campoConfirmarContraseña)
                     .addComponent(campoConteraseñaUsu)
                     .addComponent(dniUsuario))
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(369, Short.MAX_VALUE))
         );
         crearCuentaPanelLayout.setVerticalGroup(
             crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,10 +310,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        cestaButton.setText("Cesta");
-        cestaButton.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Cesta");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cestaButtonActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -325,12 +327,12 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(catalogoButton)
                     .addComponent(historialButton))
                 .addGap(18, 18, 18)
-                .addComponent(cestaButton)
+                .addComponent(jButton1)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cuentaButton)
                     .addComponent(pagosButton))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(315, Short.MAX_VALUE))
         );
         menuPrincipalLayout.setVerticalGroup(
             menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,7 +341,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(catalogoButton)
                     .addComponent(pagosButton)
-                    .addComponent(cestaButton))
+                    .addComponent(jButton1))
                 .addGap(31, 31, 31)
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(historialButton)
@@ -377,18 +379,12 @@ public class Main extends javax.swing.JFrame {
         cuentaPanel.setLayout(cuentaPanelLayout);
         cuentaPanelLayout.setHorizontalGroup(
             cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cuentaPanelLayout.createSequentialGroup()
-                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(cuentaPanelLayout.createSequentialGroup()
+                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cuentaPanelLayout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(historialPagosButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                        .addComponent(volverButton01))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cuentaPanelLayout.createSequentialGroup()
                         .addGap(129, 129, 129)
-                        .addComponent(infoLabel)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cuentaPanelLayout.createSequentialGroup()
+                        .addComponent(infoLabel))
+                    .addGroup(cuentaPanelLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nombreUsuPanel)
@@ -403,7 +399,13 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(cuentaPanelLayout.createSequentialGroup()
                                 .addGap(136, 136, 136)
                                 .addComponent(saldoResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)))))
-                .addGap(40, 40, 40))
+                .addGap(83, 83, 83))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cuentaPanelLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(historialPagosButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(volverButton01)
+                .addGap(36, 36, 36))
         );
         cuentaPanelLayout.setVerticalGroup(
             cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -469,7 +471,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(historialPagosPanelLayout.createSequentialGroup()
                         .addGap(168, 168, 168)
                         .addComponent(volverButton02)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(245, Short.MAX_VALUE))
         );
         historialPagosPanelLayout.setVerticalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -546,7 +548,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(componentesPcButton)
                             .addGroup(catalogoPanelLayout.createSequentialGroup()
                                 .addComponent(accesoriosButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
                                 .addComponent(almacenamientoButton)))))
                 .addGap(21, 21, 21))
             .addGroup(catalogoPanelLayout.createSequentialGroup()
@@ -589,11 +591,6 @@ public class Main extends javax.swing.JFrame {
         celularLista.setViewportView(jTable2);
 
         infoCelularesButton.setText("Info");
-        infoCelularesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoCelularesButtonActionPerformed(evt);
-            }
-        });
 
         volverButton04.setText("Volver");
         volverButton04.addActionListener(new java.awt.event.ActionListener() {
@@ -613,7 +610,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoCelularesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton04))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         celularesPanelLayout.setVerticalGroup(
             celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -645,11 +642,6 @@ public class Main extends javax.swing.JFrame {
         accesorioLista.setViewportView(jTable3);
 
         infoAccesoriosButton.setText("Info");
-        infoAccesoriosButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoAccesoriosButtonActionPerformed(evt);
-            }
-        });
 
         volverButton05.setText("Volver");
         volverButton05.addActionListener(new java.awt.event.ActionListener() {
@@ -669,7 +661,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoAccesoriosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton05))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         accesoriosPanelLayout.setVerticalGroup(
             accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -701,11 +693,6 @@ public class Main extends javax.swing.JFrame {
         almacenamientoLista.setViewportView(jTable4);
 
         infoAlmacenamientoButton.setText("Info");
-        infoAlmacenamientoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoAlmacenamientoButtonActionPerformed(evt);
-            }
-        });
 
         volverButton06.setText("Volver");
         volverButton06.addActionListener(new java.awt.event.ActionListener() {
@@ -725,7 +712,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoAlmacenamientoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton06))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         almacenamientoPanelLayout.setVerticalGroup(
             almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -757,11 +744,6 @@ public class Main extends javax.swing.JFrame {
         pcLista.setViewportView(jTable5);
 
         infoPcButton.setText("Info");
-        infoPcButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoPcButtonActionPerformed(evt);
-            }
-        });
 
         volverButton07.setText("Volver");
         volverButton07.addActionListener(new java.awt.event.ActionListener() {
@@ -781,7 +763,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoPcButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton07))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         pcPanelLayout.setVerticalGroup(
             pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -813,11 +795,6 @@ public class Main extends javax.swing.JFrame {
         componentesPcLista.setViewportView(jTable6);
 
         infoComponentesPcButton.setText("Info");
-        infoComponentesPcButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoComponentesPcButtonActionPerformed(evt);
-            }
-        });
 
         volverButton08.setText("Volver");
         volverButton08.addActionListener(new java.awt.event.ActionListener() {
@@ -837,7 +814,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(infoComponentesPcButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(volverButton08))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         componentesPcPanelLayout.setVerticalGroup(
             componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -873,13 +850,13 @@ public class Main extends javax.swing.JFrame {
 
         jTable7.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Producto", "Precio"
+                "Title 1", "Title 2", "Title 3"
             }
         ));
         jScrollPane1.setViewportView(jTable7);
@@ -889,35 +866,36 @@ public class Main extends javax.swing.JFrame {
         infoPanelLayout.setHorizontalGroup(
             infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(infoPanelLayout.createSequentialGroup()
-                .addGap(145, 145, 145)
-                .addComponent(añadirLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoPanelLayout.createSequentialGroup()
-                .addGap(0, 65, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
-            .addGroup(infoPanelLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(botonAñadir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(volverButton09)
-                .addGap(30, 30, 30))
+                .addGap(422, 422, 422))
+            .addGroup(infoPanelLayout.createSequentialGroup()
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(añadirLabel))
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         infoPanelLayout.setVerticalGroup(
             infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(infoPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(añadirLabel)
-                .addGap(49, 49, 49)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonAñadir)
                     .addComponent(volverButton09))
                 .addGap(15, 15, 15))
         );
 
-        mainPanel.add(infoPanel, "infoPanel");
+        mainPanel.add(infoPanel, "card7");
 
         accesoPrograma.setText("Acceso");
 
@@ -945,7 +923,7 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1057,9 +1035,9 @@ public class Main extends javax.swing.JFrame {
         cambiarPanel("pcPanel");
     }//GEN-LAST:event_pcButtonActionPerformed
 
-    private void cestaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cestaButtonActionPerformed
-        cambiarPanel("");
-    }//GEN-LAST:event_cestaButtonActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        cambiarPanel("pcPanel");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void volverButton09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton09ActionPerformed
         cambiarPanel("pcPanel");
@@ -1068,26 +1046,6 @@ public class Main extends javax.swing.JFrame {
     private void botonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonAñadirActionPerformed
-
-    private void infoComponentesPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoComponentesPcButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoComponentesPcButtonActionPerformed
-
-    private void infoCelularesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoCelularesButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoCelularesButtonActionPerformed
-
-    private void infoAccesoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoAccesoriosButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoAccesoriosButtonActionPerformed
-
-    private void infoAlmacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoAlmacenamientoButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoAlmacenamientoButtonActionPerformed
-
-    private void infoPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoPcButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoPcButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1145,7 +1103,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane celularLista;
     private javax.swing.JButton celularesButton;
     private javax.swing.JPanel celularesPanel;
-    private javax.swing.JButton cestaButton;
     private javax.swing.JButton componentesPcButton;
     private javax.swing.JScrollPane componentesPcLista;
     private javax.swing.JPanel componentesPcPanel;
@@ -1172,6 +1129,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel infoLabel;
     private javax.swing.JPanel infoPanel;
     private javax.swing.JButton infoPcButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

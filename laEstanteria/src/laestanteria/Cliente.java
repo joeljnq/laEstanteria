@@ -19,14 +19,15 @@ public class Cliente {
     private String nombre;
     private String correo;
     private String contraseña;
-    private int saldoTarjeta;
-    private char tipoCliente;
+    private int pago;
+    private TipoCliente tipoCliente;
 
     public Cliente(String dni, String nombre, String correo, String contraseña) {
         this.dni = dni;
         this.nombre = nombre;
         this.correo = correo;
-        this.contraseña = contraseña;     
+        this.contraseña = contraseña;  
+        this.tipoCliente= tipoCliente.usuario;
     }
     
     
@@ -34,8 +35,20 @@ public class Cliente {
     public Cliente(String dni, String nombre, int saldoTarjeta) {
         this.dni = dni;
         this.nombre = nombre;
-        this.saldoTarjeta = saldoTarjeta;
+        this.pago = saldoTarjeta;
     }
+
+    public Cliente(String dni, String nombre, String correo, String contraseña, int pago, TipoCliente tipoCliente) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contraseña = contraseña;
+        this.pago = pago;
+        this.tipoCliente = tipoCliente;
+    }
+    
+    
+    
 
     public String getDni() {
         return dni;
@@ -45,11 +58,11 @@ public class Cliente {
         return nombre;
     }
 
-    public int getSaldoTarjeta() {
-        return saldoTarjeta;
+    public int getPago() {
+        return pago;
     }
 
-    public char getTipoCliente() {
+    public TipoCliente getTipoCliente() {
         return tipoCliente;
     }
 
@@ -61,12 +74,20 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public void setSaldoTarjeta(int saldoTarjeta) {
-        this.saldoTarjeta = saldoTarjeta;
+    public void setPago(int pago) {
+        this.pago = pago;
     }
 
-    public void setTipoCliente(char tipoCliente) {
+    public void setTipoCliente(TipoCliente tipoCliente) {
         this.tipoCliente = tipoCliente;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getContraseña() {
+        return contraseña;
     }
 
   
