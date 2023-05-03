@@ -85,7 +85,7 @@ public class Main extends javax.swing.JFrame {
         historialButton = new javax.swing.JButton();
         cuentaButton = new javax.swing.JButton();
         pagosButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        cestaButton = new javax.swing.JButton();
         cuentaPanel = new javax.swing.JPanel();
         infoLabel = new javax.swing.JLabel();
         nombreUsuPanel = new javax.swing.JLabel();
@@ -308,10 +308,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Cesta");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        cestaButton.setText("Cesta");
+        cestaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                cestaButtonActionPerformed(evt);
             }
         });
 
@@ -325,7 +325,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(catalogoButton)
                     .addComponent(historialButton))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(cestaButton)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cuentaButton)
@@ -339,7 +339,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(catalogoButton)
                     .addComponent(pagosButton)
-                    .addComponent(jButton1))
+                    .addComponent(cestaButton))
                 .addGap(31, 31, 31)
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(historialButton)
@@ -589,6 +589,11 @@ public class Main extends javax.swing.JFrame {
         celularLista.setViewportView(jTable2);
 
         infoCelularesButton.setText("Info");
+        infoCelularesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoCelularesButtonActionPerformed(evt);
+            }
+        });
 
         volverButton04.setText("Volver");
         volverButton04.addActionListener(new java.awt.event.ActionListener() {
@@ -640,6 +645,11 @@ public class Main extends javax.swing.JFrame {
         accesorioLista.setViewportView(jTable3);
 
         infoAccesoriosButton.setText("Info");
+        infoAccesoriosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoAccesoriosButtonActionPerformed(evt);
+            }
+        });
 
         volverButton05.setText("Volver");
         volverButton05.addActionListener(new java.awt.event.ActionListener() {
@@ -691,6 +701,11 @@ public class Main extends javax.swing.JFrame {
         almacenamientoLista.setViewportView(jTable4);
 
         infoAlmacenamientoButton.setText("Info");
+        infoAlmacenamientoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoAlmacenamientoButtonActionPerformed(evt);
+            }
+        });
 
         volverButton06.setText("Volver");
         volverButton06.addActionListener(new java.awt.event.ActionListener() {
@@ -742,6 +757,11 @@ public class Main extends javax.swing.JFrame {
         pcLista.setViewportView(jTable5);
 
         infoPcButton.setText("Info");
+        infoPcButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoPcButtonActionPerformed(evt);
+            }
+        });
 
         volverButton07.setText("Volver");
         volverButton07.addActionListener(new java.awt.event.ActionListener() {
@@ -793,6 +813,11 @@ public class Main extends javax.swing.JFrame {
         componentesPcLista.setViewportView(jTable6);
 
         infoComponentesPcButton.setText("Info");
+        infoComponentesPcButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoComponentesPcButtonActionPerformed(evt);
+            }
+        });
 
         volverButton08.setText("Volver");
         volverButton08.addActionListener(new java.awt.event.ActionListener() {
@@ -892,7 +917,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        mainPanel.add(infoPanel, "card7");
+        mainPanel.add(infoPanel, "infoPanel");
 
         accesoPrograma.setText("Acceso");
 
@@ -1032,9 +1057,9 @@ public class Main extends javax.swing.JFrame {
         cambiarPanel("pcPanel");
     }//GEN-LAST:event_pcButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        cambiarPanel("pcPanel");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void cestaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cestaButtonActionPerformed
+        cambiarPanel("");
+    }//GEN-LAST:event_cestaButtonActionPerformed
 
     private void volverButton09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton09ActionPerformed
         cambiarPanel("pcPanel");
@@ -1043,6 +1068,26 @@ public class Main extends javax.swing.JFrame {
     private void botonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonAñadirActionPerformed
+
+    private void infoComponentesPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoComponentesPcButtonActionPerformed
+        cambiarPanel("infoPanel");
+    }//GEN-LAST:event_infoComponentesPcButtonActionPerformed
+
+    private void infoCelularesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoCelularesButtonActionPerformed
+        cambiarPanel("infoPanel");
+    }//GEN-LAST:event_infoCelularesButtonActionPerformed
+
+    private void infoAccesoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoAccesoriosButtonActionPerformed
+        cambiarPanel("infoPanel");
+    }//GEN-LAST:event_infoAccesoriosButtonActionPerformed
+
+    private void infoAlmacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoAlmacenamientoButtonActionPerformed
+        cambiarPanel("infoPanel");
+    }//GEN-LAST:event_infoAlmacenamientoButtonActionPerformed
+
+    private void infoPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoPcButtonActionPerformed
+        cambiarPanel("infoPanel");
+    }//GEN-LAST:event_infoPcButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1100,6 +1145,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane celularLista;
     private javax.swing.JButton celularesButton;
     private javax.swing.JPanel celularesPanel;
+    private javax.swing.JButton cestaButton;
     private javax.swing.JButton componentesPcButton;
     private javax.swing.JScrollPane componentesPcLista;
     private javax.swing.JPanel componentesPcPanel;
@@ -1126,7 +1172,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel infoLabel;
     private javax.swing.JPanel infoPanel;
     private javax.swing.JButton infoPcButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
