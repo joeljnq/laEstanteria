@@ -9,6 +9,7 @@ package laestanteria;
  * @author a18jaimejnq
  */
 public class Almacenamiento extends Producto{
+    private int pruebA;
     
     private double tamaño;
     private String Marca;
