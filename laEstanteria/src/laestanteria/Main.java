@@ -811,9 +811,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_dniUsuarioActionPerformed
 
     private void botonCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearCuentaActionPerformed
-        // TODO add your handling code here:
-
-        if (campoContraseña.getText().equals(confirmarContraseña.getText())) {
+    if (campoContraseña.getText().equals(confirmarContraseña.getText())) {
             crearUsuario();
         } else {
             showError("La contraseña no coincide");
