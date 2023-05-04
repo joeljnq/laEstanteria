@@ -10,21 +10,34 @@ package laestanteria;
  */
 abstract class Producto {
     
-    private String tipo;
+    private TipoProducto tipo;
     private String nombre;
     private int id;
     private int stock;
 
-    public Producto(String tipo, String nombre, int id, int stock) {
+    public Producto(TipoProducto tipo, String nombre, int id, int stock) {
         this.tipo = tipo;
         this.nombre = nombre;
         this.id = id;
         this.stock = stock;
     }
+
+    public Producto() {
+    }
     
     
-    
-    
+
+    public TipoProducto getTipo() {
+        return tipo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public int getStock() {
         return stock;

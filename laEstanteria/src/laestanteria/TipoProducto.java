@@ -9,5 +9,6 @@ package laestanteria;
  * @author JOTA JOTA
  */
 public enum TipoProducto {
+    almacenamiento,pc,telefonos,componentes
     
 }

@@ -57,6 +57,14 @@ public class Main extends javax.swing.JFrame {
     }
     
     
+   /* private boolean consultarAlmacenamiento(){
+        boolean toret = false;
+        Producto p1 = new Producto();
+        
+        
+        
+    }*/
+    
 
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
@@ -977,6 +985,8 @@ public class Main extends javax.swing.JFrame {
 
     private void crearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaActionPerformed
         cambiarPanel("crearCuentaPanel");
+        
+        
     }//GEN-LAST:event_crearCuentaActionPerformed
 
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed

@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -85,4 +86,24 @@ public class Dao {
         }
         return false;
     }
+    
+    public boolean productoAlmacenamiento(TipoProducto tipo){
+        boolean toret = false;
+        ArrayList<Producto> lista = new ArrayList<>();
+        String consulta= "SELECT * FROM producto";
+        
+        try (Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")){
+            PreparedStatement ps = conexion.prepareStatement(consulta);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                
+            }
+            
+        } catch (Exception e) {
+        }
+        return toret;
+    }
+    
+    
+    
 }
