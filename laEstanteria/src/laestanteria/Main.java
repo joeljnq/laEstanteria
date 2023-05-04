@@ -43,6 +43,21 @@ public class Main extends javax.swing.JFrame {
         return toret;
 
     }
+    
+    private boolean comprobarUsuario(){
+        boolean toret = false;
+        Dao comprobar = new Dao();
+        if (comprobar.comprobarUsuario(campoUsuario.getText(), campoContraseña.getText())) {
+            toret = true;
+            showMessage("USUARIO CORRECTO");
+        }else{
+            showMessage("USURIO NO ENCONTRADO, VUELVA A INTRODUCIR LOS VALORES");
+        }
+      
+        return toret;
+    }
+    
+    
 
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
@@ -966,7 +981,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_crearCuentaActionPerformed
 
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
-        cambiarPanel("menuPanel");
+        
+        if (comprobarUsuario()) {
+            cambiarPanel("menuPanel");
+        }
+        
     }//GEN-LAST:event_botonLoginActionPerformed
 
     private void componentesPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_componentesPcButtonActionPerformed

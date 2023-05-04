@@ -22,25 +22,29 @@ public class Dao {
     public Dao(String usuario, String contraseña) {
         this.usuario = usuario;
         this.contraseña = contraseña;
-
     }
+
+    public Dao() {
+    }
+    
+    
 
     public boolean crearUsuario(Cliente cliente) {
         boolean toret = false;
 
         String consulta = "INSERT INTO USUARIO(dni,nombre,pago,tipo,contraseña,correo)VALUES (?,?,?,?,?,?)";
-        String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?) ";
+        String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?)";
         try ( Connection conexion = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/laestanteria", "root",
-                "ciff2Oc-");  PreparedStatement ps
-                = conexion.prepareStatement(comprobarNombre)) {
+                "abc123.")) {
+            PreparedStatement ps
+                    = conexion.prepareStatement(comprobarNombre);
             ps.setString(1, cliente.getNombre());
             ResultSet rs = ps.executeQuery();
             rs.next();
             System.out.println(rs.getInt(1));
 
             if (rs.getInt(1) == 0) {
-                
                 PreparedStatement insertar = conexion.prepareStatement(consulta);
                 insertar.setString(1, cliente.getDni());
                 insertar.setString(2, cliente.getNombre());
@@ -50,17 +54,36 @@ public class Dao {
                 insertar.setString(6, cliente.getCorreo());
                 insertar.executeUpdate();
                 toret = true;
-            }else{
+            } else {
                 System.out.println("EL USUARIO YA EXISTE");
             }
 
             System.out.println("Conexion OK");
-            
+
         } catch (SQLException e) {
             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
                     + "SLQState: " + e.getSQLState() + "\n"
                     + "Mensaje: " + e.getMessage() + "\n");
         }
         return toret;
+    }
+
+    public boolean comprobarUsuario(String nombre, String contraseña) {
+        boolean toret = false;
+        String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?) && contraseña = (?)";
+      
+        try ( Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")) {
+            PreparedStatement ps = conexion.prepareStatement(comprobarNombre);
+            ps.setString(1,nombre);
+            ps.setString(2, contraseña);
+            ps.executeQuery();
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            if (rs.getInt(1)>0){
+                return true;
+            }
+        } catch (Exception e) {
+        }
+        return false;
     }
 }
