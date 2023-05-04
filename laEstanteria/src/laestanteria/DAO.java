@@ -29,12 +29,12 @@ public class Dao {
         boolean toret = false;
 
         String consulta = "INSERT INTO USUARIO(dni,nombre,pago,tipo,contraseña,correo)VALUES (?,?,?,?,?,?)";
-        String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = 'Ana García' ";
+        String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?) ";
         try ( Connection conexion = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/laestanteria", "root",
                 "ciff2Oc-");  PreparedStatement ps
                 = conexion.prepareStatement(comprobarNombre)) {
-
+            ps.setString(1, cliente.getNombre());
             ResultSet rs = ps.executeQuery();
             rs.next();
             System.out.println(rs.getInt(1));

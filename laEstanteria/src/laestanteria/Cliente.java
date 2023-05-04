@@ -24,31 +24,11 @@ public class Cliente {
         }else{
             System.out.println("CORREO NO VALIDO!!!!!HDP");
         }
-        this.pago = "nada";
+        this.pago = " ";
         this.contraseña = contraseña;
         
         this.tipoCliente= tipoCliente.usuario;
     }
-    
-    
-
-    public Cliente(String dni, String nombre, String saldoTarjeta) {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.pago = saldoTarjeta;
-    }
-
-    public Cliente(String dni, String nombre, String correo, String contraseña, String pago, TipoCliente tipoCliente) {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.correo = correo;
-        this.contraseña = contraseña;
-        this.pago = pago;
-        this.tipoCliente = tipoCliente;
-    }
-    
-    
-    
 
     public String getDni() {
         return dni;

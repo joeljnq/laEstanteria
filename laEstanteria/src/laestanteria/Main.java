@@ -954,9 +954,8 @@ public class Main extends javax.swing.JFrame {
                 showMessage("Usuario creado :)");
                 cambiarPanel("menuPanel");
             }else{
-                showMessage("USUARIO NO CREADO");
+                showMessage("USUARIO YA EXISTE");
             }
-
         } else {
             showError("La contraseña no coincide");
         }
