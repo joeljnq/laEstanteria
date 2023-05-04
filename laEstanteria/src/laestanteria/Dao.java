@@ -22,25 +22,37 @@ public class Dao {
     public Dao(String usuario, String contraseña) {
         this.usuario = usuario;
         this.contraseña = contraseña;
-        
-         
+
     }
 
     public boolean crearUsuario(Cliente cliente) {
         boolean toret = false;
-           
-        String consulta = "INSERT INTO USUARIO(dni,nombre,pago,tipo,contraseña)VALUES (?,?,?,?,?)";
+
+        String consulta = "INSERT INTO USUARIO(dni,nombre,pago,tipo,contraseña,correo)VALUES (?,?,?,?,?,?)";
+        String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = 'Ana García' ";
         try ( Connection conexion = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/laestanteria", "root",
-                "abc123.");  PreparedStatement ps
-                = conexion.prepareStatement(consulta)) {
-            ps.setString(1, cliente.getDni());
-            ps.setString(2, cliente.getNombre());
-            ps.setInt(3, cliente.getPago());
-            ps.setString(4, cliente.getTipoCliente().toString());
-            ps.setString(5, cliente.getContraseña());
-            ps.executeUpdate();
-           
+                "ciff2Oc-");  PreparedStatement ps
+                = conexion.prepareStatement(comprobarNombre)) {
+
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            System.out.println(rs.getInt(1));
+
+            if (rs.getInt(1) == 0) {
+                
+                PreparedStatement insertar = conexion.prepareStatement(consulta);
+                insertar.setString(1, cliente.getDni());
+                insertar.setString(2, cliente.getNombre());
+                insertar.setString(3, cliente.getPago());
+                insertar.setString(4, cliente.getTipoCliente().toString());
+                insertar.setString(5, cliente.getContraseña());
+                insertar.setString(6, cliente.getCorreo());
+                insertar.executeUpdate();
+            }else{
+                System.out.println("EL USUARIO YA EXISTE");
+            }
+
             System.out.println("Conexion OK");
             toret = true;
         } catch (SQLException e) {

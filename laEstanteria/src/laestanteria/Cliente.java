@@ -4,12 +4,6 @@
  */
 package laestanteria;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 /**
  *
  * @author a18jaimejnq
@@ -19,26 +13,32 @@ public class Cliente {
     private String nombre;
     private String correo;
     private String contraseña;
-    private int pago;
+    private String pago;
     private TipoCliente tipoCliente;
 
     public Cliente(String dni, String nombre, String correo, String contraseña) {
-        this.dni = dni;
+        this.dni = dni;      
         this.nombre = nombre;
-        this.correo = correo;
-        this.contraseña = contraseña;  
+        if (correo.contains("@")) {
+                this.correo = correo;
+        }else{
+            System.out.println("CORREO NO VALIDO!!!!!HDP");
+        }
+        this.pago = "nada";
+        this.contraseña = contraseña;
+        
         this.tipoCliente= tipoCliente.usuario;
     }
     
     
 
-    public Cliente(String dni, String nombre, int saldoTarjeta) {
+    public Cliente(String dni, String nombre, String saldoTarjeta) {
         this.dni = dni;
         this.nombre = nombre;
         this.pago = saldoTarjeta;
     }
 
-    public Cliente(String dni, String nombre, String correo, String contraseña, int pago, TipoCliente tipoCliente) {
+    public Cliente(String dni, String nombre, String correo, String contraseña, String pago, TipoCliente tipoCliente) {
         this.dni = dni;
         this.nombre = nombre;
         this.correo = correo;
@@ -58,7 +58,7 @@ public class Cliente {
         return nombre;
     }
 
-    public int getPago() {
+    public String getPago() {
         return pago;
     }
 
@@ -74,7 +74,7 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public void setPago(int pago) {
+    public void setPago(String pago) {
         this.pago = pago;
     }
 

@@ -33,10 +33,9 @@ public class Main extends javax.swing.JFrame {
         String nombre = campoNombre.getText();
         String dni = dniUsuario.getText();
         String correo = campoCorreo.getText();
-        String contraUsuario = campoContraseña.getText();
-        String confirContraseña = confirmarContraseña.getText();
+        String contraUsuario = campoConteraseñaUsu.getText();
+        String confirContraseña = campoConfirmarContraseña.getText();
         Cliente prueba = new Cliente(dni, nombre, correo, contraUsuario);
-        
         Dao crearUsu = new Dao(dni, contraUsuario);
      crearUsu.crearUsuario(prueba);
         
