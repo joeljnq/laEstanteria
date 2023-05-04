@@ -49,12 +49,13 @@ public class Dao {
                 insertar.setString(5, cliente.getContraseña());
                 insertar.setString(6, cliente.getCorreo());
                 insertar.executeUpdate();
+                toret = true;
             }else{
                 System.out.println("EL USUARIO YA EXISTE");
             }
 
             System.out.println("Conexion OK");
-            toret = true;
+            
         } catch (SQLException e) {
             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
                     + "SLQState: " + e.getSQLState() + "\n"
