@@ -82,24 +82,33 @@ public class Dao {
             if (rs.getInt(1)>0){
                 return true;
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
+             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
         }
         return false;
     }
     
     public boolean productoAlmacenamiento(TipoProducto tipo){
         boolean toret = false;
-        ArrayList<Producto> lista = new ArrayList<>();
-        String consulta= "SELECT * FROM producto";
-        
+        ArrayList<String>listaNombre=new ArrayList<>() ;
+        ArrayList<Double>listaPrecio=new ArrayList<>() ;
+        String consulta= "SELECT nombre,precio FROM producto";
+        int contador= 1;
         try (Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")){
             PreparedStatement ps = conexion.prepareStatement(consulta);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                
+                listaNombre.add(rs.getString(contador));
+                listaPrecio.add(rs.getDouble(contador));
+                contador++;
             }
             
-        } catch (Exception e) {
+        } catch (SQLException e) {
+             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
         }
         return toret;
     }

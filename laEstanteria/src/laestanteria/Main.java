@@ -57,13 +57,14 @@ public class Main extends javax.swing.JFrame {
     }
     
     
-   /* private boolean consultarAlmacenamiento(){
+   private void consultarAlmacenamiento(){
         boolean toret = false;
-        Producto p1 = new Producto();
+    
+        Dao dao = new Dao();
+        dao.productoAlmacenamiento(TipoProducto.almacenamiento);
+
         
-        
-        
-    }*/
+    }
     
 
     private void showError(String text) {

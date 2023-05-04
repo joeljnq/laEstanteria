@@ -8,7 +8,7 @@ package laestanteria;
  *
  * @author a18jaimejnq
  */
-abstract class Producto {
+class Producto {
     
     private TipoProducto tipo;
     private String nombre;
