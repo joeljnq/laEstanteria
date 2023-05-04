@@ -25,24 +25,18 @@ create table producto
 (
 idProducto integer not null,
 nombre varchar(30) not null,
-Tipo enum('componentes','telefonos','almacenamiento') not null,
+Tipo enum('componentes','telefonos','almacenamiento','pc') not null,
 stock integer not null,
+precio double not null,
 primary key(idProducto)
-)engine = InnoDB;
-
-create table tipo
-(
-idTipo integer not null,
-nombre varchar(30) not null,
-primary key(idTipo)
 )engine = InnoDB;
 
 create table pedido
 (
-numeroPedido integer not null,
+idPedido integer not null,
 factura integer not null,
 estado enum('confirmado','enviado','entregado'),
-primary key(numeroPedido)
+primary key(idPedido)
 )engine = InnoDB;
 
 
@@ -53,19 +47,14 @@ INSERT INTO usuario (dni, nombre, pago, tipo, contraseña) VALUES
 INSERT INTO almacen (idAlmacen, nombre, seccion) VALUES
     (1, 'Almacen 1', 'Electronica');
     
-    INSERT INTO producto (idProducto, nombre, tipo, stock) VALUES
-    (1, 'Tarjeta gráfica', 'componentes', 15),
-    (2, 'Disco duro', 'almacenamiento', 20),
-    (3, 'Pantalla', 'componentes', 10),
-    (4, 'Móvil Samsung', 'telefonos', 30),
-    (5, 'Portátil Lenovo', 'componentes', 12);
+    INSERT INTO producto (idProducto, nombre, tipo, stock,precio) VALUES
+    (1, 'Tarjeta gráfica', 'componentes', 15,1000.00),
+    (2, 'Disco duro', 'almacenamiento', 20,40.00),
+    (3, 'Pantalla', 'componentes', 10,200.00),
+    (4, 'Móvil Samsung', 'telefonos', 30,100.00),
+    (5, 'Portátil Lenovo', 'pc', 12,1500.00);
     
-    INSERT INTO tipo (idTipo, nombre) VALUES
-    (1, 'Componente'),
-    (2, 'Teléfono'),
-    (3, 'Almacenaje'),
-    (4, 'Otros');
-    INSERT INTO pedido (numeroPedido, factura, estado) VALUES
+    INSERT INTO pedido (idPedido, factura, estado) VALUES
     (1, 123, 'confirmado');
 
 	UPDATE producto SET stock = stock - 2 WHERE idProducto IN (1, 4);
