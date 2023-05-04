@@ -8,8 +8,8 @@ dni varchar(9) not null ,
 nombre varchar(30) not null,
 pago varchar(10) not null,
 tipo enum('administrador','usuario') not null,
-contraseña varchar(30),
-correo varchar(50),
+contraseña varchar(30) not null,
+correo varchar(50) not null,
 primary key(dni)
 )engine = InnoDB;
 
@@ -40,8 +40,8 @@ primary key(idPedido)
 )engine = InnoDB;
 
 
-INSERT INTO usuario (dni, nombre, pago, tipo, contraseña) VALUES
-    ('12345678A', 'Ana García', 'mensual', 'usuario', '123456');
+INSERT INTO usuario (dni, nombre, pago, tipo, contraseña,correo) VALUES
+    ('12345678A', 'Ana García', 'mensual', 'usuario', '123456','prueba@prueba.com');
 
 
 INSERT INTO almacen (idAlmacen, nombre, seccion) VALUES

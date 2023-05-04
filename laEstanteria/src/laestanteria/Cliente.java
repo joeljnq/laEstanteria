@@ -4,12 +4,6 @@
  */
 package laestanteria;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 /**
  *
  * @author a18jaimejnq
@@ -19,22 +13,21 @@ public class Cliente {
     private String nombre;
     private String correo;
     private String contraseña;
-    private int saldoTarjeta;
-    private char tipoCliente;
+    private String pago;
+    private TipoCliente tipoCliente;
 
     public Cliente(String dni, String nombre, String correo, String contraseña) {
-        this.dni = dni;
+        this.dni = dni;      
         this.nombre = nombre;
-        this.correo = correo;
-        this.contraseña = contraseña;     
-    }
-    
-    
-
-    public Cliente(String dni, String nombre, int saldoTarjeta) {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.saldoTarjeta = saldoTarjeta;
+        if (correo.contains("@")) {
+                this.correo = correo;
+        }else{
+            System.out.println("CORREO NO VALIDO!!!!!HDP");
+        }
+        this.pago = " ";
+        this.contraseña = contraseña;
+        
+        this.tipoCliente= tipoCliente.usuario;
     }
 
     public String getDni() {
@@ -45,11 +38,11 @@ public class Cliente {
         return nombre;
     }
 
-    public int getSaldoTarjeta() {
-        return saldoTarjeta;
+    public String getPago() {
+        return pago;
     }
 
-    public char getTipoCliente() {
+    public TipoCliente getTipoCliente() {
         return tipoCliente;
     }
 
@@ -61,12 +54,20 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public void setSaldoTarjeta(int saldoTarjeta) {
-        this.saldoTarjeta = saldoTarjeta;
+    public void setPago(String pago) {
+        this.pago = pago;
     }
 
-    public void setTipoCliente(char tipoCliente) {
+    public void setTipoCliente(TipoCliente tipoCliente) {
         this.tipoCliente = tipoCliente;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getContraseña() {
+        return contraseña;
     }
 
   
