@@ -53,7 +53,6 @@ public class Main extends javax.swing.JFrame {
         }else{
             showMessage("USURIO NO ENCONTRADO, VUELVA A INTRODUCIR LOS VALORES");
         }
-      
         return toret;
     }
     
