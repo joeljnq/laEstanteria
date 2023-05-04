@@ -14,12 +14,13 @@ public class Accesorio extends Producto{
     private int velocidad;
     private String subTipo;
 
-    public Accesorio(String marca, int velocidad, String subTipo, String tipo, String nombre, int id, int stock) {
+    public Accesorio(String marca, int velocidad, String subTipo, TipoProducto tipo, String nombre, int id, int stock) {
         super(tipo, nombre, id, stock);
         this.marca = marca;
         this.velocidad = velocidad;
         this.subTipo = subTipo;
     }
+
 
     public String getMarca() {
         return marca;

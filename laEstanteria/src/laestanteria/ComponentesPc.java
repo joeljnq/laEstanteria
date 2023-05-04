@@ -14,12 +14,8 @@ public class ComponentesPc extends Producto{
    private String marca;
    private String subTipo;
    private double velocidad;
-    
-    public ComponentesPc(String tipo, String nombre, int id, int stock) {
-        super(tipo, nombre, id, stock);
-    }
 
-    public ComponentesPc(double tamaño, String marca, String subTipo, double velocidad, String tipo, String nombre, int id, int stock) {
+    public ComponentesPc(double tamaño, String marca, String subTipo, double velocidad, TipoProducto tipo, String nombre, int id, int stock) {
         super(tipo, nombre, id, stock);
         this.tamaño = tamaño;
         this.marca = marca;
@@ -27,7 +23,7 @@ public class ComponentesPc extends Producto{
         this.velocidad = velocidad;
     }
     
-  
+ 
 
     @Override
     public int calcularPrecio() {

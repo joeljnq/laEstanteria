@@ -15,17 +15,15 @@ public class Celular extends Producto {
     private String subTipo;
     private double velocidad;
 
-    public Celular(String tipo, String nombre, int id, int stock) {
-        super(tipo, nombre, id, stock);
-    }
-
-    public Celular(double tamaño, String marca, String subTipo, double velocidad, String tipo, String nombre, int id, int stock) {
+    public Celular(double tamaño, String marca, String subTipo, double velocidad, TipoProducto tipo, String nombre, int id, int stock) {
         super(tipo, nombre, id, stock);
         this.tamaño = tamaño;
         this.marca = marca;
         this.subTipo = subTipo;
         this.velocidad = velocidad;
     }
+
+   
     
     
 

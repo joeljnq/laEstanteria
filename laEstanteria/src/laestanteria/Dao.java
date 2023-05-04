@@ -27,7 +27,6 @@ public class Dao {
     public Dao() {
     }
     
-    
 
     public boolean crearUsuario(Cliente cliente) {
         boolean toret = false;

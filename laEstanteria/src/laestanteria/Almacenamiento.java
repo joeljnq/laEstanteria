@@ -15,12 +15,15 @@ public class Almacenamiento extends Producto{
     private String Marca;
     private int velocidad;
 
-    public Almacenamiento(double tamaño, String Marca, int velocidad, String tipo, String nombre, int id, int stock) {
+    public Almacenamiento(int pruebA, double tamaño, String Marca, int velocidad, TipoProducto tipo, String nombre, int id, int stock) {
         super(tipo, nombre, id, stock);
+        this.pruebA = pruebA;
         this.tamaño = tamaño;
         this.Marca = Marca;
         this.velocidad = velocidad;
     }
+
+
 
     public double getTamaño() {
         return tamaño;
