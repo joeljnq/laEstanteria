@@ -6,6 +6,7 @@ package laestanteria;
 
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -59,11 +60,9 @@ public class Main extends javax.swing.JFrame {
     
    private void consultarAlmacenamiento(){
         boolean toret = false;
-    
         Dao dao = new Dao();
-        dao.productoAlmacenamiento(TipoProducto.almacenamiento);
-
-        
+        DefaultTableModel modelo = (DefaultTableModel) tablaAlmacenamiento.getModel();
+       modelo.addRow(new Object[]{dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(0)});    
     }
     
 
@@ -147,7 +146,7 @@ public class Main extends javax.swing.JFrame {
         volverButton05 = new javax.swing.JButton();
         almacenamientoPanel = new javax.swing.JPanel();
         almacenamientoLista = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tablaAlmacenamiento = new javax.swing.JTable();
         infoAlmacenamientoButton = new javax.swing.JButton();
         volverButton06 = new javax.swing.JButton();
         pcPanel = new javax.swing.JPanel();
@@ -704,7 +703,7 @@ public class Main extends javax.swing.JFrame {
 
         mainPanel.add(accesoriosPanel, "accesoriosPanel");
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tablaAlmacenamiento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -715,7 +714,7 @@ public class Main extends javax.swing.JFrame {
                 "Almacenamiento", "Precio"
             }
         ));
-        almacenamientoLista.setViewportView(jTable4);
+        almacenamientoLista.setViewportView(tablaAlmacenamiento);
 
         infoAlmacenamientoButton.setText("Info");
 
@@ -1064,6 +1063,8 @@ public class Main extends javax.swing.JFrame {
 
     private void almacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almacenamientoButtonActionPerformed
         cambiarPanel("almacenamientoPanel");
+        consultarAlmacenamiento();
+        
     }//GEN-LAST:event_almacenamientoButtonActionPerformed
 
     private void pcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcButtonActionPerformed
@@ -1170,7 +1171,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
@@ -1189,6 +1189,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel pcPanel;
     private javax.swing.JLabel saldoPanel;
     private javax.swing.JLabel saldoResPanel;
+    private javax.swing.JTable tablaAlmacenamiento;
     private javax.swing.JLabel usuario;
     private javax.swing.JButton volverButton01;
     private javax.swing.JButton volverButton02;

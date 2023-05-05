@@ -29,7 +29,7 @@ public class Dao {
     }
     
 
-    public boolean crearUsuario(Cliente cliente) {
+    public boolean crearUsuario(Cliente cliente) { //ESTE METODO CREA UN USUARIO.
         boolean toret = false;
 
         String consulta = "INSERT INTO USUARIO(dni,nombre,pago,tipo,contraseña,correo)VALUES (?,?,?,?,?,?)";
@@ -68,7 +68,7 @@ public class Dao {
         return toret;
     }
 
-    public boolean comprobarUsuario(String nombre, String contraseña) {
+    public boolean comprobarUsuario(String nombre, String contraseña) {  //ESTE METODO SIRVE PARA COMPROBAR SI EL USUARIO QUE SE HACE LOG IN SE ENCUENTRA EN LA BASE DE DATOS
         boolean toret = false;
         String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?) && contraseña = (?)";
       
@@ -90,19 +90,16 @@ public class Dao {
         return false;
     }
     
-    public boolean productoAlmacenamiento(TipoProducto tipo){
-        boolean toret = false;
-        ArrayList<String>listaNombre=new ArrayList<>() ;
-        ArrayList<Double>listaPrecio=new ArrayList<>() ;
-        String consulta= "SELECT nombre,precio FROM producto";
-        int contador= 1;
+    public ArrayList productoPrecioAlmacenamiento(TipoProducto tipo){  //ESTE METODO SIRVE PARA COGER TODO LOS PRECIOS DE LA TABLA PRODUCTO
+        ArrayList<Resultado>lista=new ArrayList<>() ;
+        String consulta= "SELECT nombre,precio FROM producto where tipo=(?)";
+        
         try (Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")){
             PreparedStatement ps = conexion.prepareStatement(consulta);
+            ps.setString(1, tipo.toString());
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                listaNombre.add(rs.getString(contador));
-                listaPrecio.add(rs.getDouble(contador));
-                contador++;
+              lista.add(new Resultado(rs.getString("nombre"),rs.getDouble("precio")));
             }
             
         } catch (SQLException e) {
@@ -110,9 +107,27 @@ public class Dao {
                     + "SLQState: " + e.getSQLState() + "\n"
                     + "Mensaje: " + e.getMessage() + "\n");
         }
-        return toret;
+        return lista;
     }
     
-    
+    public ArrayList productoNombreAlmacenamiento(TipoProducto tipo){//ESTE METODO SIRVE PARA COGER TODO LOS NOMBRES DE LA TABLA PRODUCTO
+        ArrayList<Double>listaNombre=new ArrayList<>() ;
+        String consulta= "SELECT nombre,precio FROM producto where tipo=(?)";
+        
+        try (Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")){
+            PreparedStatement ps = conexion.prepareStatement(consulta);
+            ps.setString(1, tipo.toString());
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                listaNombre.add(rs.getDouble("precio"));          
+            }
+            
+        } catch (SQLException e) {
+             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
+        }
+        return listaNombre;
+    }
     
 }
