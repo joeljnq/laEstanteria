@@ -64,7 +64,10 @@ public class Main extends javax.swing.JFrame {
         Dao dao = new Dao();
       DefaultTableModel modelo = new DefaultTableModel(new String[]{"nombre", "precio"}, 0);
     
-      modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(0));
+       for (int i = 0; i < dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).size(); i++) {
+            modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(i));
+       }
+  
       tablaAlmacenamiento.setModel(modelo);
      
     }
