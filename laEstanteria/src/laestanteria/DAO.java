@@ -27,7 +27,6 @@ public class Dao {
 
     public Dao() {
     }
-    
 
     public boolean crearUsuario(Cliente cliente) { //ESTE METODO CREA UN USUARIO.
         boolean toret = false;
@@ -71,63 +70,47 @@ public class Dao {
     public boolean comprobarUsuario(String nombre, String contraseña) {  //ESTE METODO SIRVE PARA COMPROBAR SI EL USUARIO QUE SE HACE LOG IN SE ENCUENTRA EN LA BASE DE DATOS
         boolean toret = false;
         String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?) && contraseña = (?)";
-      
+
         try ( Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")) {
             PreparedStatement ps = conexion.prepareStatement(comprobarNombre);
-            ps.setString(1,nombre);
+            ps.setString(1, nombre);
             ps.setString(2, contraseña);
             ps.executeQuery();
             ResultSet rs = ps.executeQuery();
             rs.next();
-            if (rs.getInt(1)>0){
+            if (rs.getInt(1) > 0) {
                 return true;
             }
         } catch (SQLException e) {
-             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
                     + "SLQState: " + e.getSQLState() + "\n"
                     + "Mensaje: " + e.getMessage() + "\n");
         }
         return false;
     }
-    
-    public ArrayList productoPrecioAlmacenamiento(TipoProducto tipo){  //ESTE METODO SIRVE PARA COGER TODO LOS PRECIOS DE LA TABLA PRODUCTO
-        ArrayList<Resultado>lista=new ArrayList<>() ;
-        String consulta= "SELECT nombre,precio FROM producto where tipo=(?)";
-        
-        try (Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")){
+
+    public ArrayList productoPrecioAlmacenamiento(TipoProducto tipo) {  //ESTE METODO SIRVE PARA COGER TODO LOS PRECIOS DE LA TABLA PRODUCTO
+        ArrayList<Object[]> lista = new ArrayList<>();
+        String consulta = "SELECT nombre,precio FROM producto where tipo=(?)";
+
+        try ( Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")) {
             PreparedStatement ps = conexion.prepareStatement(consulta);
             ps.setString(1, tipo.toString());
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-              lista.add(new Resultado(rs.getString("nombre"),rs.getDouble("precio")));
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                double precio = rs.getDouble("precio");
+
+                lista.add(new Object[]{nombre,precio});
             }
-            
+    conexion.close();
+
         } catch (SQLException e) {
-             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
                     + "SLQState: " + e.getSQLState() + "\n"
                     + "Mensaje: " + e.getMessage() + "\n");
         }
         return lista;
     }
-    
-    public ArrayList productoNombreAlmacenamiento(TipoProducto tipo){//ESTE METODO SIRVE PARA COGER TODO LOS NOMBRES DE LA TABLA PRODUCTO
-        ArrayList<Double>listaNombre=new ArrayList<>() ;
-        String consulta= "SELECT nombre,precio FROM producto where tipo=(?)";
-        
-        try (Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")){
-            PreparedStatement ps = conexion.prepareStatement(consulta);
-            ps.setString(1, tipo.toString());
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                listaNombre.add(rs.getDouble("precio"));          
-            }
-            
-        } catch (SQLException e) {
-             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
-                    + "SLQState: " + e.getSQLState() + "\n"
-                    + "Mensaje: " + e.getMessage() + "\n");
-        }
-        return listaNombre;
-    }
-    
+
 }

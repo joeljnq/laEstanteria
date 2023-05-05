@@ -5,6 +5,7 @@
 package laestanteria;
 
 import java.awt.CardLayout;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -61,8 +62,15 @@ public class Main extends javax.swing.JFrame {
    private void consultarAlmacenamiento(){
         boolean toret = false;
         Dao dao = new Dao();
-        DefaultTableModel modelo = (DefaultTableModel) tablaAlmacenamiento.getModel();
-       modelo.addRow(new Object[]{dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(0)});    
+      DefaultTableModel modelo = new DefaultTableModel(new String[]{"nombre", "precio"}, 0);
+      for (Object object : dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento)) {
+        modelo.addRow((Vector<?>) object);
+       }
+       
+      tablaAlmacenamiento.setModel(modelo);
+      
+       
+     
     }
     
 
@@ -116,12 +124,12 @@ public class Main extends javax.swing.JFrame {
         saldoPanel = new javax.swing.JLabel();
         dniPanel = new javax.swing.JLabel();
         gmailPanel = new javax.swing.JLabel();
-        nombreResPanel = new javax.swing.JLabel();
-        gmailResPanel = new javax.swing.JLabel();
-        dniResPanel = new javax.swing.JLabel();
-        saldoResPanel = new javax.swing.JLabel();
         volverButton01 = new javax.swing.JButton();
         historialPagosButton = new javax.swing.JButton();
+        obtenerGmail = new javax.swing.JTextField();
+        obtenerNombre = new javax.swing.JTextField();
+        obtenerDni = new javax.swing.JTextField();
+        obtenerSaldo = new javax.swing.JTextField();
         historialPagosPanel = new javax.swing.JPanel();
         pagosTable = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -226,7 +234,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(botonLogin)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         mainPanel.add(loginPanel, "loginPanel");
@@ -301,7 +309,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(campoConfirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(botonCrearCuenta)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         mainPanel.add(crearCuentaPanel, "crearCuentaPanel");
@@ -370,7 +378,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(historialButton)
                     .addComponent(cuentaButton))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         mainPanel.add(menuPrincipal, "menuPanel");
@@ -399,6 +407,12 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        obtenerGmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obtenerGmailActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout cuentaPanelLayout = new javax.swing.GroupLayout(cuentaPanel);
         cuentaPanel.setLayout(cuentaPanelLayout);
         cuentaPanelLayout.setHorizontalGroup(
@@ -411,19 +425,27 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(cuentaPanelLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nombreUsuPanel)
-                            .addComponent(gmailPanel)
-                            .addComponent(dniPanel)
-                            .addComponent(saldoPanel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nombreResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(gmailResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dniResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(cuentaPanelLayout.createSequentialGroup()
-                                .addGap(136, 136, 136)
-                                .addComponent(saldoResPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)))))
-                .addGap(83, 83, 83))
+                                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(dniPanel)
+                                    .addComponent(saldoPanel))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(cuentaPanelLayout.createSequentialGroup()
+                                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(gmailPanel)
+                                    .addComponent(nombreUsuPanel))
+                                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(cuentaPanelLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(obtenerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(cuentaPanelLayout.createSequentialGroup()
+                                        .addGap(197, 197, 197)
+                                        .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(obtenerGmail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(obtenerDni, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(obtenerSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 102, Short.MAX_VALUE)))))
+                .addGap(96, 96, 96))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cuentaPanelLayout.createSequentialGroup()
                 .addGap(94, 94, 94)
                 .addComponent(historialPagosButton)
@@ -436,27 +458,33 @@ public class Main extends javax.swing.JFrame {
             .addGroup(cuentaPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(infoLabel)
-                .addGap(36, 36, 36)
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nombreResPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombreUsuPanel))
-                .addGap(18, 18, 18)
+                    .addGroup(cuentaPanelLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(nombreUsuPanel)
+                        .addGap(18, 18, 18)
+                        .addComponent(gmailPanel))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cuentaPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(obtenerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(obtenerGmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(gmailPanel)
-                    .addComponent(gmailResPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dniPanel)
-                    .addComponent(dniResPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(saldoPanel)
-                    .addComponent(saldoResPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(volverButton01)
-                    .addComponent(historialPagosButton))
-                .addGap(34, 34, 34))
+                    .addGroup(cuentaPanelLayout.createSequentialGroup()
+                        .addComponent(dniPanel)
+                        .addGap(18, 18, 18)
+                        .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(saldoPanel)
+                            .addComponent(obtenerSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(volverButton01)
+                            .addComponent(historialPagosButton))
+                        .addGap(34, 34, 34))
+                    .addGroup(cuentaPanelLayout.createSequentialGroup()
+                        .addComponent(obtenerDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         mainPanel.add(cuentaPanel, "cuentaPanel");
@@ -594,7 +622,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(componentesPcButton)
                     .addComponent(pcButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(volverButton03)
                 .addGap(27, 27, 27))
         );
@@ -639,7 +667,7 @@ public class Main extends javax.swing.JFrame {
         celularesPanelLayout.setVerticalGroup(
             celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, celularesPanelLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(60, Short.MAX_VALUE)
                 .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
             .addGroup(celularesPanelLayout.createSequentialGroup()
@@ -690,7 +718,7 @@ public class Main extends javax.swing.JFrame {
         accesoriosPanelLayout.setVerticalGroup(
             accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, accesoriosPanelLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(60, Short.MAX_VALUE)
                 .addComponent(accesorioLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
             .addGroup(accesoriosPanelLayout.createSequentialGroup()
@@ -741,7 +769,7 @@ public class Main extends javax.swing.JFrame {
         almacenamientoPanelLayout.setVerticalGroup(
             almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, almacenamientoPanelLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(60, Short.MAX_VALUE)
                 .addComponent(almacenamientoLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
             .addGroup(almacenamientoPanelLayout.createSequentialGroup()
@@ -792,7 +820,7 @@ public class Main extends javax.swing.JFrame {
         pcPanelLayout.setVerticalGroup(
             pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pcPanelLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(60, Short.MAX_VALUE)
                 .addComponent(pcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
             .addGroup(pcPanelLayout.createSequentialGroup()
@@ -843,7 +871,7 @@ public class Main extends javax.swing.JFrame {
         componentesPcPanelLayout.setVerticalGroup(
             componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, componentesPcPanelLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(60, Short.MAX_VALUE)
                 .addComponent(componentesPcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
             .addGroup(componentesPcPanelLayout.createSequentialGroup()
@@ -912,7 +940,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(añadirLabel)
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonAñadir)
                     .addComponent(volverButton09))
@@ -1083,6 +1111,10 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonAñadirActionPerformed
 
+    private void obtenerGmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obtenerGmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_obtenerGmailActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1151,10 +1183,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton cuentaButton;
     private javax.swing.JPanel cuentaPanel;
     private javax.swing.JLabel dniPanel;
-    private javax.swing.JLabel dniResPanel;
     private javax.swing.JTextField dniUsuario;
     private javax.swing.JLabel gmailPanel;
-    private javax.swing.JLabel gmailResPanel;
     private javax.swing.JButton historialButton;
     private javax.swing.JButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
@@ -1179,16 +1209,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel menuPrincipal;
-    private javax.swing.JLabel nombreResPanel;
     private javax.swing.JLabel nombreUsu;
     private javax.swing.JLabel nombreUsuPanel;
+    private javax.swing.JTextField obtenerDni;
+    private javax.swing.JTextField obtenerGmail;
+    private javax.swing.JTextField obtenerNombre;
+    private javax.swing.JTextField obtenerSaldo;
     private javax.swing.JButton pagosButton;
     private javax.swing.JScrollPane pagosTable;
     private javax.swing.JButton pcButton;
     private javax.swing.JScrollPane pcLista;
     private javax.swing.JPanel pcPanel;
     private javax.swing.JLabel saldoPanel;
-    private javax.swing.JLabel saldoResPanel;
     private javax.swing.JTable tablaAlmacenamiento;
     private javax.swing.JLabel usuario;
     private javax.swing.JButton volverButton01;
