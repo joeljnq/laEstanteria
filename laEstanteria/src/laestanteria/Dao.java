@@ -90,7 +90,7 @@ public class Dao {
     }
 
     public ArrayList productoPrecioAlmacenamiento(TipoProducto tipo) {  //ESTE METODO SIRVE PARA COGER TODO LOS PRECIOS DE LA TABLA PRODUCTO
-        ArrayList<Object[]> lista = new ArrayList<>();
+        ArrayList<Object> lista = new ArrayList<>();
         String consulta = "SELECT nombre,precio FROM producto where tipo=(?)";
 
         try ( Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")) {
