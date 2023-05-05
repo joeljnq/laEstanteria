@@ -62,7 +62,8 @@ public class Main extends javax.swing.JFrame {
    private void consultarAlmacenamiento(){
         boolean toret = false;
         Dao dao = new Dao();
-      DefaultTableModel modelo = new DefaultTableModel(new String[]{"nombre", "precio"}, 0);  
+      DefaultTableModel modelo = new DefaultTableModel(new String[]{"nombre", "precio"}, 0);
+    
       modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(0));
       tablaAlmacenamiento.setModel(modelo);
      
