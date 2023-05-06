@@ -2,15 +2,45 @@ drop database if exists laEstanteria;
 create database laEstanteria;
 use laEstanteria;
 
+create table pedido
+(
+idPedido integer not null,
+factura integer not null,
+estado enum('confirmado','enviado','entregado'),
+idProducto integer not null,
+primary key(idPedido),
+foreign key(idProducto)references producto(idPedido)
+on update cascade
+on delete restrict
+)engine = InnoDB;
+
+create table producto
+(
+idProducto integer not null,
+nombre varchar(30) not null,
+Tipo enum('componentes','telefonos','almacenamiento','pc') not null,
+stock integer not null,
+precio double not null,
+idPedido integer not null,
+primary key(idProducto),
+foreign key(idPedido) references pedido(idPedido)
+on update cascade
+on delete restrict
+)engine = InnoDB;
+
 create table usuario
 (
 dni varchar(9) not null ,
 nombre varchar(30) not null,
 pago varchar(10) not null,
 tipo enum('administrador','usuario') not null,
-contraseña varchar(30) not null,
-correo varchar(50) not null,
-primary key(dni)
+contraseña varchar(30),
+correo varchar(50),
+idPedido integer not null,
+primary key(dni),
+foreign key (idpedido) references pedido(idPedido)
+on update cascade
+on delete restrict
 )engine = InnoDB;
 
 create table almacen
@@ -21,27 +51,13 @@ seccion varchar(30) not null,
 primary key(idAlmacen)
 )engine = InnoDB;
 
-create table producto
-(
-idProducto integer not null,
-nombre varchar(30) not null,
-Tipo enum('componentes','telefonos','almacenamiento','pc') not null,
-stock integer not null,
-precio double not null,
-primary key(idProducto)
-)engine = InnoDB;
-
-create table pedido
-(
-idPedido integer not null,
-factura integer not null,
-estado enum('confirmado','enviado','entregado'),
-primary key(idPedido)
-)engine = InnoDB;
 
 
-INSERT INTO usuario (dni, nombre, pago, tipo, contraseña,correo) VALUES
-    ('12345678A', 'Ana García', 'mensual', 'usuario', '123456','prueba@prueba.com');
+
+
+
+INSERT INTO usuario (dni, nombre, pago, tipo, contraseña) VALUES
+    ('12345678A', 'Ana García', 'mensual', 'usuario', '123456');
 
 
 INSERT INTO almacen (idAlmacen, nombre, seccion) VALUES
