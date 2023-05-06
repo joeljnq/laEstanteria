@@ -4,14 +4,10 @@ use laEstanteria;
 
 create table pedido
 (
-idPedido integer not null,
+idPedido integer not null auto_increment,
 factura integer not null,
 estado enum('confirmado','enviado','entregado'),
-idProducto integer not null,
-primary key(idPedido),
-foreign key(idProducto)references producto(idPedido)
-on update cascade
-on delete restrict
+primary key(idPedido)
 )engine = InnoDB;
 
 create table producto
@@ -21,12 +17,22 @@ nombre varchar(30) not null,
 Tipo enum('componentes','telefonos','almacenamiento','pc') not null,
 stock integer not null,
 precio double not null,
-idPedido integer not null,
-primary key(idProducto),
-foreign key(idPedido) references pedido(idPedido)
+primary key(idProducto)
+)engine = InnoDB;
+
+create table detalle_pedido
+(
+pedido integer not null,
+producto integer not null,
+pago varchar(50),
+primary key(pedido,producto),
+foreign key(pedido) references pedido(idPedido)
+on update cascade
+on delete restrict,
+foreign key(producto) references producto(idProducto)
 on update cascade
 on delete restrict
-)engine = InnoDB;
+)engine=InnoDB;
 
 create table usuario
 (
@@ -53,11 +59,10 @@ primary key(idAlmacen)
 
 
 
-
-
-
-INSERT INTO usuario (dni, nombre, pago, tipo, contraseña) VALUES
-    ('12345678A', 'Ana García', 'mensual', 'usuario', '123456');
+INSERT INTO pedido (idPedido, factura, estado) VALUES
+    (1, 123, 'confirmado');
+INSERT INTO usuario (dni, nombre, pago, tipo, contraseña,idPedido) VALUES
+    ('12345678A', 'Ana García', 'mensual', 'usuario', '123456',1);
 
 
 INSERT INTO almacen (idAlmacen, nombre, seccion) VALUES
@@ -70,9 +75,6 @@ INSERT INTO almacen (idAlmacen, nombre, seccion) VALUES
     (4, 'Móvil Samsung', 'telefonos', 30,100.00),
     (5, 'Portátil Lenovo', 'pc', 12,1500.00);
     
-    INSERT INTO pedido (idPedido, factura, estado) VALUES
-    (1, 123, 'confirmado');
-
 	UPDATE producto SET stock = stock - 2 WHERE idProducto IN (1, 4);
 
     
