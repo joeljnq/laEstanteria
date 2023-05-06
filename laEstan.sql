@@ -58,6 +58,19 @@ primary key(idAlmacen)
 )engine = InnoDB;
 
 
+create table detalle_producto
+(
+producto integer not null,
+almacen integer not null,
+primary key(producto,almacen),
+foreign key(producto) references producto(idProducto)
+on update cascade
+on delete restrict,
+foreign key(almacen) references almacen(idAlmacen)
+on update cascade
+on delete restrict
+)engine=InnoDB;
+
 
 INSERT INTO pedido (idPedido, factura, estado) VALUES
     (1, 123, 'confirmado');
