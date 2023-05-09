@@ -623,7 +623,7 @@
                                   <Component id="componentesPcButton" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="accesoriosButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="260" max="32767" attributes="0"/>
+                                      <EmptySpace pref="35" max="32767" attributes="0"/>
                                       <Component id="almacenamientoButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
