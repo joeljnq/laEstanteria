@@ -28,6 +28,7 @@ public class Dao {
     }
 
     public Dao() {
+         cadenaConexion = "jdbc:mysql://192.168.109.24:3306/laestanteria";
     }
 
     public boolean crearUsuario(Cliente cliente) { //ESTE METODO CREA UN USUARIO.
@@ -73,7 +74,7 @@ public class Dao {
 
         String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?) && contraseña = (?)";
 
-        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "root", "abc123.")) {
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
             PreparedStatement ps = conexion.prepareStatement(comprobarNombre);
             ps.setString(1, nombre);
             ps.setString(2, contraseña);
@@ -95,7 +96,7 @@ public class Dao {
         ArrayList<Object> lista = new ArrayList<>();
         String consulta = "SELECT nombre,precio FROM producto where tipo=(?)";
 
-        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "root", "abc123.")) {
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
             PreparedStatement ps = conexion.prepareStatement(consulta);
             ps.setString(1, tipo.toString());
             ResultSet rs = ps.executeQuery();
