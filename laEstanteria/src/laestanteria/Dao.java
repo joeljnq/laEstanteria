@@ -19,10 +19,12 @@ public class Dao {
 
     private String usuario;
     private String contraseña;
+    private String cadenaConexion;
 
     public Dao(String usuario, String contraseña) {
         this.usuario = usuario;
         this.contraseña = contraseña;
+        cadenaConexion = "jdbc:mysql://192.168.109.24:3306/laestanteria";
     }
 
     public Dao() {
@@ -34,8 +36,8 @@ public class Dao {
         String consulta = "INSERT INTO USUARIO(dni,nombre,pago,tipo,contraseña,correo)VALUES (?,?,?,?,?,?)";
         String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?)";
         try ( Connection conexion = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/laestanteria", "root",
-                "abc123.")) {
+                cadenaConexion, "estanteria",
+                "root")) {
             PreparedStatement ps
                     = conexion.prepareStatement(comprobarNombre);
             ps.setString(1, cliente.getNombre());
@@ -68,10 +70,10 @@ public class Dao {
     }
 
     public boolean comprobarUsuario(String nombre, String contraseña) {  //ESTE METODO SIRVE PARA COMPROBAR SI EL USUARIO QUE SE HACE LOG IN SE ENCUENTRA EN LA BASE DE DATOS
-        boolean toret = false;
+
         String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?) && contraseña = (?)";
 
-        try ( Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")) {
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "root", "abc123.")) {
             PreparedStatement ps = conexion.prepareStatement(comprobarNombre);
             ps.setString(1, nombre);
             ps.setString(2, contraseña);
@@ -93,7 +95,7 @@ public class Dao {
         ArrayList<Object> lista = new ArrayList<>();
         String consulta = "SELECT nombre,precio FROM producto where tipo=(?)";
 
-        try ( Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/laestanteria", "root", "abc123.")) {
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "root", "abc123.")) {
             PreparedStatement ps = conexion.prepareStatement(consulta);
             ps.setString(1, tipo.toString());
             ResultSet rs = ps.executeQuery();
@@ -101,9 +103,9 @@ public class Dao {
                 String nombre = rs.getString("nombre");
                 double precio = rs.getDouble("precio");
 
-                lista.add(new Object[]{nombre,precio});
+                lista.add(new Object[]{nombre, precio});
             }
-    conexion.close();
+            conexion.close();
 
         } catch (SQLException e) {
             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
