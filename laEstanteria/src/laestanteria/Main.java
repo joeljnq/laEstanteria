@@ -114,8 +114,8 @@ public class Main extends javax.swing.JFrame {
         usuario = new javax.swing.JLabel();
         campoUsuario = new javax.swing.JTextField();
         contraseña = new javax.swing.JLabel();
-        campoContraseña = new javax.swing.JTextField();
         botonLogin = new javax.swing.JButton();
+        campoContraseña = new javax.swing.JPasswordField();
         crearCuentaPanel = new javax.swing.JPanel();
         correoUsu = new javax.swing.JLabel();
         campoNombre = new javax.swing.JTextField();
@@ -232,16 +232,14 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17)
+                        .addComponent(botonLogin))
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(112, 112, 112)
-                        .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(71, Short.MAX_VALUE))
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(botonLogin)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,9 +252,9 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(contraseña)
                     .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                .addGap(31, 31, 31)
                 .addComponent(botonLogin)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         mainPanel.add(loginPanel, "loginPanel");
@@ -1295,7 +1293,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton botonLogin;
     private javax.swing.JPasswordField campoConfirmarContraseña;
     private javax.swing.JPasswordField campoConteraseñaUsu;
-    private javax.swing.JTextField campoContraseña;
+    private javax.swing.JPasswordField campoContraseña;
     private javax.swing.JTextField campoCorreo;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoUsuario;
