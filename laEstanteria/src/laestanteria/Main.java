@@ -58,7 +58,11 @@ public class Main extends javax.swing.JFrame {
     private void consultarAlmacenamiento() {
         boolean toret = false;
         Dao dao = new Dao();
+<<<<<<< Updated upstream
         DefaultTableModel modelo = new DefaultTableModel(new String[]{"nombre", "precio"}, 0);
+=======
+        DefaultTableModel modelo = (DefaultTableModel) tablaAlmacenamiento.getModel();
+>>>>>>> Stashed changes
 
         for (int i = 0; i < dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).size(); i++) {
             modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(i));
@@ -66,7 +70,29 @@ public class Main extends javax.swing.JFrame {
 
         tablaAlmacenamiento.setModel(modelo);
 
+<<<<<<< Updated upstream
     }
+=======
+    }
+
+    private void consultarTelefono() {
+        Dao dao = new Dao();
+        DefaultTableModel modelo = (DefaultTableModel) tablaTelefonos.getModel();
+        for (int i = 0; i < dao.productoTelefonos(TipoProducto.telefonos).size(); i++) {
+            modelo.addRow((Object[]) dao.productoTelefonos(TipoProducto.telefonos).get(i));
+        }
+        tablaTelefonos.setModel(modelo);
+    }
+    
+    private void consultarComponentes(){
+        Dao dao = new Dao();
+        DefaultTableModel modelo = (DefaultTableModel) tablaComponentes.getModel();
+        for (int i = 0; i < dao.productosComponentes(TipoProducto.componentes).size(); i++) {
+            modelo.addRow((Object[])dao.productosComponentes(TipoProducto.pc).get(i));
+        }
+        tablaTelefonos.setModel(modelo);
+    }
+>>>>>>> Stashed changes
 
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
@@ -138,7 +164,7 @@ public class Main extends javax.swing.JFrame {
         pcButton = new javax.swing.JButton();
         celularesPanel = new javax.swing.JPanel();
         celularLista = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaTelefonos = new javax.swing.JTable();
         infoCelularesButton = new javax.swing.JButton();
         volverButton04 = new javax.swing.JButton();
         accesoriosPanel = new javax.swing.JPanel();
@@ -153,12 +179,12 @@ public class Main extends javax.swing.JFrame {
         volverButton06 = new javax.swing.JButton();
         pcPanel = new javax.swing.JPanel();
         pcLista = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tablaPC = new javax.swing.JTable();
         infoPcButton = new javax.swing.JButton();
         volverButton07 = new javax.swing.JButton();
         componentesPcPanel = new javax.swing.JPanel();
         componentesPcLista = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        tablaComponentes = new javax.swing.JTable();
         infoComponentesPcButton = new javax.swing.JButton();
         volverButton08 = new javax.swing.JButton();
         infoPanel = new javax.swing.JPanel();
@@ -619,7 +645,7 @@ public class Main extends javax.swing.JFrame {
 
         mainPanel.add(catalogoPanel, "catalogoPanel");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaTelefonos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -630,7 +656,7 @@ public class Main extends javax.swing.JFrame {
                 "Celular", "Precio"
             }
         ));
-        celularLista.setViewportView(jTable2);
+        celularLista.setViewportView(tablaTelefonos);
 
         infoCelularesButton.setText("Info");
         infoCelularesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -787,7 +813,7 @@ public class Main extends javax.swing.JFrame {
 
         mainPanel.add(almacenamientoPanel, "almacenamientoPanel");
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tablaPC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -798,7 +824,7 @@ public class Main extends javax.swing.JFrame {
                 "Pc", "Precio"
             }
         ));
-        pcLista.setViewportView(jTable5);
+        pcLista.setViewportView(tablaPC);
 
         infoPcButton.setText("Info");
         infoPcButton.addActionListener(new java.awt.event.ActionListener() {
@@ -843,7 +869,7 @@ public class Main extends javax.swing.JFrame {
 
         mainPanel.add(pcPanel, "pcPanel");
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        tablaComponentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -854,7 +880,7 @@ public class Main extends javax.swing.JFrame {
                 "Componente", "Precio"
             }
         ));
-        componentesPcLista.setViewportView(jTable6);
+        componentesPcLista.setViewportView(tablaComponentes);
 
         infoComponentesPcButton.setText("Info");
         infoComponentesPcButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1105,6 +1131,7 @@ public class Main extends javax.swing.JFrame {
 
     private void componentesPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_componentesPcButtonActionPerformed
         cambiarPanel("componentesPcPanel");
+        consultarComponentes();
     }//GEN-LAST:event_componentesPcButtonActionPerformed
 
     private void volverButton04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton04ActionPerformed
@@ -1157,10 +1184,13 @@ public class Main extends javax.swing.JFrame {
 
     private void volverButton02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton02ActionPerformed
         cambiarPanel("cuentaPanel");
+
+
     }//GEN-LAST:event_volverButton02ActionPerformed
 
     private void celularesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularesButtonActionPerformed
         cambiarPanel("celularesPanel");
+        consultarTelefono();
     }//GEN-LAST:event_celularesButtonActionPerformed
 
     private void accesoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoriosButtonActionPerformed
@@ -1168,9 +1198,15 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_accesoriosButtonActionPerformed
 
     private void almacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almacenamientoButtonActionPerformed
+
         cambiarPanel("almacenamientoPanel");
+
         consultarAlmacenamiento();
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     }//GEN-LAST:event_almacenamientoButtonActionPerformed
 
     private void pcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcButtonActionPerformed
@@ -1309,10 +1345,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JLabel labelDni;
     private javax.swing.JMenuItem login;
@@ -1334,6 +1367,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable pedidosTable;
     private javax.swing.JLabel saldoPanel;
     private javax.swing.JTable tablaAlmacenamiento;
+    private javax.swing.JTable tablaComponentes;
+    private javax.swing.JTable tablaPC;
+    private javax.swing.JTable tablaTelefonos;
     private javax.swing.JLabel usuario;
     private javax.swing.JButton volverButton01;
     private javax.swing.JButton volverButton02;
