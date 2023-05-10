@@ -85,6 +85,10 @@ public class Main extends javax.swing.JFrame {
         }
         tablaTelefonos.setModel(modelo);
     }
+    
+    private void consultarPc(){
+        
+    }
 
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);

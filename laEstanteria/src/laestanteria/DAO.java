@@ -149,7 +149,9 @@ public class Dao {
            ps.setString(1, tipo.toString());
            ResultSet rs = ps.executeQuery();
            while(rs.next()){
-               lista.add(new Object[]{"nombre","precio"});
+                 String nombre = rs.getString("nombre");
+                double precio = rs.getDouble("precio");
+               lista.add(new Object[]{nombre,precio});
            }
         } catch (SQLException e) {
              System.out.println("Código de Error: " + e.getErrorCode() + "\n"
