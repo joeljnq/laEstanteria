@@ -805,6 +805,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoCelularesButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton04">
               <Properties>
@@ -896,6 +899,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoAccesoriosButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton05">
               <Properties>
@@ -987,6 +993,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoAlmacenamientoButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton06">
               <Properties>
@@ -1078,6 +1087,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoPcButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton07">
               <Properties>
@@ -1169,6 +1181,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Info"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="infoComponentesPcButtonActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="volverButton08">
               <Properties>
@@ -1183,7 +1198,7 @@
         <Container class="javax.swing.JPanel" name="infoPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-              <CardConstraints cardName="card7"/>
+              <CardConstraints cardName="infoPanel"/>
             </Constraint>
           </Constraints>
 
