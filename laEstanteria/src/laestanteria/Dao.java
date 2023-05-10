@@ -149,7 +149,9 @@ public class Dao {
            ps.setString(1, tipo.toString());
            ResultSet rs = ps.executeQuery();
            while(rs.next()){
-               lista.add(new Object[]{"nombre","precio"});
+                 String nombre = rs.getString("nombre");
+                double precio = rs.getDouble("precio");
+               lista.add(new Object[]{nombre,precio});
            }
         } catch (SQLException e) {
              System.out.println("Código de Error: " + e.getErrorCode() + "\n"
@@ -158,5 +160,26 @@ public class Dao {
         }
         return lista;
     }
+    
+  public ArrayList productosPc(TipoProducto tipo) {
+        ArrayList<Object> lista = new ArrayList<>();
+        String consulta = "SELECT nombre,precio FROM producto WHERE tipo=(?)";
+        
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
+           PreparedStatement ps = conexion.prepareStatement(consulta);
+           ps.setString(1, tipo.toString());
+           ResultSet rs = ps.executeQuery();
+           while(rs.next()){
+                 String nombre = rs.getString("nombre");
+                double precio = rs.getDouble("precio");
+               lista.add(new Object[]{nombre,precio});
+           }
+        } catch (SQLException e) {
+             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
+        }
+        return lista;
+    }  
     
 }

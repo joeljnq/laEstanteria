@@ -81,9 +81,19 @@ public class Main extends javax.swing.JFrame {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) tablaComponentes.getModel();
         for (int i = 0; i < dao.productosComponentes(TipoProducto.componentes).size(); i++) {
-            modelo.addRow((Object[])dao.productosComponentes(TipoProducto.pc).get(i));
+            modelo.addRow((Object[])dao.productosComponentes(TipoProducto.componentes).get(i));
         }
-        tablaTelefonos.setModel(modelo);
+        tablaComponentes.setModel(modelo);
+    }
+    
+    private void consultarPc(){
+        Dao dao = new Dao();
+        DefaultTableModel modelo = (DefaultTableModel) tablaPC.getModel();
+        for (int i = 0; i < dao.productosPc(TipoProducto.pc).size(); i++) {
+            modelo.addRow((Object[])dao.productosPc(TipoProducto.pc).get(i));
+        }
+        tablaPC.setModel(modelo);
+        
     }
 
     private void showError(String text) {
@@ -106,6 +116,24 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
+        loginPanel = new javax.swing.JPanel();
+        usuario = new javax.swing.JLabel();
+        campoUsuario = new javax.swing.JTextField();
+        contraseña = new javax.swing.JLabel();
+        botonLogin = new javax.swing.JButton();
+        campoContraseña = new javax.swing.JPasswordField();
+        crearCuentaPanel = new javax.swing.JPanel();
+        correoUsu = new javax.swing.JLabel();
+        campoNombre = new javax.swing.JTextField();
+        campoCorreo = new javax.swing.JTextField();
+        nombreUsu = new javax.swing.JLabel();
+        confirmarContraseña = new javax.swing.JLabel();
+        contraseñaUsu = new javax.swing.JLabel();
+        campoConfirmarContraseña = new javax.swing.JPasswordField();
+        campoConteraseñaUsu = new javax.swing.JPasswordField();
+        botonCrearCuenta = new javax.swing.JButton();
+        labelDni = new javax.swing.JLabel();
+        dniUsuario = new javax.swing.JTextField();
         menuPrincipal = new javax.swing.JPanel();
         catalogoButton = new javax.swing.JButton();
         historialButton = new javax.swing.JButton();
@@ -134,7 +162,6 @@ public class Main extends javax.swing.JFrame {
         componentesPcButton = new javax.swing.JButton();
         volverButton03 = new javax.swing.JButton();
         celularesButton = new javax.swing.JButton();
-        accesoriosButton = new javax.swing.JButton();
         almacenamientoButton = new javax.swing.JButton();
         pcButton = new javax.swing.JButton();
         celularesPanel = new javax.swing.JPanel();
@@ -208,7 +235,136 @@ public class Main extends javax.swing.JFrame {
 
         mainPanel.setLayout(new java.awt.CardLayout());
 
-        catalogoButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        usuario.setText("Usuario");
+
+        campoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoUsuarioActionPerformed(evt);
+            }
+        });
+
+        contraseña.setText("Contraseña");
+
+        botonLogin.setText("Enviar");
+        botonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonLoginActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(contraseña)
+                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(botonLogin))
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contraseña)
+                    .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(botonLogin)
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(loginPanel, "loginPanel");
+
+        correoUsu.setText("Correo");
+
+        nombreUsu.setText("Nombre de Usuario");
+
+        confirmarContraseña.setText("Confirmar Contraseña");
+
+        contraseñaUsu.setText("Contraseña");
+
+        botonCrearCuenta.setText("Crear Cuenta");
+        botonCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCrearCuentaActionPerformed(evt);
+            }
+        });
+
+        labelDni.setText("Dni");
+
+        dniUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dniUsuarioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout crearCuentaPanelLayout = new javax.swing.GroupLayout(crearCuentaPanel);
+        crearCuentaPanel.setLayout(crearCuentaPanelLayout);
+        crearCuentaPanelLayout.setHorizontalGroup(
+            crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crearCuentaPanelLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(correoUsu)
+                    .addComponent(confirmarContraseña)
+                    .addComponent(contraseñaUsu)
+                    .addComponent(nombreUsu)
+                    .addComponent(labelDni, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botonCrearCuenta)
+                    .addComponent(campoCorreo)
+                    .addComponent(campoNombre)
+                    .addComponent(campoConfirmarContraseña)
+                    .addComponent(campoConteraseñaUsu)
+                    .addComponent(dniUsuario))
+                .addContainerGap(145, Short.MAX_VALUE))
+        );
+        crearCuentaPanelLayout.setVerticalGroup(
+            crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(crearCuentaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dniUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelDni))
+                .addGap(13, 13, 13)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(correoUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contraseñaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoConteraseñaUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoConfirmarContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(botonCrearCuenta)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(crearCuentaPanel, "crearCuentaPanel");
+
         catalogoButton.setText("Catálogo");
         catalogoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1232,10 +1388,6 @@ public class Main extends javax.swing.JFrame {
         cambiarPanel("catalogoPanel");
     }//GEN-LAST:event_volverButton04ActionPerformed
 
-    private void volverButton05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton05ActionPerformed
-        cambiarPanel("catalogoPanel");
-    }//GEN-LAST:event_volverButton05ActionPerformed
-
     private void volverButton06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton06ActionPerformed
         cambiarPanel("catalogoPanel");
     }//GEN-LAST:event_volverButton06ActionPerformed
@@ -1287,10 +1439,6 @@ public class Main extends javax.swing.JFrame {
         consultarTelefono();
     }//GEN-LAST:event_celularesButtonActionPerformed
 
-    private void accesoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoriosButtonActionPerformed
-        cambiarPanel("accesoriosPanel");
-    }//GEN-LAST:event_accesoriosButtonActionPerformed
-
     private void almacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almacenamientoButtonActionPerformed
 
         cambiarPanel("almacenamientoPanel");
@@ -1301,6 +1449,7 @@ public class Main extends javax.swing.JFrame {
 
     private void pcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcButtonActionPerformed
         cambiarPanel("pcPanel");
+        consultarPc();
     }//GEN-LAST:event_pcButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1326,10 +1475,6 @@ public class Main extends javax.swing.JFrame {
     private void infoCelularesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoCelularesButtonActionPerformed
         cambiarPanel("infoPanel");
     }//GEN-LAST:event_infoCelularesButtonActionPerformed
-
-    private void infoAccesoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoAccesoriosButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoAccesoriosButtonActionPerformed
 
     private void infoAlmacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoAlmacenamientoButtonActionPerformed
         cambiarPanel("infoPanel");
@@ -1392,9 +1537,6 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accesoPrograma;
-    private javax.swing.JScrollPane accesorioLista;
-    private javax.swing.JButton accesoriosButton;
-    private javax.swing.JPanel accesoriosPanel;
     private javax.swing.JButton almacenamientoButton;
     private javax.swing.JScrollPane almacenamientoLista;
     private javax.swing.JPanel almacenamientoPanel;
@@ -1404,7 +1546,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton botonLogin;
     private javax.swing.JPasswordField campoConfirmarContraseña;
     private javax.swing.JPasswordField campoConteraseñaUsu;
-    private javax.swing.JTextField campoContraseña;
+    private javax.swing.JPasswordField campoContraseña;
     private javax.swing.JTextField campoCorreo;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoUsuario;
@@ -1431,7 +1573,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton historialButton;
     private javax.swing.JButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
-    private javax.swing.JButton infoAccesoriosButton;
     private javax.swing.JButton infoAlmacenamientoButton;
     private javax.swing.JButton infoCelularesButton;
     private javax.swing.JButton infoComponentesPcButton;
@@ -1454,7 +1595,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable7;
     private javax.swing.JLabel labelDni;
     private javax.swing.JMenuItem login;
@@ -1484,7 +1624,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton volverButton02;
     private javax.swing.JButton volverButton03;
     private javax.swing.JButton volverButton04;
-    private javax.swing.JButton volverButton05;
     private javax.swing.JButton volverButton06;
     private javax.swing.JButton volverButton07;
     private javax.swing.JButton volverButton08;
