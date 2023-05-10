@@ -14,7 +14,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Main extends javax.swing.JFrame {
 
-
     /**
      * Creates new form NMain
      */
@@ -43,33 +42,31 @@ public class Main extends javax.swing.JFrame {
         return toret;
 
     }
-    
-    private boolean comprobarUsuario(){
+
+    private boolean comprobarUsuario() {
         boolean toret = false;
         Dao comprobar = new Dao();
         if (comprobar.comprobarUsuario(campoUsuario.getText(), campoContraseña.getText())) {
             toret = true;
             showMessage("USUARIO CORRECTO");
-        }else{
+        } else {
             showMessage("USURIO NO ENCONTRADO, VUELVA A INTRODUCIR LOS VALORES");
         }
         return toret;
     }
-    
-    
-   private void consultarAlmacenamiento(){
+
+    private void consultarAlmacenamiento() {
         boolean toret = false;
         Dao dao = new Dao();
-      DefaultTableModel modelo = new DefaultTableModel(new String[]{"nombre", "precio"}, 0);
-    
-       for (int i = 0; i < dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).size(); i++) {
+        DefaultTableModel modelo = new DefaultTableModel(new String[]{"nombre", "precio"}, 0);
+
+        for (int i = 0; i < dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).size(); i++) {
             modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(i));
-       }
-  
-      tablaAlmacenamiento.setModel(modelo);
-     
+        }
+
+        tablaAlmacenamiento.setModel(modelo);
+
     }
-    
 
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
@@ -1024,7 +1021,7 @@ public class Main extends javax.swing.JFrame {
             if (crearUsuario()) {
                 showMessage("Usuario creado :)");
                 cambiarPanel("menuPanel");
-            }else{
+            } else {
                 showMessage("USUARIO YA EXISTE");
             }
         } else {
@@ -1034,16 +1031,16 @@ public class Main extends javax.swing.JFrame {
 
     private void crearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaActionPerformed
         cambiarPanel("crearCuentaPanel");
-        
-        
+
+
     }//GEN-LAST:event_crearCuentaActionPerformed
 
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
-        
+
         if (comprobarUsuario()) {
             cambiarPanel("menuPanel");
         }
-        
+
     }//GEN-LAST:event_botonLoginActionPerformed
 
     private void componentesPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_componentesPcButtonActionPerformed
@@ -1113,7 +1110,7 @@ public class Main extends javax.swing.JFrame {
     private void almacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almacenamientoButtonActionPerformed
         cambiarPanel("almacenamientoPanel");
         consultarAlmacenamiento();
-        
+
     }//GEN-LAST:event_almacenamientoButtonActionPerformed
 
     private void pcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcButtonActionPerformed
