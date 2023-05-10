@@ -58,11 +58,7 @@ public class Main extends javax.swing.JFrame {
     private void consultarAlmacenamiento() {
         boolean toret = false;
         Dao dao = new Dao();
-<<<<<<< Updated upstream
-        DefaultTableModel modelo = new DefaultTableModel(new String[]{"nombre", "precio"}, 0);
-=======
         DefaultTableModel modelo = (DefaultTableModel) tablaAlmacenamiento.getModel();
->>>>>>> Stashed changes
 
         for (int i = 0; i < dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).size(); i++) {
             modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(i));
@@ -70,9 +66,6 @@ public class Main extends javax.swing.JFrame {
 
         tablaAlmacenamiento.setModel(modelo);
 
-<<<<<<< Updated upstream
-    }
-=======
     }
 
     private void consultarTelefono() {
@@ -92,7 +85,6 @@ public class Main extends javax.swing.JFrame {
         }
         tablaTelefonos.setModel(modelo);
     }
->>>>>>> Stashed changes
 
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
