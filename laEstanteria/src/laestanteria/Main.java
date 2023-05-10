@@ -364,7 +364,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cuentaButton)
                     .addComponent(pagosButton))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         menuPrincipalLayout.setVerticalGroup(
             menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
