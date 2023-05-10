@@ -1195,10 +1195,6 @@ public class Main extends javax.swing.JFrame {
 
         consultarAlmacenamiento();
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     }//GEN-LAST:event_almacenamientoButtonActionPerformed
 
     private void pcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcButtonActionPerformed
