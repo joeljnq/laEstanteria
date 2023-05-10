@@ -81,12 +81,18 @@ public class Main extends javax.swing.JFrame {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) tablaComponentes.getModel();
         for (int i = 0; i < dao.productosComponentes(TipoProducto.componentes).size(); i++) {
-            modelo.addRow((Object[])dao.productosComponentes(TipoProducto.pc).get(i));
+            modelo.addRow((Object[])dao.productosComponentes(TipoProducto.componentes).get(i));
         }
-        tablaTelefonos.setModel(modelo);
+        tablaComponentes.setModel(modelo);
     }
     
     private void consultarPc(){
+        Dao dao = new Dao();
+        DefaultTableModel modelo = (DefaultTableModel) tablaPC.getModel();
+        for (int i = 0; i < dao.productosPc(TipoProducto.pc).size(); i++) {
+            modelo.addRow((Object[])dao.productosPc(TipoProducto.pc).get(i));
+        }
+        tablaPC.setModel(modelo);
         
     }
 
@@ -155,7 +161,6 @@ public class Main extends javax.swing.JFrame {
         componentesPcButton = new javax.swing.JButton();
         volverButton03 = new javax.swing.JButton();
         celularesButton = new javax.swing.JButton();
-        accesoriosButton = new javax.swing.JButton();
         almacenamientoButton = new javax.swing.JButton();
         pcButton = new javax.swing.JButton();
         celularesPanel = new javax.swing.JPanel();
@@ -163,11 +168,6 @@ public class Main extends javax.swing.JFrame {
         tablaTelefonos = new javax.swing.JTable();
         infoCelularesButton = new javax.swing.JButton();
         volverButton04 = new javax.swing.JButton();
-        accesoriosPanel = new javax.swing.JPanel();
-        accesorioLista = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        infoAccesoriosButton = new javax.swing.JButton();
-        volverButton05 = new javax.swing.JButton();
         almacenamientoPanel = new javax.swing.JPanel();
         almacenamientoLista = new javax.swing.JScrollPane();
         tablaAlmacenamiento = new javax.swing.JTable();
@@ -570,13 +570,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        accesoriosButton.setText("Accesorios");
-        accesoriosButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accesoriosButtonActionPerformed(evt);
-            }
-        });
-
         almacenamientoButton.setText("Almacenamiento");
         almacenamientoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -608,15 +601,11 @@ public class Main extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(componentesPcButton)
-                            .addGroup(catalogoPanelLayout.createSequentialGroup()
-                                .addComponent(accesoriosButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                                .addComponent(almacenamientoButton)))))
-                .addGap(21, 21, 21))
-            .addGroup(catalogoPanelLayout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addComponent(volverButton03)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(almacenamientoButton)))
+                    .addGroup(catalogoPanelLayout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(volverButton03)))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         catalogoPanelLayout.setVerticalGroup(
             catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -626,13 +615,12 @@ public class Main extends javax.swing.JFrame {
                 .addGap(67, 67, 67)
                 .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(celularesButton)
-                    .addComponent(accesoriosButton)
                     .addComponent(almacenamientoButton))
                 .addGap(32, 32, 32)
                 .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(componentesPcButton)
                     .addComponent(pcButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(volverButton03)
                 .addGap(27, 27, 27))
         );
@@ -694,62 +682,6 @@ public class Main extends javax.swing.JFrame {
         );
 
         mainPanel.add(celularesPanel, "celularesPanel");
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Accesorio", "Precio"
-            }
-        ));
-        accesorioLista.setViewportView(jTable3);
-
-        infoAccesoriosButton.setText("Info");
-        infoAccesoriosButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoAccesoriosButtonActionPerformed(evt);
-            }
-        });
-
-        volverButton05.setText("Volver");
-        volverButton05.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                volverButton05ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout accesoriosPanelLayout = new javax.swing.GroupLayout(accesoriosPanel);
-        accesoriosPanel.setLayout(accesoriosPanelLayout);
-        accesoriosPanelLayout.setHorizontalGroup(
-            accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(accesoriosPanelLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(accesorioLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(infoAccesoriosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(volverButton05))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        accesoriosPanelLayout.setVerticalGroup(
-            accesoriosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, accesoriosPanelLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(accesorioLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
-            .addGroup(accesoriosPanelLayout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addComponent(infoAccesoriosButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(volverButton05)
-                .addGap(47, 47, 47))
-        );
-
-        mainPanel.add(accesoriosPanel, "accesoriosPanel");
 
         tablaAlmacenamiento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1132,10 +1064,6 @@ public class Main extends javax.swing.JFrame {
         cambiarPanel("catalogoPanel");
     }//GEN-LAST:event_volverButton04ActionPerformed
 
-    private void volverButton05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton05ActionPerformed
-        cambiarPanel("catalogoPanel");
-    }//GEN-LAST:event_volverButton05ActionPerformed
-
     private void volverButton06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton06ActionPerformed
         cambiarPanel("catalogoPanel");
     }//GEN-LAST:event_volverButton06ActionPerformed
@@ -1187,10 +1115,6 @@ public class Main extends javax.swing.JFrame {
         consultarTelefono();
     }//GEN-LAST:event_celularesButtonActionPerformed
 
-    private void accesoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoriosButtonActionPerformed
-        cambiarPanel("accesoriosPanel");
-    }//GEN-LAST:event_accesoriosButtonActionPerformed
-
     private void almacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almacenamientoButtonActionPerformed
 
         cambiarPanel("almacenamientoPanel");
@@ -1201,6 +1125,7 @@ public class Main extends javax.swing.JFrame {
 
     private void pcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcButtonActionPerformed
         cambiarPanel("pcPanel");
+        consultarPc();
     }//GEN-LAST:event_pcButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1226,10 +1151,6 @@ public class Main extends javax.swing.JFrame {
     private void infoCelularesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoCelularesButtonActionPerformed
         cambiarPanel("infoPanel");
     }//GEN-LAST:event_infoCelularesButtonActionPerformed
-
-    private void infoAccesoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoAccesoriosButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoAccesoriosButtonActionPerformed
 
     private void infoAlmacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoAlmacenamientoButtonActionPerformed
         cambiarPanel("infoPanel");
@@ -1281,9 +1202,6 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accesoPrograma;
-    private javax.swing.JScrollPane accesorioLista;
-    private javax.swing.JButton accesoriosButton;
-    private javax.swing.JPanel accesoriosPanel;
     private javax.swing.JButton almacenamientoButton;
     private javax.swing.JScrollPane almacenamientoLista;
     private javax.swing.JPanel almacenamientoPanel;
@@ -1320,7 +1238,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton historialButton;
     private javax.swing.JButton historialPagosButton;
     private javax.swing.JPanel historialPagosPanel;
-    private javax.swing.JButton infoAccesoriosButton;
     private javax.swing.JButton infoAlmacenamientoButton;
     private javax.swing.JButton infoCelularesButton;
     private javax.swing.JButton infoComponentesPcButton;
@@ -1335,7 +1252,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable7;
     private javax.swing.JLabel labelDni;
     private javax.swing.JMenuItem login;
@@ -1365,7 +1281,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton volverButton02;
     private javax.swing.JButton volverButton03;
     private javax.swing.JButton volverButton04;
-    private javax.swing.JButton volverButton05;
     private javax.swing.JButton volverButton06;
     private javax.swing.JButton volverButton07;
     private javax.swing.JButton volverButton08;
