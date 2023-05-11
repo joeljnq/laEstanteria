@@ -12,6 +12,7 @@ public class toDo {
     -Acabar la interfaz gráfica
     -Control de errores
     -Hacer extras(si sobra tiempo)
+    -Comentarios de tipo javadock
     -
     */
 }
