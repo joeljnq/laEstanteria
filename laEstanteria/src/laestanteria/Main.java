@@ -924,7 +924,7 @@ public class Main extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Id ", "Info "
+                "Id ", "Factura"
             }
         ));
         jScrollPane2.setViewportView(pedidosTable);
