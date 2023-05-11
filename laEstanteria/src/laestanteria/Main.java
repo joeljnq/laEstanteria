@@ -108,6 +108,13 @@ public class Main extends javax.swing.JFrame {
         }
         pedidosTable.setModel(modelo);
     }
+    
+    private void infoUsuario(){
+        Dao dao = new Dao();
+        obtenerNombre.setText(dao.infoCuenta(campoUsuario.getText())[0]);
+        obtenerGmail.setText(dao.infoCuenta(campoUsuario.getText())[1]);
+        obtenerDni.setText(dao.infoCuenta(campoUsuario.getText())[2]);
+    }
 
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
@@ -1197,7 +1204,7 @@ public class Main extends javax.swing.JFrame {
 
     private void cuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuentaButtonActionPerformed
        
-        
+        infoUsuario();
         cambiarPanel("cuentaPanel");
     }//GEN-LAST:event_cuentaButtonActionPerformed
 

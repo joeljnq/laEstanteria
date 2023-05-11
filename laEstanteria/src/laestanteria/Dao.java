@@ -204,7 +204,37 @@ public class Dao {
         return lista;
     }
     
-    public void infoCuenta(){
-        
+    public String[] infoCuenta(String nombreUsuario){
+        String[]toret = new String[3];
+        String consultaNombre = "SELECT nombre FROM usuario WHERE nombre=(?)";
+        String consultaGmail = "SELECT correo FROM usuario WHERE nombre=(?)";
+        String consultaDni = "SELECT dni FROM usuario WHERE nombre=(?)";
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root");) {
+            PreparedStatement psNombre = conexion.prepareStatement(consultaNombre);
+            psNombre.setString(1, nombreUsuario);
+            ResultSet rsNombre = psNombre.executeQuery();
+            while(rsNombre.next()){
+                toret[0]= rsNombre.getString("nombre");
+            }
+            PreparedStatement psGmail = conexion.prepareStatement(consultaGmail);
+            psGmail.setString(1, nombreUsuario);
+            ResultSet rsGmail = psGmail.executeQuery();
+            while(rsGmail.next()){
+                toret[1]= rsGmail.getString("correo");
+            }
+            PreparedStatement psDni = conexion.prepareStatement(consultaDni);
+            psDni.setString(1,nombreUsuario);
+            ResultSet rsDni = psDni.executeQuery();
+            while(rsDni.next()){
+                toret[2] = rsDni.getString("dni");
+            }
+           
+            conexion.close();
+        } catch (SQLException e) {
+            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
+        }
+        return toret;
     }
 }
