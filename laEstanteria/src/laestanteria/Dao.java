@@ -182,9 +182,9 @@ public class Dao {
         }
         return lista;
     }
-    public ArrayList consultarPedidos(){
+    public ArrayList consultarPedidos(String nombreUsuario){
         ArrayList<Object> lista = new ArrayList<>();
-        String consulta ="SELECT idPedido, factura, estado FROM pedido WHERE idPedido= any(SELECT idPedido FROM usuario)";
+        String consulta ="SELECT idPedido, factura, estado FROM pedido WHERE idPedido=(SELECT idPedido FROM usuario WHERE nombre =(?))";
         try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
             PreparedStatement ps = conexion.prepareStatement(consulta);
             ResultSet rs = ps.executeQuery();
