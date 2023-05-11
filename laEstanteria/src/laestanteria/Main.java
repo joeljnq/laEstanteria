@@ -1252,7 +1252,7 @@ public class Main extends javax.swing.JFrame {
 
     private void historialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historialButtonActionPerformed
         consultarPedidoUsuario();
-        cambiarPanel("historialCuentaPanel");
+        cambiarPanel("historialPedidosPanel");
     }//GEN-LAST:event_historialButtonActionPerformed
 
     private void cuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuentaButtonActionPerformed
@@ -1262,7 +1262,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cuentaButtonActionPerformed
 
     private void pagosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagosButtonActionPerformed
-        cambiarPanel("historialPedidosPanel");
+        
     }//GEN-LAST:event_pagosButtonActionPerformed
 
     private void volverButton02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton02ActionPerformed
