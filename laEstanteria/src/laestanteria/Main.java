@@ -63,8 +63,13 @@ public class Main extends javax.swing.JFrame {
         for (int i = 0; i < dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).size(); i++) {
             modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(i));
         }
+       
 
         tablaAlmacenamiento.setModel(modelo);
+         for (int i = 0; i < modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+         tablaAlmacenamiento.setModel(modelo);
 
     }
 
