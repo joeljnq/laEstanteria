@@ -95,6 +95,15 @@ public class Main extends javax.swing.JFrame {
         tablaPC.setModel(modelo);
         
     }
+    
+    private void consultarPedidoUsuario(){
+        Dao dao = new Dao();
+        DefaultTableModel modelo = (DefaultTableModel) pedidosTable.getModel();
+        for (int i = 0; i < dao.consultarPedidos(campoUsuario.getText()).size(); i++) {
+            modelo.addRow((Object[])dao.consultarPedidos(campoUsuario.getText()).get(i));
+        }
+        pedidosTable.setModel(modelo);
+    }
 
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
@@ -1194,6 +1203,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_catalogoButtonActionPerformed
 
     private void historialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historialButtonActionPerformed
+        consultarPedidoUsuario();
         cambiarPanel("historialCuentaPanel");
     }//GEN-LAST:event_historialButtonActionPerformed
 

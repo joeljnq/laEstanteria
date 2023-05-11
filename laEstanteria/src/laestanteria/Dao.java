@@ -185,13 +185,15 @@ public class Dao {
     public ArrayList consultarPedidos(String nombreUsuario){
         ArrayList<Object> lista = new ArrayList<>();
         String consulta ="SELECT idPedido, factura, estado FROM pedido WHERE idPedido=(SELECT idPedido FROM usuario WHERE nombre =(?))";
-        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root");) {
             PreparedStatement ps = conexion.prepareStatement(consulta);
-            ResultSet rs = ps.executeQuery();
+            ps.setString(1, nombreUsuario);
+            ResultSet rs = ps.executeQuery();      
             while (rs.next()) {
-                String nombre = rs.getString("nombre");
-                double precio = rs.getDouble("precio");
-                lista.add(new Object[]{nombre, precio});
+                String nombre = rs.getString("idPedido");
+                double precio = rs.getInt("factura");
+                String estado = rs.getString("estado");
+                lista.add(new Object[]{nombre, precio,estado});
             }
             conexion.close();
         } catch (SQLException e) {

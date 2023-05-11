@@ -42,7 +42,7 @@ pago varchar(10) not null,
 tipo enum('administrador','usuario') not null,
 contraseña varchar(30),
 correo varchar(50),
-idPedido integer not null,
+idPedido integer,
 primary key(dni),
 foreign key (idpedido) references pedido(idPedido)
 on update cascade
