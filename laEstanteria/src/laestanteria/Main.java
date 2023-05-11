@@ -153,7 +153,7 @@ public class Main extends javax.swing.JFrame {
         catalogoButton = new javax.swing.JButton();
         historialButton = new javax.swing.JButton();
         cuentaButton = new javax.swing.JButton();
-        pagosButton = new javax.swing.JButton();
+        pedidosButton = new javax.swing.JButton();
         cestaButton = new javax.swing.JButton();
         cuentaPanel = new javax.swing.JPanel();
         infoLabel = new javax.swing.JLabel();
@@ -208,15 +208,20 @@ public class Main extends javax.swing.JFrame {
         informacionProductoTable = new javax.swing.JScrollPane();
         jTable7 = new javax.swing.JTable();
         historialPedidosPanel = new javax.swing.JPanel();
-        pedidoTable = new javax.swing.JScrollPane();
+        historialPedidosTable = new javax.swing.JScrollPane();
         pedidosTable = new javax.swing.JTable();
-        pedidosLabel = new javax.swing.JLabel();
+        historialPedidosLabel = new javax.swing.JLabel();
         volverButton10 = new javax.swing.JButton();
         cestaPanel = new javax.swing.JPanel();
         cestaLabel = new javax.swing.JLabel();
         cestaTable = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         volverButton11 = new javax.swing.JButton();
+        pedidosPanel = new javax.swing.JPanel();
+        pedidoTable = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        volverButton12 = new javax.swing.JButton();
+        pedidosLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -410,11 +415,11 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        pagosButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        pagosButton.setText("Pedidos");
-        pagosButton.addActionListener(new java.awt.event.ActionListener() {
+        pedidosButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        pedidosButton.setText("Pedidos");
+        pedidosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pagosButtonActionPerformed(evt);
+                pedidosButtonActionPerformed(evt);
             }
         });
 
@@ -436,7 +441,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPrincipalLayout.createSequentialGroup()
                         .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(historialButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pagosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(pedidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(catalogoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -453,7 +458,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(95, 95, 95)
                 .addGroup(menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(catalogoButton)
-                    .addComponent(pagosButton))
+                    .addComponent(pedidosButton))
                 .addGap(34, 34, 34)
                 .addComponent(cestaButton)
                 .addGap(41, 41, 41)
@@ -1040,10 +1045,10 @@ public class Main extends javax.swing.JFrame {
                 "Id ", "Factura"
             }
         ));
-        pedidoTable.setViewportView(pedidosTable);
+        historialPedidosTable.setViewportView(pedidosTable);
 
-        pedidosLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        pedidosLabel.setText("Historial De Pedidos");
+        historialPedidosLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        historialPedidosLabel.setText("Historial De Pedidos");
 
         volverButton10.setText("Volver");
         volverButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -1060,23 +1065,23 @@ public class Main extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(historialPedidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(historialPedidosPanelLayout.createSequentialGroup()
-                        .addComponent(pedidoTable, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(historialPedidosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addComponent(volverButton10))
                     .addGroup(historialPedidosPanelLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
-                        .addComponent(pedidosLabel)))
+                        .addComponent(historialPedidosLabel)))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         historialPedidosPanelLayout.setVerticalGroup(
             historialPedidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(historialPedidosPanelLayout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addComponent(pedidosLabel)
+                .addComponent(historialPedidosLabel)
                 .addGap(18, 18, 18)
                 .addGroup(historialPedidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(volverButton10)
-                    .addComponent(pedidoTable, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(historialPedidosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
 
@@ -1136,6 +1141,61 @@ public class Main extends javax.swing.JFrame {
         );
 
         mainPanel.add(cestaPanel, "cestaPanel");
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID", "Estado", "Información"
+            }
+        ));
+        pedidoTable.setViewportView(jTable3);
+
+        volverButton12.setText("Volver");
+        volverButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverButton12ActionPerformed(evt);
+            }
+        });
+
+        pedidosLabel.setText("Pedidos");
+
+        javax.swing.GroupLayout pedidosPanelLayout = new javax.swing.GroupLayout(pedidosPanel);
+        pedidosPanel.setLayout(pedidosPanelLayout);
+        pedidosPanelLayout.setHorizontalGroup(
+            pedidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pedidosPanelLayout.createSequentialGroup()
+                .addGroup(pedidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pedidosPanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(pedidoTable, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(volverButton12))
+                    .addGroup(pedidosPanelLayout.createSequentialGroup()
+                        .addGap(221, 221, 221)
+                        .addComponent(pedidosLabel)))
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+        pedidosPanelLayout.setVerticalGroup(
+            pedidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pedidosPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(pedidosLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addGroup(pedidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pedidosPanelLayout.createSequentialGroup()
+                        .addComponent(pedidoTable, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pedidosPanelLayout.createSequentialGroup()
+                        .addComponent(volverButton12)
+                        .addGap(43, 43, 43))))
+        );
+
+        mainPanel.add(pedidosPanel, "pedidosPanel");
 
         accesoPrograma.setText("Acceso");
 
@@ -1256,14 +1316,13 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_historialButtonActionPerformed
 
     private void cuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuentaButtonActionPerformed
-       
-        
+
         cambiarPanel("cuentaPanel");
     }//GEN-LAST:event_cuentaButtonActionPerformed
 
-    private void pagosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagosButtonActionPerformed
-        
-    }//GEN-LAST:event_pagosButtonActionPerformed
+    private void pedidosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedidosButtonActionPerformed
+        cambiarPanel("pedidosPanel");
+    }//GEN-LAST:event_pedidosButtonActionPerformed
 
     private void volverButton02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton02ActionPerformed
         cambiarPanel("cuentaPanel");
@@ -1340,6 +1399,10 @@ public class Main extends javax.swing.JFrame {
     private void volverButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton11ActionPerformed
         cambiarPanel("menuPanel");
     }//GEN-LAST:event_volverButton11ActionPerformed
+
+    private void volverButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton12ActionPerformed
+        cambiarPanel("menuPanel");
+    }//GEN-LAST:event_volverButton12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1419,7 +1482,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton historialPagosButton;
     private javax.swing.JLabel historialPagosLabel;
     private javax.swing.JPanel historialPagosPanel;
+    private javax.swing.JLabel historialPedidosLabel;
     private javax.swing.JPanel historialPedidosPanel;
+    private javax.swing.JScrollPane historialPedidosTable;
     private javax.swing.JButton infoAlmacenamientoButton;
     private javax.swing.JButton infoCelularesButton;
     private javax.swing.JButton infoComponentesPcButton;
@@ -1431,6 +1496,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable7;
     private javax.swing.JLabel labelDni;
     private javax.swing.JLabel logInLabel;
@@ -1443,14 +1509,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField obtenerDni;
     private javax.swing.JTextField obtenerGmail;
     private javax.swing.JTextField obtenerNombre;
-    private javax.swing.JButton pagosButton;
     private javax.swing.JScrollPane pagosTable;
     private javax.swing.JButton pcButton;
     private javax.swing.JLabel pcLabel;
     private javax.swing.JScrollPane pcLista;
     private javax.swing.JPanel pcPanel;
     private javax.swing.JScrollPane pedidoTable;
+    private javax.swing.JButton pedidosButton;
     private javax.swing.JLabel pedidosLabel;
+    private javax.swing.JPanel pedidosPanel;
     private javax.swing.JTable pedidosTable;
     private javax.swing.JLabel signInLabel;
     private javax.swing.JTable tablaAlmacenamiento;
@@ -1468,5 +1535,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton volverButton09;
     private javax.swing.JButton volverButton10;
     private javax.swing.JButton volverButton11;
+    private javax.swing.JButton volverButton12;
     // End of variables declaration//GEN-END:variables
 }
