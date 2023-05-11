@@ -182,7 +182,25 @@ public class Dao {
         }
         return lista;
     }
-    
+    public ArrayList consultarPedidos(){
+        ArrayList<Object> lista = new ArrayList<>();
+        String consulta ="SELECT idPedido, factura, estado FROM pedido WHERE idPedido= any(SELECT idPedido FROM usuario)";
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
+            PreparedStatement ps = conexion.prepareStatement(consulta);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                double precio = rs.getDouble("precio");
+                lista.add(new Object[]{nombre, precio});
+            }
+            conexion.close();
+        } catch (SQLException e) {
+            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
+        }
+        return lista;
+    }
     
     
     

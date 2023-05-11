@@ -110,6 +110,8 @@ public class Main extends javax.swing.JFrame {
         CardLayout card = (CardLayout) mainPanel.getLayout();
         card.show(mainPanel, nomeTarxeta);
     }
+    
+    
 
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
