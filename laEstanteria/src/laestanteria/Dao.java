@@ -204,14 +204,7 @@ public class Dao {
         return lista;
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
+    public void infoCuenta(){
+        
+    }
 }

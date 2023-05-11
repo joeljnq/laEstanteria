@@ -60,16 +60,15 @@ public class Main extends javax.swing.JFrame {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) tablaAlmacenamiento.getModel();
 
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            modelo.removeRow(i);
+        }
+        tablaAlmacenamiento.setModel(modelo);
         for (int i = 0; i < dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).size(); i++) {
             modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(i));
         }
-       
 
         tablaAlmacenamiento.setModel(modelo);
-         for (int i = 0; i < modelo.getRowCount(); i++) {
-            modelo.removeRow(i);
-        }
-         tablaAlmacenamiento.setModel(modelo);
 
     }
 
@@ -81,31 +80,31 @@ public class Main extends javax.swing.JFrame {
         }
         tablaTelefonos.setModel(modelo);
     }
-    
-    private void consultarComponentes(){
+
+    private void consultarComponentes() {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) tablaComponentes.getModel();
         for (int i = 0; i < dao.productosComponentes(TipoProducto.componentes).size(); i++) {
-            modelo.addRow((Object[])dao.productosComponentes(TipoProducto.componentes).get(i));
+            modelo.addRow((Object[]) dao.productosComponentes(TipoProducto.componentes).get(i));
         }
         tablaComponentes.setModel(modelo);
     }
-    
-    private void consultarPc(){
+
+    private void consultarPc() {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) tablaPC.getModel();
         for (int i = 0; i < dao.productosPc(TipoProducto.pc).size(); i++) {
-            modelo.addRow((Object[])dao.productosPc(TipoProducto.pc).get(i));
+            modelo.addRow((Object[]) dao.productosPc(TipoProducto.pc).get(i));
         }
         tablaPC.setModel(modelo);
-        
+
     }
-    
-    private void consultarPedidoUsuario(){
+
+    private void consultarPedidoUsuario() {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) pedidosTable.getModel();
         for (int i = 0; i < dao.consultarPedidos(campoUsuario.getText()).size(); i++) {
-            modelo.addRow((Object[])dao.consultarPedidos(campoUsuario.getText()).get(i));
+            modelo.addRow((Object[]) dao.consultarPedidos(campoUsuario.getText()).get(i));
         }
         pedidosTable.setModel(modelo);
     }
@@ -124,8 +123,6 @@ public class Main extends javax.swing.JFrame {
         CardLayout card = (CardLayout) mainPanel.getLayout();
         card.show(mainPanel, nomeTarxeta);
     }
-    
-    
 
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -161,7 +158,6 @@ public class Main extends javax.swing.JFrame {
         cuentaPanel = new javax.swing.JPanel();
         infoLabel = new javax.swing.JLabel();
         nombreUsuPanel = new javax.swing.JLabel();
-        saldoPanel = new javax.swing.JLabel();
         dniPanel = new javax.swing.JLabel();
         gmailPanel = new javax.swing.JLabel();
         volverButton01 = new javax.swing.JButton();
@@ -169,7 +165,6 @@ public class Main extends javax.swing.JFrame {
         obtenerGmail = new javax.swing.JTextField();
         obtenerNombre = new javax.swing.JTextField();
         obtenerDni = new javax.swing.JTextField();
-        obtenerSaldo = new javax.swing.JTextField();
         historialPagosPanel = new javax.swing.JPanel();
         pagosTable = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -472,10 +467,6 @@ public class Main extends javax.swing.JFrame {
         nombreUsuPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nombreUsuPanel.setText("Nombre de usuario");
 
-        saldoPanel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        saldoPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        saldoPanel.setText("Saldo");
-
         dniPanel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         dniPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dniPanel.setText("Dni");
@@ -509,30 +500,27 @@ public class Main extends javax.swing.JFrame {
         cuentaPanelLayout.setHorizontalGroup(
             cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cuentaPanelLayout.createSequentialGroup()
-                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(51, 51, 51)
+                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(infoLabel)
                     .addGroup(cuentaPanelLayout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(historialPagosButton))
-                    .addGroup(cuentaPanelLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
                         .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(infoLabel)
                             .addGroup(cuentaPanelLayout.createSequentialGroup()
                                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(gmailPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(nombreUsuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(dniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(saldoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(31, 31, 31)
-                                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(obtenerDni, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(obtenerSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(obtenerGmail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(obtenerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(volverButton01))))))
+                                    .addComponent(dniPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(31, 31, 31))
+                            .addGroup(cuentaPanelLayout.createSequentialGroup()
+                                .addComponent(historialPagosButton)
+                                .addGap(57, 57, 57)))
+                        .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(obtenerDni, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(obtenerGmail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(obtenerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(volverButton01))))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         cuentaPanelLayout.setVerticalGroup(
@@ -552,15 +540,11 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dniPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(obtenerDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
+                .addGap(74, 74, 74)
                 .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(saldoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(obtenerSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(volverButton01)
-                    .addComponent(historialPagosButton))
-                .addGap(21, 21, 21))
+                    .addComponent(historialPagosButton)
+                    .addComponent(volverButton01))
+                .addGap(32, 32, 32))
         );
 
         mainPanel.add(cuentaPanel, "cuentaPanel");
@@ -602,14 +586,14 @@ public class Main extends javax.swing.JFrame {
             .addGroup(historialPagosPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(pagosTable, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(volverButton02)
                 .addGap(19, 19, 19))
         );
         historialPagosPanelLayout.setVerticalGroup(
             historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, historialPagosPanelLayout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(historialPagosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(volverButton02, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(historialPagosPanelLayout.createSequentialGroup()
@@ -1076,8 +1060,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jButton2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(71, 71, 71)
-                        .addComponent(pedidosLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pedidosLabel)))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -1213,6 +1196,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_historialButtonActionPerformed
 
     private void cuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuentaButtonActionPerformed
+       
+        
         cambiarPanel("cuentaPanel");
     }//GEN-LAST:event_cuentaButtonActionPerformed
 
@@ -1394,7 +1379,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField obtenerDni;
     private javax.swing.JTextField obtenerGmail;
     private javax.swing.JTextField obtenerNombre;
-    private javax.swing.JTextField obtenerSaldo;
     private javax.swing.JButton pagosButton;
     private javax.swing.JScrollPane pagosTable;
     private javax.swing.JButton pcButton;
@@ -1402,7 +1386,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel pcPanel;
     private javax.swing.JLabel pedidosLabel;
     private javax.swing.JTable pedidosTable;
-    private javax.swing.JLabel saldoPanel;
     private javax.swing.JTable tablaAlmacenamiento;
     private javax.swing.JTable tablaComponentes;
     private javax.swing.JTable tablaPC;
