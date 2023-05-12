@@ -35,7 +35,7 @@ public class Main extends javax.swing.JFrame {
         String contraUsuario = campoConteraseñaUsu.getText();
         String confirContraseña = campoConfirmarContraseña.getText();
         
-        Cliente prueba = new Cliente(dni, nombre, correo,  crearUsu.calcularHash(contraUsuario));
+        Cliente prueba = new Cliente(dni, nombre, correo, contraUsuario);
        
         if (crearUsu.crearUsuario(prueba)) {
             return true;

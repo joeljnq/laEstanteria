@@ -55,7 +55,7 @@ public class Dao {
                 insertar.setString(2, cliente.getNombre());
                 insertar.setString(3, cliente.getPago());
                 insertar.setString(4, cliente.getTipoCliente().toString());
-                insertar.setString(5, cliente.getContraseña());
+                insertar.setString(5, calcularHash(cliente.getContraseña()));
                 insertar.setString(6, cliente.getCorreo());
                 insertar.executeUpdate();
                 toret = true;
@@ -73,7 +73,7 @@ public class Dao {
         return toret;
     }
     
-     public String calcularHash(String password) {
+     private String calcularHash(String password) {
         byte[] salt = "DAW1".getBytes(StandardCharsets.UTF_8);
         KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 1000, 512);
         SecretKeyFactory factory;
@@ -103,13 +103,14 @@ public class Dao {
      */
 
     public boolean comprobarUsuario(String nombre, String contraseña) { 
+        
 
         String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?) && contraseña = (?)";
 
         try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
             PreparedStatement ps = conexion.prepareStatement(comprobarNombre);
             ps.setString(1, nombre);
-            ps.setString(2, contraseña);
+            ps.setString(2, calcularHash(contraseña));
             ps.executeQuery();
             ResultSet rs = ps.executeQuery();
             rs.next();
@@ -133,7 +134,7 @@ public class Dao {
     
     public ArrayList productosComponentes(TipoProducto tipo) {
         ArrayList<Object> lista = new ArrayList<>();
-        String consulta = "SELECT nombre,precio FROM producto WHERE tipo=(?)";
+        String consulta = "SELECT nombre,idProducto,precio FROM producto WHERE tipo=(?)";
 
         try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
             PreparedStatement ps = conexion.prepareStatement(consulta);
@@ -142,7 +143,8 @@ public class Dao {
             while (rs.next()) {
                 String nombre = rs.getString("nombre");
                 double precio = rs.getDouble("precio");
-                lista.add(new Object[]{nombre, precio});
+                int idProducto = rs.getInt("idProducto");
+                lista.add(new Object[]{nombre,idProducto, precio});
             }
             conexion.close();
         } catch (SQLException e) {
