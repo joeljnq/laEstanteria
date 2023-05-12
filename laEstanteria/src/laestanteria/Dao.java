@@ -10,7 +10,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 /**
  *
  * @author a18jaimejnq
@@ -33,7 +38,7 @@ public class Dao {
         boolean toret = false;
 
         String consulta = "INSERT INTO USUARIO(dni,nombre,pago,tipo,contraseña,correo)VALUES (?,?,?,?,?,?)";
-        String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?)";
+        String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?)";     
         try ( Connection conexion = DriverManager.getConnection(
                 cadenaConexion, "estanteria",
                 "root")) {
@@ -66,6 +71,28 @@ public class Dao {
                     + "Mensaje: " + e.getMessage() + "\n");
         }
         return toret;
+    }
+    
+     public String calcularHash(String password) {
+        byte[] salt = "DAW1".getBytes(StandardCharsets.UTF_8);
+        KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 1000, 512);
+        SecretKeyFactory factory;
+        try {
+            factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
+            byte[] hash = factory.generateSecret(spec).getEncoded();
+            // Conversión a cadena hexadecimal
+            StringBuilder sb = new StringBuilder();
+            for (byte b : hash) {
+                sb.append(String.format("%02x", b));
+            }
+            return(sb.toString());
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println("Non existe o algoritmo");
+        } catch (InvalidKeySpecException e) {
+            System.out.println("Erro coa clave");
+            e.printStackTrace();
+        }
+        return null;
     }
     
     /**
