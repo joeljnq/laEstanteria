@@ -17,20 +17,18 @@ import java.util.ArrayList;
  */
 public class Dao {
 
-    private String usuario;
-    private String contraseña;
-    private String cadenaConexion;
+  
+    private String cadenaConexion; //este es un atributo para no modificar la conexion
 
-    public Dao(String usuario, String contraseña) {
-        this.usuario = usuario;
-        this.contraseña = contraseña;
-        cadenaConexion = "jdbc:mysql://192.168.109.24:3306/laestanteria";
-    }
 
     public Dao() {
         cadenaConexion = "jdbc:mysql://192.168.109.24:3306/laestanteria";
     }
-
+/**
+ * es un metodo apra poder crear un usuario metiendo un Cliente de tipo cliente como parametro
+ * @param cliente
+ * @return Retorna un booleano para que pueda ser impletmentado en l clase main
+ */
     public boolean crearUsuario(Cliente cliente) { //ESTE METODO CREA UN USUARIO.
         boolean toret = false;
 
@@ -69,8 +67,15 @@ public class Dao {
         }
         return toret;
     }
+    
+    /**
+     * comprueba si el usuario se encuentra en la base de datos
+     * @param nombre
+     * @param contraseña
+     * @return un booleano para poder mostrar mensaje de errores en caso de que sea false 
+     */
 
-    public boolean comprobarUsuario(String nombre, String contraseña) {  //ESTE METODO SIRVE PARA COMPROBAR SI EL USUARIO QUE SE HACE LOG IN SE ENCUENTRA EN LA BASE DE DATOS
+    public boolean comprobarUsuario(String nombre, String contraseña) { 
 
         String comprobarNombre = "SELECT count(nombre) FROM usuario where nombre = (?) && contraseña = (?)";
 
@@ -92,53 +97,13 @@ public class Dao {
         return false;
     }
 
-    public ArrayList productoPrecioAlmacenamiento(TipoProducto tipo) {  //ESTE METODO SIRVE PARA COGER TODO LOS PRECIOS DE LA TABLA PRODUCTO
-        ArrayList<Object> lista = new ArrayList<>();
-        String consulta = "SELECT nombre,precio FROM producto where tipo=(?)";
-
-        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root");  PreparedStatement ps = conexion.prepareStatement(consulta);) {
-            ps.setString(1, tipo.toString());
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                String nombre = rs.getString("nombre");
-                double precio = rs.getDouble("precio");
-
-                lista.add(new Object[]{nombre, precio});
-            }
-            conexion.close();
-
-        } catch (SQLException e) {
-            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
-                    + "SLQState: " + e.getSQLState() + "\n"
-                    + "Mensaje: " + e.getMessage() + "\n");
-        }
-        return lista;
-    }
-
-    public ArrayList productoTelefonos(TipoProducto tipo) {  //ESTE METODO SIRVE PARA COGER TODO LOS PRECIOS DE LA TABLA PRODUCTO
-        ArrayList<Object> lista = new ArrayList<>();
-        String consulta = "SELECT nombre,precio FROM producto where tipo=(?)";
-
-        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
-            PreparedStatement ps = conexion.prepareStatement(consulta);
-            ps.setString(1, tipo.toString());
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                String nombre = rs.getString("nombre");
-                double precio = rs.getDouble("precio");
-
-                lista.add(new Object[]{nombre, precio});
-            }
-            conexion.close();
-
-        } catch (SQLException e) {
-            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
-                    + "SLQState: " + e.getSQLState() + "\n"
-                    + "Mensaje: " + e.getMessage() + "\n");
-        }
-        return lista;
-    }
-
+    
+/**
+ * Muestra la lista de productos que hay segun el tipo de producto
+ * @param tipo
+ * @return un arrayList de Object para que pueda ser ingresado en la jTable
+ */
+    
     public ArrayList productosComponentes(TipoProducto tipo) {
         ArrayList<Object> lista = new ArrayList<>();
         String consulta = "SELECT nombre,precio FROM producto WHERE tipo=(?)";
@@ -161,27 +126,11 @@ public class Dao {
         return lista;
     }
 
-    public ArrayList productosPc(TipoProducto tipo) {
-        ArrayList<Object> lista = new ArrayList<>();
-        String consulta = "SELECT nombre,precio FROM producto WHERE tipo=(?)";
-
-        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
-            PreparedStatement ps = conexion.prepareStatement(consulta);
-            ps.setString(1, tipo.toString());
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                String nombre = rs.getString("nombre");
-                double precio = rs.getDouble("precio");
-                lista.add(new Object[]{nombre, precio});
-            }
-            conexion.close();
-        } catch (SQLException e) {
-            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
-                    + "SLQState: " + e.getSQLState() + "\n"
-                    + "Mensaje: " + e.getMessage() + "\n");
-        }
-        return lista;
-    }
+    /**
+     * 
+     * @param nombreUsuario
+     * @return 
+     */
     public ArrayList consultarPedidos(String nombreUsuario){
         ArrayList<Object> lista = new ArrayList<>();
         String consulta ="SELECT idPedido, factura, estado FROM pedido WHERE idPedido=(SELECT idPedido FROM usuario WHERE nombre =(?))";
@@ -204,7 +153,37 @@ public class Dao {
         return lista;
     }
     
-    public void infoCuenta(){
-        
+    public String[] infoCuenta(String nombreUsuario){
+        String[]toret = new String[3];
+        String consultaNombre = "SELECT nombre FROM usuario WHERE nombre=(?)";
+        String consultaGmail = "SELECT correo FROM usuario WHERE nombre=(?)";
+        String consultaDni = "SELECT dni FROM usuario WHERE nombre=(?)";
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root");) {
+            PreparedStatement psNombre = conexion.prepareStatement(consultaNombre);
+            psNombre.setString(1, nombreUsuario);
+            ResultSet rsNombre = psNombre.executeQuery();
+            while(rsNombre.next()){
+                toret[0]= rsNombre.getString("nombre");
+            }
+            PreparedStatement psGmail = conexion.prepareStatement(consultaGmail);
+            psGmail.setString(1, nombreUsuario);
+            ResultSet rsGmail = psGmail.executeQuery();
+            while(rsGmail.next()){
+                toret[1]= rsGmail.getString("correo");
+            }
+            PreparedStatement psDni = conexion.prepareStatement(consultaDni);
+            psDni.setString(1,nombreUsuario);
+            ResultSet rsDni = psDni.executeQuery();
+            while(rsDni.next()){
+                toret[2] = rsDni.getString("dni");
+            }
+           
+            conexion.close();
+        } catch (SQLException e) {
+            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
+        }
+        return toret;
     }
 }

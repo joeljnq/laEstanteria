@@ -34,7 +34,7 @@ public class Main extends javax.swing.JFrame {
         String contraUsuario = campoConteraseñaUsu.getText();
         String confirContraseña = campoConfirmarContraseña.getText();
         Cliente prueba = new Cliente(dni, nombre, correo, contraUsuario);
-        Dao crearUsu = new Dao(dni, contraUsuario);
+        Dao crearUsu = new Dao();
 
         if (crearUsu.crearUsuario(prueba)) {
             return true;
@@ -58,14 +58,17 @@ public class Main extends javax.swing.JFrame {
     private void consultarAlmacenamiento() {
         boolean toret = false;
         Dao dao = new Dao();
+        tablaAlmacenamiento.setRowSelectionAllowed(true);
         DefaultTableModel modelo = (DefaultTableModel) tablaAlmacenamiento.getModel();
-
-        for (int i = 0; i < modelo.getRowCount(); i++) {
-            modelo.removeRow(i);
+         int [] filasSeleccionadas = tablaAlmacenamiento.getSelectedRows();
+         
+        for (int i = 0; i < filasSeleccionadas.length; i++) {
+            modelo.removeRow(filasSeleccionadas[i]);
         }
-        tablaAlmacenamiento.setModel(modelo);
-        for (int i = 0; i < dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).size(); i++) {
-            modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(i));
+        
+        tablaAlmacenamiento.repaint();
+        for (int i = 0; i < dao.productosComponentes(TipoProducto.almacenamiento).size(); i++) {
+            modelo.addRow((Object[]) dao.productosComponentes(TipoProducto.almacenamiento).get(i));
         }
 
         tablaAlmacenamiento.setModel(modelo);
@@ -75,8 +78,8 @@ public class Main extends javax.swing.JFrame {
     private void consultarTelefono() {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) tablaTelefonos.getModel();
-        for (int i = 0; i < dao.productoTelefonos(TipoProducto.telefonos).size(); i++) {
-            modelo.addRow((Object[]) dao.productoTelefonos(TipoProducto.telefonos).get(i));
+        for (int i = 0; i < dao.productosComponentes(TipoProducto.telefonos).size(); i++) {
+            modelo.addRow((Object[]) dao.productosComponentes(TipoProducto.telefonos).get(i));
         }
         tablaTelefonos.setModel(modelo);
     }
@@ -93,8 +96,8 @@ public class Main extends javax.swing.JFrame {
     private void consultarPc() {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) tablaPC.getModel();
-        for (int i = 0; i < dao.productosPc(TipoProducto.pc).size(); i++) {
-            modelo.addRow((Object[]) dao.productosPc(TipoProducto.pc).get(i));
+        for (int i = 0; i < dao.productosComponentes(TipoProducto.pc).size(); i++) {
+            modelo.addRow((Object[]) dao.productosComponentes(TipoProducto.pc).get(i));
         }
         tablaPC.setModel(modelo);
 
@@ -103,10 +106,32 @@ public class Main extends javax.swing.JFrame {
     private void consultarPedidoUsuario() {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) pedidosTable.getModel();
-        for (int i = 0; i < dao.consultarPedidos(campoUsuario.getText()).size(); i++) {
-            modelo.addRow((Object[]) dao.consultarPedidos(campoUsuario.getText()).get(i));
+        if (campoNombre.getText().length() > 0) {
+            for (int i = 0; i < dao.consultarPedidos(campoNombre.getText()).size(); i++) {
+                modelo.addRow((Object[]) dao.consultarPedidos(campoNombre.getText()).get(i));
+            }
+        } else {
+            for (int i = 0; i < dao.consultarPedidos(campoUsuario.getText()).size(); i++) {
+                modelo.addRow((Object[]) dao.consultarPedidos(campoUsuario.getText()).get(i));
+            }
         }
+
         pedidosTable.setModel(modelo);
+    }
+
+    private void infoUsuario() {
+        Dao dao = new Dao();
+
+        if (campoNombre.getText().length() > 0) {
+            obtenerNombre.setText(dao.infoCuenta(campoNombre.getText())[0]);
+            obtenerGmail.setText(dao.infoCuenta(campoNombre.getText())[1]);
+            obtenerDni.setText(dao.infoCuenta(campoNombre.getText())[2]);
+        } else {
+            obtenerNombre.setText(dao.infoCuenta(campoUsuario.getText())[0]);
+            obtenerGmail.setText(dao.infoCuenta(campoUsuario.getText())[1]);
+            obtenerDni.setText(dao.infoCuenta(campoUsuario.getText())[2]);
+        }
+
     }
 
     private void showError(String text) {
@@ -1371,6 +1396,7 @@ public class Main extends javax.swing.JFrame {
 
     private void cuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuentaButtonActionPerformed
 
+        infoUsuario();
         cambiarPanel("cuentaPanel");
     }//GEN-LAST:event_cuentaButtonActionPerformed
 
