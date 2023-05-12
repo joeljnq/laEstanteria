@@ -731,7 +731,7 @@ public class Main extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Nombre", "Id", "Precio"
+                "Nombre", "ID", "Precio"
             }
         ));
         celularLista.setViewportView(tablaTelefonos);
