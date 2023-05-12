@@ -51,10 +51,14 @@ public class Main extends javax.swing.JFrame {
             toret = true;
             showMessage("USUARIO CORRECTO");
         } else {
-            showMessage("USURIO NO ENCONTRADO, VUELVA A INTRODUCIR LOS VALORES");
+            showMessage("USUARIO NO ENCONTRADO, VUELVA A INTRODUCIR LOS VALORES");
         }
         return toret;
     }
+    
+    private void añadirCesta(){
+        showMessage("Se ha añadido el producto seleccionado a la cesta");
+    } 
 
     private void consultarAlmacenamiento() {
         boolean toret = false;
@@ -839,6 +843,11 @@ public class Main extends javax.swing.JFrame {
         buscadorAlmacenamientoLabel.setText("Introduzca el ID del producto que quiere añadir");
 
         añadirCestaButton02.setText("Añadir a cesta");
+        añadirCestaButton02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirCestaButton02ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout almacenamientoPanelLayout = new javax.swing.GroupLayout(almacenamientoPanel);
         almacenamientoPanel.setLayout(almacenamientoPanelLayout);
@@ -914,6 +923,11 @@ public class Main extends javax.swing.JFrame {
         pcBuscadorLabel.setText("Introduzca el ID del producto que quiere añadir");
 
         añadirCestaButton03.setText("Añadir a cesta");
+        añadirCestaButton03.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirCestaButton03ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pcPanelLayout = new javax.swing.GroupLayout(pcPanel);
         pcPanel.setLayout(pcPanelLayout);
@@ -991,6 +1005,11 @@ public class Main extends javax.swing.JFrame {
         hardwareBuscadorLabel.setText("Introduzca el ID del producto que quiere añadir");
 
         añadirCestaButton04.setText("Añadir a cesta");
+        añadirCestaButton04.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirCestaButton04ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout componentesPcPanelLayout = new javax.swing.GroupLayout(componentesPcPanel);
         componentesPcPanel.setLayout(componentesPcPanelLayout);
@@ -1390,8 +1409,20 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_volverButton12ActionPerformed
 
     private void añadirCestaButton01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCestaButton01ActionPerformed
-        // TODO add your handling code here:
+        añadirCesta();
     }//GEN-LAST:event_añadirCestaButton01ActionPerformed
+
+    private void añadirCestaButton02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCestaButton02ActionPerformed
+        añadirCesta();
+    }//GEN-LAST:event_añadirCestaButton02ActionPerformed
+
+    private void añadirCestaButton03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCestaButton03ActionPerformed
+        añadirCesta();
+    }//GEN-LAST:event_añadirCestaButton03ActionPerformed
+
+    private void añadirCestaButton04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCestaButton04ActionPerformed
+        añadirCesta();
+    }//GEN-LAST:event_añadirCestaButton04ActionPerformed
 
     /**
      * @param args the command line arguments

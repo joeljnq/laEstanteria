@@ -1094,6 +1094,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir a cesta"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirCestaButton02ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1236,6 +1239,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir a cesta"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirCestaButton03ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -1374,6 +1380,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir a cesta"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirCestaButton04ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
