@@ -206,33 +206,35 @@ public class Main extends javax.swing.JFrame {
         celularesPanel = new javax.swing.JPanel();
         celularLista = new javax.swing.JScrollPane();
         tablaTelefonos = new javax.swing.JTable();
-        infoCelularesButton = new javax.swing.JButton();
         volverButton04 = new javax.swing.JButton();
         celularesLabel = new javax.swing.JLabel();
+        añadirCestaButton01 = new javax.swing.JButton();
+        celularBuscadorLabel = new javax.swing.JLabel();
+        celularBuscadorText = new javax.swing.JTextField();
         almacenamientoPanel = new javax.swing.JPanel();
         almacenamientoLista = new javax.swing.JScrollPane();
         tablaAlmacenamiento = new javax.swing.JTable();
-        infoAlmacenamientoButton = new javax.swing.JButton();
         volverButton06 = new javax.swing.JButton();
         almacenamientoLabel = new javax.swing.JLabel();
+        buscadorAlmacenamientoLabel = new javax.swing.JLabel();
+        almacenamientoBuscadorText = new javax.swing.JTextField();
+        añadirCestaButton02 = new javax.swing.JButton();
         pcPanel = new javax.swing.JPanel();
         pcLista = new javax.swing.JScrollPane();
         tablaPC = new javax.swing.JTable();
-        infoPcButton = new javax.swing.JButton();
         volverButton07 = new javax.swing.JButton();
         pcLabel = new javax.swing.JLabel();
+        pcBuscadorLabel = new javax.swing.JLabel();
+        pcBuscadorText = new javax.swing.JTextField();
+        añadirCestaButton03 = new javax.swing.JButton();
         componentesPcPanel = new javax.swing.JPanel();
         componentesPcLista = new javax.swing.JScrollPane();
         tablaComponentes = new javax.swing.JTable();
-        infoComponentesPcButton = new javax.swing.JButton();
         volverButton08 = new javax.swing.JButton();
         hardwareLabel = new javax.swing.JLabel();
-        infoPanel = new javax.swing.JPanel();
-        añadirLabel = new javax.swing.JLabel();
-        botonAñadir = new javax.swing.JButton();
-        volverButton09 = new javax.swing.JButton();
-        informacionProductoTable = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
+        hardwareBuscadorLabel = new javax.swing.JLabel();
+        hardwareBuscadorText = new javax.swing.JTextField();
+        añadirCestaButton04 = new javax.swing.JButton();
         historialPedidosPanel = new javax.swing.JPanel();
         historialPedidosTable = new javax.swing.JScrollPane();
         pedidosTable = new javax.swing.JTable();
@@ -302,7 +304,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addGap(81, 81, 81)
                         .addComponent(botonLogin)))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -383,7 +385,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(crearCuentaPanelLayout.createSequentialGroup()
                         .addGap(56, 56, 56)
                         .addComponent(botonCrearCuenta)))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
         crearCuentaPanelLayout.setVerticalGroup(
             crearCuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -469,7 +471,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(cestaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(historialButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pedidosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
         menuPrincipalLayout.setVerticalGroup(
             menuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -550,7 +552,7 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(obtenerGmail, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(obtenerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(volverButton01))))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
         cuentaPanelLayout.setVerticalGroup(
             cuentaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -686,7 +688,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(volverButton03)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, catalogoPanelLayout.createSequentialGroup()
-                .addGap(0, 121, Short.MAX_VALUE)
+                .addGap(0, 158, Short.MAX_VALUE)
                 .addGroup(catalogoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(catalogoPanelLayout.createSequentialGroup()
                         .addComponent(almacenamientoButton)
@@ -724,24 +726,16 @@ public class Main extends javax.swing.JFrame {
 
         tablaTelefonos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Celular", "Precio"
+                "Nombre", "ID", "Precio"
             }
         ));
         celularLista.setViewportView(tablaTelefonos);
-
-        infoCelularesButton.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        infoCelularesButton.setText("Info");
-        infoCelularesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoCelularesButtonActionPerformed(evt);
-            }
-        });
 
         volverButton04.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         volverButton04.setText("Volver");
@@ -754,59 +748,83 @@ public class Main extends javax.swing.JFrame {
         celularesLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         celularesLabel.setText("Celulares");
 
+        añadirCestaButton01.setText("Añadir a cesta");
+        añadirCestaButton01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirCestaButton01ActionPerformed(evt);
+            }
+        });
+
+        celularBuscadorLabel.setText("Escriba el ID del producto que quiere añadir");
+
         javax.swing.GroupLayout celularesPanelLayout = new javax.swing.GroupLayout(celularesPanel);
         celularesPanel.setLayout(celularesPanelLayout);
         celularesPanelLayout.setHorizontalGroup(
             celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, celularesPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(celularBuscadorLabel)
+                .addGap(83, 83, 83))
             .addGroup(celularesPanelLayout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(celularesLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(celularesPanelLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(infoCelularesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(volverButton04, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46))
+                    .addGroup(celularesPanelLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(celularesPanelLayout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(celularBuscadorText, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(celularesPanelLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(añadirCestaButton01))))
+                    .addGroup(celularesPanelLayout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(celularesLabel))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, celularesPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(volverButton04, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         celularesPanelLayout.setVerticalGroup(
             celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(celularesPanelLayout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
                 .addComponent(celularesLabel)
-                .addGap(36, 36, 36)
-                .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(celularBuscadorLabel)
+                .addGap(18, 18, 18)
+                .addGroup(celularesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(celularesPanelLayout.createSequentialGroup()
-                        .addComponent(infoCelularesButton)
-                        .addGap(114, 114, 114)
-                        .addComponent(volverButton04)))
-                .addGap(57, 57, 57))
+                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addComponent(celularBuscadorText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(añadirCestaButton01)
+                        .addGap(169, 169, 169))
+                    .addGroup(celularesPanelLayout.createSequentialGroup()
+                        .addComponent(celularLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(volverButton04)
+                .addGap(23, 23, 23))
         );
 
         mainPanel.add(celularesPanel, "celularesPanel");
 
         tablaAlmacenamiento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Almacenamiento", "Precio"
+                "Nombre", "ID", "Precio"
             }
         ));
         almacenamientoLista.setViewportView(tablaAlmacenamiento);
-
-        infoAlmacenamientoButton.setText("Info");
-        infoAlmacenamientoButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoAlmacenamientoButtonActionPerformed(evt);
-            }
-        });
+        if (tablaAlmacenamiento.getColumnModel().getColumnCount() > 0) {
+            tablaAlmacenamiento.getColumnModel().getColumn(0).setResizable(false);
+        }
 
         volverButton06.setText("Volver");
         volverButton06.addActionListener(new java.awt.event.ActionListener() {
@@ -818,61 +836,70 @@ public class Main extends javax.swing.JFrame {
         almacenamientoLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         almacenamientoLabel.setText("Almacenamiento");
 
+        buscadorAlmacenamientoLabel.setText("Introduzca el ID del producto que quiere añadir");
+
+        añadirCestaButton02.setText("Añadir a cesta");
+
         javax.swing.GroupLayout almacenamientoPanelLayout = new javax.swing.GroupLayout(almacenamientoPanel);
         almacenamientoPanel.setLayout(almacenamientoPanelLayout);
         almacenamientoPanelLayout.setHorizontalGroup(
             almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(almacenamientoPanelLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
                 .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(almacenamientoPanelLayout.createSequentialGroup()
-                        .addComponent(almacenamientoLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(volverButton06, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(infoAlmacenamientoButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(144, 144, 144)
+                        .addComponent(almacenamientoLabel))
                     .addGroup(almacenamientoPanelLayout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(almacenamientoLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(54, 54, 54))
+                        .addGap(18, 18, 18)
+                        .addComponent(almacenamientoLista, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(almacenamientoBuscadorText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(añadirCestaButton02))))
+                .addContainerGap(135, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, almacenamientoPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, almacenamientoPanelLayout.createSequentialGroup()
+                        .addComponent(volverButton06, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(203, 203, 203))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, almacenamientoPanelLayout.createSequentialGroup()
+                        .addComponent(buscadorAlmacenamientoLabel)
+                        .addGap(20, 20, 20))))
         );
         almacenamientoPanelLayout.setVerticalGroup(
             almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(almacenamientoPanelLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(18, 18, 18)
                 .addComponent(almacenamientoLabel)
-                .addGap(30, 30, 30)
-                .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(buscadorAlmacenamientoLabel)
+                .addGap(18, 18, 18)
+                .addGroup(almacenamientoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(almacenamientoLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(almacenamientoPanelLayout.createSequentialGroup()
-                        .addComponent(infoAlmacenamientoButton)
-                        .addGap(128, 128, 128)
-                        .addComponent(volverButton06)))
-                .addContainerGap(88, Short.MAX_VALUE))
+                        .addComponent(almacenamientoBuscadorText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(añadirCestaButton02)))
+                .addGap(18, 18, 18)
+                .addComponent(volverButton06)
+                .addGap(21, 21, 21))
         );
 
         mainPanel.add(almacenamientoPanel, "almacenamientoPanel");
 
         tablaPC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Pc", "Precio"
+                "Nombre", "ID", "Precio"
             }
         ));
         pcLista.setViewportView(tablaPC);
-
-        infoPcButton.setText("Info");
-        infoPcButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoPcButtonActionPerformed(evt);
-            }
-        });
 
         volverButton07.setText("Volver");
         volverButton07.addActionListener(new java.awt.event.ActionListener() {
@@ -884,61 +911,72 @@ public class Main extends javax.swing.JFrame {
         pcLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         pcLabel.setText("Ordenadores Personales");
 
+        pcBuscadorLabel.setText("Introduzca el ID del producto que quiere añadir");
+
+        añadirCestaButton03.setText("Añadir a cesta");
+
         javax.swing.GroupLayout pcPanelLayout = new javax.swing.GroupLayout(pcPanel);
         pcPanel.setLayout(pcPanelLayout);
         pcPanelLayout.setHorizontalGroup(
             pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pcPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(pcBuscadorLabel)
+                .addGap(25, 25, 25))
             .addGroup(pcPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
                 .addGroup(pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pcPanelLayout.createSequentialGroup()
-                        .addComponent(pcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
+                        .addGroup(pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pcPanelLayout.createSequentialGroup()
+                                .addGap(212, 212, 212)
+                                .addComponent(volverButton07, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pcPanelLayout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(pcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
                         .addGroup(pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(infoPcButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(volverButton07, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pcPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(pcLabel)
-                        .addGap(36, 36, 36)))
-                .addContainerGap(91, Short.MAX_VALUE))
+                            .addComponent(añadirCestaButton03, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pcBuscadorText)))
+                    .addGroup(pcPanelLayout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(pcLabel)))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
         pcPanelLayout.setVerticalGroup(
             pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pcPanelLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(pcLabel)
-                .addGap(27, 27, 27)
-                .addGroup(pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pcPanelLayout.createSequentialGroup()
-                        .addComponent(infoPcButton)
-                        .addGap(125, 125, 125)
-                        .addComponent(volverButton07)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                        .addGap(20, 20, 20)
+                        .addComponent(pcLabel)
+                        .addGap(39, 39, 39)
+                        .addComponent(pcBuscadorLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(pcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pcPanelLayout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(pcBuscadorText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(añadirCestaButton03)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(volverButton07)
+                .addGap(15, 15, 15))
         );
 
         mainPanel.add(pcPanel, "pcPanel");
 
         tablaComponentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Componente", "Precio"
+                "Nombre", "ID", "Precio"
             }
         ));
         componentesPcLista.setViewportView(tablaComponentes);
-
-        infoComponentesPcButton.setText("Info");
-        infoComponentesPcButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infoComponentesPcButtonActionPerformed(evt);
-            }
-        });
 
         volverButton08.setText("Volver");
         volverButton08.addActionListener(new java.awt.event.ActionListener() {
@@ -950,108 +988,57 @@ public class Main extends javax.swing.JFrame {
         hardwareLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         hardwareLabel.setText("Hardware");
 
+        hardwareBuscadorLabel.setText("Introduzca el ID del producto que quiere añadir");
+
+        añadirCestaButton04.setText("Añadir a cesta");
+
         javax.swing.GroupLayout componentesPcPanelLayout = new javax.swing.GroupLayout(componentesPcPanel);
         componentesPcPanel.setLayout(componentesPcPanelLayout);
         componentesPcPanelLayout.setHorizontalGroup(
             componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(componentesPcPanelLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
                 .addGroup(componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(hardwareLabel)
-                    .addComponent(componentesPcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(infoComponentesPcButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(volverButton08, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
+                    .addComponent(volverButton08, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(componentesPcPanelLayout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(componentesPcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(componentesPcPanelLayout.createSequentialGroup()
+                            .addGap(209, 209, 209)
+                            .addComponent(hardwareLabel))))
+                .addGap(49, 49, 49)
+                .addGroup(componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hardwareBuscadorText, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(añadirCestaButton04))
+                .addContainerGap(72, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, componentesPcPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(hardwareBuscadorLabel)
+                .addGap(25, 25, 25))
         );
         componentesPcPanelLayout.setVerticalGroup(
             componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(componentesPcPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(16, 16, 16)
+                .addComponent(hardwareLabel)
+                .addGroup(componentesPcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(componentesPcPanelLayout.createSequentialGroup()
-                        .addComponent(hardwareLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addComponent(hardwareBuscadorLabel)
                         .addGap(18, 18, 18)
-                        .addComponent(componentesPcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(componentesPcLista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))
                     .addGroup(componentesPcPanelLayout.createSequentialGroup()
-                        .addComponent(infoComponentesPcButton)
-                        .addGap(126, 126, 126)
-                        .addComponent(volverButton08)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                        .addGap(77, 77, 77)
+                        .addComponent(hardwareBuscadorText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(añadirCestaButton04)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(volverButton08)
+                .addGap(22, 22, 22))
         );
 
         mainPanel.add(componentesPcPanel, "componentesPcPanel");
-
-        añadirLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        añadirLabel.setText("Información De Producto");
-
-        botonAñadir.setText("Añadir a cesta");
-        botonAñadir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAñadirActionPerformed(evt);
-            }
-        });
-
-        volverButton09.setText("Volver");
-        volverButton09.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                volverButton09ActionPerformed(evt);
-            }
-        });
-
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3"
-            }
-        ));
-        informacionProductoTable.setViewportView(jTable7);
-
-        javax.swing.GroupLayout infoPanelLayout = new javax.swing.GroupLayout(infoPanel);
-        infoPanel.setLayout(infoPanelLayout);
-        infoPanelLayout.setHorizontalGroup(
-            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoPanelLayout.createSequentialGroup()
-                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(infoPanelLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(informacionProductoTable, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(infoPanelLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(botonAñadir))
-                            .addGroup(infoPanelLayout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(volverButton09))))
-                    .addGroup(infoPanelLayout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(añadirLabel)))
-                .addContainerGap(81, Short.MAX_VALUE))
-        );
-        infoPanelLayout.setVerticalGroup(
-            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoPanelLayout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
-                .addComponent(añadirLabel)
-                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(infoPanelLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(informacionProductoTable, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(infoPanelLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(botonAñadir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(volverButton09)))
-                .addGap(89, 89, 89))
-        );
-
-        mainPanel.add(infoPanel, "infoPanel");
 
         pedidosTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1090,7 +1077,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(historialPedidosPanelLayout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(historialPedidosLabel)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
         historialPedidosPanelLayout.setVerticalGroup(
             historialPedidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1144,7 +1131,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(cestaTable, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(volverButton11)))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         cestaPanelLayout.setVerticalGroup(
             cestaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1201,7 +1188,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(pedidosPanelLayout.createSequentialGroup()
                         .addGap(190, 190, 190)
                         .addComponent(pedidosLabel)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         pedidosPanelLayout.setVerticalGroup(
             pedidosPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1374,33 +1361,9 @@ public class Main extends javax.swing.JFrame {
         cambiarPanel("cestaPanel");
     }//GEN-LAST:event_cestaButtonActionPerformed
 
-    private void volverButton09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton09ActionPerformed
-        cambiarPanel("pcPanel");
-    }//GEN-LAST:event_volverButton09ActionPerformed
-
-    private void botonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAñadirActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         cambiarPanel("menuPanel");
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void infoCelularesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoCelularesButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoCelularesButtonActionPerformed
-
-    private void infoAlmacenamientoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoAlmacenamientoButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoAlmacenamientoButtonActionPerformed
-
-    private void infoPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoPcButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoPcButtonActionPerformed
-
-    private void infoComponentesPcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoComponentesPcButtonActionPerformed
-        cambiarPanel("infoPanel");
-    }//GEN-LAST:event_infoComponentesPcButtonActionPerformed
 
     private void volverButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton10ActionPerformed
         cambiarPanel("menuPanel");
@@ -1425,6 +1388,10 @@ public class Main extends javax.swing.JFrame {
     private void volverButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButton12ActionPerformed
         cambiarPanel("menuPanel");
     }//GEN-LAST:event_volverButton12ActionPerformed
+
+    private void añadirCestaButton01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCestaButton01ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_añadirCestaButton01ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1460,14 +1427,18 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu accesoPrograma;
+    private javax.swing.JTextField almacenamientoBuscadorText;
     private javax.swing.JButton almacenamientoButton;
     private javax.swing.JLabel almacenamientoLabel;
     private javax.swing.JScrollPane almacenamientoLista;
     private javax.swing.JPanel almacenamientoPanel;
-    private javax.swing.JLabel añadirLabel;
-    private javax.swing.JButton botonAñadir;
+    private javax.swing.JButton añadirCestaButton01;
+    private javax.swing.JButton añadirCestaButton02;
+    private javax.swing.JButton añadirCestaButton03;
+    private javax.swing.JButton añadirCestaButton04;
     private javax.swing.JButton botonCrearCuenta;
     private javax.swing.JButton botonLogin;
+    private javax.swing.JLabel buscadorAlmacenamientoLabel;
     private javax.swing.JPasswordField campoConfirmarContraseña;
     private javax.swing.JPasswordField campoConteraseñaUsu;
     private javax.swing.JPasswordField campoContraseña;
@@ -1477,6 +1448,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton catalogoButton;
     private javax.swing.JLabel catalogoLabel;
     private javax.swing.JPanel catalogoPanel;
+    private javax.swing.JLabel celularBuscadorLabel;
+    private javax.swing.JTextField celularBuscadorText;
     private javax.swing.JScrollPane celularLista;
     private javax.swing.JButton celularesButton;
     private javax.swing.JLabel celularesLabel;
@@ -1499,6 +1472,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel dniPanel;
     private javax.swing.JTextField dniUsuario;
     private javax.swing.JLabel gmailPanel;
+    private javax.swing.JLabel hardwareBuscadorLabel;
+    private javax.swing.JTextField hardwareBuscadorText;
     private javax.swing.JLabel hardwareLabel;
     private javax.swing.JButton historialButton;
     private javax.swing.JButton historialPagosButton;
@@ -1507,19 +1482,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel historialPedidosLabel;
     private javax.swing.JPanel historialPedidosPanel;
     private javax.swing.JScrollPane historialPedidosTable;
-    private javax.swing.JButton infoAlmacenamientoButton;
-    private javax.swing.JButton infoCelularesButton;
-    private javax.swing.JButton infoComponentesPcButton;
     private javax.swing.JLabel infoLabel;
-    private javax.swing.JPanel infoPanel;
-    private javax.swing.JButton infoPcButton;
-    private javax.swing.JScrollPane informacionProductoTable;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable7;
     private javax.swing.JLabel labelDni;
     private javax.swing.JLabel logInLabel;
     private javax.swing.JMenuItem login;
@@ -1532,6 +1500,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField obtenerGmail;
     private javax.swing.JTextField obtenerNombre;
     private javax.swing.JScrollPane pagosTable;
+    private javax.swing.JLabel pcBuscadorLabel;
+    private javax.swing.JTextField pcBuscadorText;
     private javax.swing.JButton pcButton;
     private javax.swing.JLabel pcLabel;
     private javax.swing.JScrollPane pcLista;
@@ -1554,7 +1524,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton volverButton06;
     private javax.swing.JButton volverButton07;
     private javax.swing.JButton volverButton08;
-    private javax.swing.JButton volverButton09;
     private javax.swing.JButton volverButton10;
     private javax.swing.JButton volverButton11;
     private javax.swing.JButton volverButton12;
