@@ -34,7 +34,7 @@ public class Main extends javax.swing.JFrame {
         String contraUsuario = campoConteraseñaUsu.getText();
         String confirContraseña = campoConfirmarContraseña.getText();
         Cliente prueba = new Cliente(dni, nombre, correo, contraUsuario);
-        Dao crearUsu = new Dao(dni, contraUsuario);
+        Dao crearUsu = new Dao();
 
         if (crearUsu.crearUsuario(prueba)) {
             return true;
@@ -58,12 +58,15 @@ public class Main extends javax.swing.JFrame {
     private void consultarAlmacenamiento() {
         boolean toret = false;
         Dao dao = new Dao();
+        tablaAlmacenamiento.setRowSelectionAllowed(true);
         DefaultTableModel modelo = (DefaultTableModel) tablaAlmacenamiento.getModel();
-
-        for (int i = 0; i < modelo.getRowCount(); i++) {
-            modelo.removeRow(i);
+         int [] filasSeleccionadas = tablaAlmacenamiento.getSelectedRows();
+         
+        for (int i = 0; i < filasSeleccionadas.length; i++) {
+            modelo.removeRow(filasSeleccionadas[i]);
         }
-        tablaAlmacenamiento.setModel(modelo);
+        
+        tablaAlmacenamiento.repaint();
         for (int i = 0; i < dao.productosComponentes(TipoProducto.almacenamiento).size(); i++) {
             modelo.addRow((Object[]) dao.productosComponentes(TipoProducto.almacenamiento).get(i));
         }
