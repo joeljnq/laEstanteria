@@ -64,8 +64,8 @@ public class Main extends javax.swing.JFrame {
             modelo.removeRow(i);
         }
         tablaAlmacenamiento.setModel(modelo);
-        for (int i = 0; i < dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).size(); i++) {
-            modelo.addRow((Object[]) dao.productoPrecioAlmacenamiento(TipoProducto.almacenamiento).get(i));
+        for (int i = 0; i < dao.productosComponentes(TipoProducto.almacenamiento).size(); i++) {
+            modelo.addRow((Object[]) dao.productosComponentes(TipoProducto.almacenamiento).get(i));
         }
 
         tablaAlmacenamiento.setModel(modelo);
@@ -75,8 +75,8 @@ public class Main extends javax.swing.JFrame {
     private void consultarTelefono() {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) tablaTelefonos.getModel();
-        for (int i = 0; i < dao.productoTelefonos(TipoProducto.telefonos).size(); i++) {
-            modelo.addRow((Object[]) dao.productoTelefonos(TipoProducto.telefonos).get(i));
+        for (int i = 0; i < dao.productosComponentes(TipoProducto.telefonos).size(); i++) {
+            modelo.addRow((Object[]) dao.productosComponentes(TipoProducto.telefonos).get(i));
         }
         tablaTelefonos.setModel(modelo);
     }
@@ -93,8 +93,8 @@ public class Main extends javax.swing.JFrame {
     private void consultarPc() {
         Dao dao = new Dao();
         DefaultTableModel modelo = (DefaultTableModel) tablaPC.getModel();
-        for (int i = 0; i < dao.productosPc(TipoProducto.pc).size(); i++) {
-            modelo.addRow((Object[]) dao.productosPc(TipoProducto.pc).get(i));
+        for (int i = 0; i < dao.productosComponentes(TipoProducto.pc).size(); i++) {
+            modelo.addRow((Object[]) dao.productosComponentes(TipoProducto.pc).get(i));
         }
         tablaPC.setModel(modelo);
 

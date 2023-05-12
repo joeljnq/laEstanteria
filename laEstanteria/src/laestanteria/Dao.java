@@ -92,53 +92,9 @@ public class Dao {
         return false;
     }
 
-    public ArrayList productoPrecioAlmacenamiento(TipoProducto tipo) {  //ESTE METODO SIRVE PARA COGER TODO LOS PRECIOS DE LA TABLA PRODUCTO
-        ArrayList<Object> lista = new ArrayList<>();
-        String consulta = "SELECT nombre,precio FROM producto where tipo=(?)";
+    
 
-        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root");  PreparedStatement ps = conexion.prepareStatement(consulta);) {
-            ps.setString(1, tipo.toString());
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                String nombre = rs.getString("nombre");
-                double precio = rs.getDouble("precio");
-
-                lista.add(new Object[]{nombre, precio});
-            }
-            conexion.close();
-
-        } catch (SQLException e) {
-            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
-                    + "SLQState: " + e.getSQLState() + "\n"
-                    + "Mensaje: " + e.getMessage() + "\n");
-        }
-        return lista;
-    }
-
-    public ArrayList productoTelefonos(TipoProducto tipo) {  //ESTE METODO SIRVE PARA COGER TODO LOS PRECIOS DE LA TABLA PRODUCTO
-        ArrayList<Object> lista = new ArrayList<>();
-        String consulta = "SELECT nombre,precio FROM producto where tipo=(?)";
-
-        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
-            PreparedStatement ps = conexion.prepareStatement(consulta);
-            ps.setString(1, tipo.toString());
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                String nombre = rs.getString("nombre");
-                double precio = rs.getDouble("precio");
-
-                lista.add(new Object[]{nombre, precio});
-            }
-            conexion.close();
-
-        } catch (SQLException e) {
-            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
-                    + "SLQState: " + e.getSQLState() + "\n"
-                    + "Mensaje: " + e.getMessage() + "\n");
-        }
-        return lista;
-    }
-
+    
     public ArrayList productosComponentes(TipoProducto tipo) {
         ArrayList<Object> lista = new ArrayList<>();
         String consulta = "SELECT nombre,precio FROM producto WHERE tipo=(?)";
@@ -161,27 +117,7 @@ public class Dao {
         return lista;
     }
 
-    public ArrayList productosPc(TipoProducto tipo) {
-        ArrayList<Object> lista = new ArrayList<>();
-        String consulta = "SELECT nombre,precio FROM producto WHERE tipo=(?)";
-
-        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root")) {
-            PreparedStatement ps = conexion.prepareStatement(consulta);
-            ps.setString(1, tipo.toString());
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                String nombre = rs.getString("nombre");
-                double precio = rs.getDouble("precio");
-                lista.add(new Object[]{nombre, precio});
-            }
-            conexion.close();
-        } catch (SQLException e) {
-            System.out.println("Código de Error: " + e.getErrorCode() + "\n"
-                    + "SLQState: " + e.getSQLState() + "\n"
-                    + "Mensaje: " + e.getMessage() + "\n");
-        }
-        return lista;
-    }
+    
     public ArrayList consultarPedidos(String nombreUsuario){
         ArrayList<Object> lista = new ArrayList<>();
         String consulta ="SELECT idPedido, factura, estado FROM pedido WHERE idPedido=(SELECT idPedido FROM usuario WHERE nombre =(?))";
