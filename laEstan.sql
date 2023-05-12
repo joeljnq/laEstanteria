@@ -40,7 +40,7 @@ dni varchar(9) not null ,
 nombre varchar(30) not null,
 pago varchar(10) not null,
 tipo enum('administrador','usuario') not null,
-contraseña varchar(30),
+contraseña varchar(1000),
 correo varchar(50),
 idPedido integer,
 primary key(dni),
@@ -70,6 +70,21 @@ foreign key(almacen) references almacen(idAlmacen)
 on update cascade
 on delete restrict
 )engine=InnoDB;
+
+create table cesta
+(
+idCesta integer not null,
+producto integer not null,
+cantidad integer,
+usuario varchar(9),
+primary key(idCesta),
+foreign key(usuario) references usuario(dni)
+on update cascade
+on delete restrict,
+foreign key(producto) references producto(idProducto)
+on update cascade
+on delete restrict
+)engine = InnoDB;
 
 
 INSERT INTO pedido (idPedido, factura, estado) VALUES
