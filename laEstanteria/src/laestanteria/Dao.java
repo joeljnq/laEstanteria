@@ -27,7 +27,7 @@ public class Dao {
 
 
     public Dao() {
-        cadenaConexion = "jdbc:mysql://192.168.109.24:3306/laestanteria";
+        cadenaConexion = "jdbc:mysql://localhost:3306/laestanteria";
     }
 /**
  * es un metodo apra poder crear un usuario metiendo un Cliente de tipo cliente como parametro
@@ -216,5 +216,60 @@ public class Dao {
         return toret;
     }
     
+    public void añadirCesta(String usuario,int cantidad,int producto){
+        String consulta = "insert into cesta(producto,cantidad,usuario) values(?,?,?);";
+        try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root"); PreparedStatement ps = conexion.prepareStatement(consulta);){
+            ps.setInt(1, producto);
+            ps.setInt(2, cantidad);
+            ps.setString(3, usuario);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
+        }
+ 
+        
+    }
+    public String obtenerDniUsuario(String usuario){
+        String toret="";
+        String consulta = "SELECT dni FROM usuario WHERE nombre = ?";
+        
+        try(Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root"); PreparedStatement ps = conexion.prepareStatement(consulta);) {
+            ps.setString(1, usuario);
+          
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {                
+                toret = rs.getString(1);
+            }
+        } catch (SQLException e) {
+               System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
+        }
+       
+        return toret;
+    }
+    public ArrayList mostrarUltimaCesta(String dni){
+        String consulta ="select pr.idProducto,pr.precio from producto as pr join cesta as ces on(pr.idProducto= ces.producto) where ces.usuario = ? order by ces.idCesta desc limit 1;";
+       ArrayList<Object> lista = new ArrayList<>();
+        try (Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root");PreparedStatement ps = conexion.prepareStatement(consulta);){
+            ps.setString(1, dni);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                int producto = rs.getInt("idProducto");
+                double precio = rs.getDouble("precio");
+                lista.add(new Object[]{producto,precio});
+            }
+            
+        } catch (SQLException e) {
+              System.out.println("Código de Error: " + e.getErrorCode() + "\n"
+                    + "SLQState: " + e.getSQLState() + "\n"
+                    + "Mensaje: " + e.getMessage() + "\n");
+        }
+        return lista;
+        }
+
     
 }

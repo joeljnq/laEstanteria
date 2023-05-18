@@ -73,7 +73,7 @@ on delete restrict
 
 create table cesta
 (
-idCesta integer not null,
+idCesta integer auto_increment not null,
 producto integer not null,
 cantidad integer,
 usuario varchar(9),
