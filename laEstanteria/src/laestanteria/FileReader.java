@@ -1,10 +1,13 @@
 package laestanteria;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -25,10 +28,20 @@ public class FileReader {
             {
                 /*
                 Implementar la cadena a la interfaz de historial de pedidos
-                */
+                 */
             }
         } catch (IOException ex) {
             System.err.printf("Error:%s\n", ex.getMessage());
+        }
+    }
+
+    private void escribirInsercionRepetida() {
+        try ( FileOutputStream fos = new FileOutputStream("C:\\Users\\a22davidma\\Downloads\\fichero.txt", true);  OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8"); //"ISO-8859-1"
+                  BufferedWriter bfw = new BufferedWriter(osw)) {
+            bfw.write("Esto es una prueba");
+            bfw.newLine();
+        } catch (IOException ex) {
+            System.err.printf("Error:%s", ex.getMessage());
         }
     }
 }
