@@ -9,7 +9,7 @@ public class toDo {
     /*
     -Acabar la clase dao
     -Meter lectura y escritura de ficheros(quizas para hacer txt de pedidos)
-    -Acabar la interfaz gráfica
+    -Acabar la interfaz gráfica(acabada)
     -Control de errores
     -Hacer extras(si sobra tiempo)
     -Comentarios de tipo javadock
