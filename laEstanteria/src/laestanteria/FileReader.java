@@ -39,6 +39,9 @@ public class FileReader {
         try ( FileOutputStream fos = new FileOutputStream("C:\\Users\\a22davidma\\Downloads\\fichero.txt", true);  OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8"); //"ISO-8859-1"
                   BufferedWriter bfw = new BufferedWriter(osw)) {
             bfw.write("Esto es una prueba");
+            /*
+            Pasarle los valores del pedido
+            */
             bfw.newLine();
         } catch (IOException ex) {
             System.err.printf("Error:%s", ex.getMessage());
