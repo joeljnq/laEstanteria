@@ -90,7 +90,7 @@ on delete restrict
 INSERT INTO pedido (factura, estado) VALUES
     (123, 'confirmado');
 INSERT INTO usuario (dni, nombre, pago, tipo, contraseña,idPedido) VALUES
-    ('12345678A', 'Ana García', 'mensual', 'usuario', '123456',1);
+    ('12345678A', 'prueba', 'mensual', 'usuario', '123',1);
 
 
 INSERT INTO almacen (idAlmacen, nombre, seccion) VALUES
