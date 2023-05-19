@@ -364,7 +364,6 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="historialPagosButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                               <Component id="volverButton01" min="-2" max="-2" attributes="0"/>
@@ -607,7 +606,6 @@
                                       <Component id="componentesPcButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace pref="99" max="-2" attributes="0"/>
                                       <Component id="catalogoLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                                   </Group>
@@ -1422,7 +1420,6 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="170" max="-2" attributes="0"/>
                               <Component id="pasarCestaButton" min="-2" pref="29" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="imprimirCestaButton" min="-2" pref="29" max="-2" attributes="0"/>

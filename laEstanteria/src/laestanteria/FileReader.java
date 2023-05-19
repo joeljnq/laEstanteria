@@ -16,6 +16,8 @@ import java.io.OutputStreamWriter;
 /**
  *
  * @author a18jaimejnq
+ * @author a22davidma
+ * @author a18miguelamc
  */
 public class FileReader {
 

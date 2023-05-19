@@ -7,6 +7,8 @@ package laestanteria;
 /**
  *
  * @author a18jaimejnq
+ * @author a22davidma
+ * @author a18miguelamc
  */
 public class Cliente {
     private String dni;

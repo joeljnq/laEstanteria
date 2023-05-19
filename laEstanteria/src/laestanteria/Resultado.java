@@ -6,7 +6,9 @@ package laestanteria;
 
 /**
  *
- * @author JOTA JOTA
+ * @author a18jaimejnq
+ * @author a22davidma
+ * @author a18miguelamc
  */
 public class Resultado {
     
