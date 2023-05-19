@@ -133,18 +133,18 @@ public class Main extends javax.swing.JFrame {
 
     private void consultarPedidoUsuario() {
         Dao dao = new Dao();
-        DefaultTableModel modelo = (DefaultTableModel) pedidosTable.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) pedidostTable.getModel();
         if (campoNombre.getText().length() > 0) {
             for (int i = 0; i < dao.consultarPedidos(campoNombre.getText()).size(); i++) {
                 modelo.addRow((Object[]) dao.consultarPedidos(campoNombre.getText()).get(i));
             }
-        } else {
+        } else if(campoUsuario.getText().length()>0) {
             for (int i = 0; i < dao.consultarPedidos(campoUsuario.getText()).size(); i++) {
                 modelo.addRow((Object[]) dao.consultarPedidos(campoUsuario.getText()).get(i));
             }
         }
 
-        pedidosTable.setModel(modelo);
+        pedidostTable.setModel(modelo);
     }
 
     private void infoUsuario() {
@@ -282,7 +282,7 @@ public class Main extends javax.swing.JFrame {
         pasarCestaButton = new javax.swing.JButton();
         pedidosPanel = new javax.swing.JPanel();
         pedidoTable = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        pedidostTable = new javax.swing.JTable();
         volverButton12 = new javax.swing.JButton();
         pedidosLabel = new javax.swing.JLabel();
         loginPanel = new javax.swing.JPanel();
@@ -1175,7 +1175,7 @@ public class Main extends javax.swing.JFrame {
 
         mainPanel.add(cestaPanel, "cestaPanel");
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        pedidostTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -1186,7 +1186,7 @@ public class Main extends javax.swing.JFrame {
                 "ID", "Estado", "Información"
             }
         ));
-        pedidoTable.setViewportView(jTable3);
+        pedidoTable.setViewportView(pedidostTable);
 
         volverButton12.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         volverButton12.setText("Volver");
@@ -1421,6 +1421,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cuentaButtonActionPerformed
 
     private void pedidosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedidosButtonActionPerformed
+       consultarPedidoUsuario();
         cambiarPanel("pedidosPanel");
     }//GEN-LAST:event_pedidosButtonActionPerformed
 
@@ -1615,7 +1616,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JLabel labelDni;
     private javax.swing.JLabel logInLabel;
     private javax.swing.JMenuItem login;
@@ -1640,6 +1640,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel pedidosLabel;
     private javax.swing.JPanel pedidosPanel;
     private javax.swing.JTable pedidosTable;
+    private javax.swing.JTable pedidostTable;
     private javax.swing.JLabel signInLabel;
     private javax.swing.JTable tablaAlmacenamiento;
     private javax.swing.JTable tablaComponentes;

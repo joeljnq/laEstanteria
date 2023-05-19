@@ -162,18 +162,18 @@ public class Dao {
      */
     public ArrayList consultarPedidos(String nombreUsuario){
         ArrayList<Object> lista = new ArrayList<>();
-        String consulta ="SELECT idPedido, factura, estado FROM pedido WHERE idPedido=(SELECT idPedido FROM usuario WHERE nombre =(?))";
+        String consulta ="SELECT idPedido,factura,estado FROM pedido WHERE idPedido=(SELECT idPedido FROM usuario WHERE nombre=?)";
         try ( Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root");) {
             PreparedStatement ps = conexion.prepareStatement(consulta);
             ps.setString(1, nombreUsuario);
             ResultSet rs = ps.executeQuery();      
             while (rs.next()) {
-                String nombre = rs.getString("idPedido");
+                int nombre = rs.getInt("idPedido");
                 double precio = rs.getInt("factura");
                 String estado = rs.getString("estado");
-                lista.add(new Object[]{nombre, precio,estado});
+                lista.add(new Object[]{nombre,precio,estado});
             }
-            conexion.close();
+         
         } catch (SQLException e) {
             System.out.println("Código de Error: " + e.getErrorCode() + "\n"
                     + "SLQState: " + e.getSQLState() + "\n"
@@ -247,8 +247,7 @@ public class Dao {
                System.out.println("Código de Error: " + e.getErrorCode() + "\n"
                     + "SLQState: " + e.getSQLState() + "\n"
                     + "Mensaje: " + e.getMessage() + "\n");
-        }
-       
+        }     
         return toret;
     }
     public ArrayList mostrarUltimaCesta(String dni){
@@ -270,6 +269,8 @@ public class Dao {
         }
         return lista;
         }
+    
+    
 
     
 }
