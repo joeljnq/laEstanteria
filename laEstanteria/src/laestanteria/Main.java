@@ -278,8 +278,6 @@ public class Main extends javax.swing.JFrame {
         cestaTable = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         volverButton11 = new javax.swing.JButton();
-        imprimircestaButton = new javax.swing.JButton();
-        pasarcestaButton = new javax.swing.JButton();
         pedidosPanel = new javax.swing.JPanel();
         pedidoTable = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -1126,20 +1124,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        imprimircestaButton.setText("Imprimir cesta");
-        imprimircestaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imprimircestaButtonActionPerformed(evt);
-            }
-        });
-
-        pasarcestaButton.setText("Pasar cesta");
-        pasarcestaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pasarcestaButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout cestaPanelLayout = new javax.swing.GroupLayout(cestaPanel);
         cestaPanel.setLayout(cestaPanelLayout);
         cestaPanelLayout.setHorizontalGroup(
@@ -1152,33 +1136,22 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(cestaPanelLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(cestaTable, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(cestaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cestaPanelLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(volverButton11))
-                            .addGroup(cestaPanelLayout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addGroup(cestaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pasarcestaButton)
-                                    .addComponent(imprimircestaButton))))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(volverButton11)))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         cestaPanelLayout.setVerticalGroup(
             cestaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cestaPanelLayout.createSequentialGroup()
                 .addGroup(cestaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(cestaPanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(volverButton11))
+                    .addGroup(cestaPanelLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(cestaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(cestaTable, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cestaPanelLayout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(imprimircestaButton)
-                        .addGap(43, 43, 43)
-                        .addComponent(pasarcestaButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(volverButton11)))
+                        .addComponent(cestaTable, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
         );
 
@@ -1515,6 +1488,7 @@ public class Main extends javax.swing.JFrame {
         añadirCesta();
     }//GEN-LAST:event_añadirCestaButton04ActionPerformed
 
+
     private void celularBuscadorTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularBuscadorTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_celularBuscadorTextActionPerformed
@@ -1617,7 +1591,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel historialPedidosLabel;
     private javax.swing.JPanel historialPedidosPanel;
     private javax.swing.JScrollPane historialPedidosTable;
-    private javax.swing.JButton imprimircestaButton;
     private javax.swing.JLabel infoLabel;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -1636,7 +1609,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField obtenerGmail;
     private javax.swing.JTextField obtenerNombre;
     private javax.swing.JScrollPane pagosTable;
-    private javax.swing.JButton pasarcestaButton;
     private javax.swing.JLabel pcBuscadorLabel;
     private javax.swing.JTextField pcBuscadorText;
     private javax.swing.JButton pcButton;

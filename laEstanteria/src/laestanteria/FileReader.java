@@ -19,8 +19,8 @@ import java.io.OutputStreamWriter;
  */
 public class FileReader {
 
-    public void cestapasar() {
-        File f = new File("C:\\Users\\a22davidma\\Downloads\\cestapasar.txt");
+    public void pedido() {
+        File f = new File("fichero.txt");
         String cadena;
         try ( FileInputStream fis = new FileInputStream(f);  InputStreamReader isr = new InputStreamReader(fis, "UTF-8"); //"ISO-8859-1"
                   BufferedReader bfr = new BufferedReader(isr)) {
@@ -35,10 +35,10 @@ public class FileReader {
         }
     }
 
-    public void cestaimprimir() {
-        try ( FileOutputStream fos = new FileOutputStream("C:\\Users\\a22davidma\\Downloads\\cestaimpresa.txt", true);  OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8"); //"ISO-8859-1"
+    private void escribirInsercionRepetida() {
+        try ( FileOutputStream fos = new FileOutputStream("C:\\Users\\a22davidma\\Downloads\\fichero.txt", true);  OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8"); //"ISO-8859-1"
                   BufferedWriter bfw = new BufferedWriter(osw)) {
-            bfw.write("Esto es una prueba");//Ejemplo
+            bfw.write("Esto es una prueba");
             /*
             Pasarle los valores del pedido
             */
