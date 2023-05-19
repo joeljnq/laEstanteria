@@ -19,9 +19,9 @@ public class antiexception {
             numCorrecto = true;
         } catch (Exception e) {//Si se pone solo Exception te recoje cualquier excepción
             //Si hay varios catch, en cuanto se ejecuta una, las otras no saltan, para meter varios catch, consultar el zeal con lo q veas(en este caso, nextInt)
-            System.out.println("Datos introducidos no válidos");
-            teclado.nextLine();
-            System.out.println(e.toString());//Captura la info de ese error
+            /*System.out.println("Datos introducidos no válidos");*/
+            /*teclado.nextLine();*/
+            /*System.out.println(e.toString());//Captura la info de ese error*/
         }
     }
     }
