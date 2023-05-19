@@ -27,7 +27,7 @@ public class Dao {
 
 
     public Dao() {
-        cadenaConexion = "jdbc:mysql://localhost:3306/laestanteria";
+        cadenaConexion = "jdbc:mysql://estanteria@192.168.109.24:3306/laestanteria";
     }
 /**
  * es un metodo apra poder crear un usuario metiendo un Cliente de tipo cliente como parametro
