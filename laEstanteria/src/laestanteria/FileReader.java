@@ -20,7 +20,7 @@ import java.io.OutputStreamWriter;
 public class FileReader {
 
     public void pasarcesta() {
-        File f = new File("C:\\Users\\a22davidma\\Downloads\\pasarcesta.txt");
+        File f = new File("pasarcesta.txt");
         String cadena;
         try ( FileInputStream fis = new FileInputStream(f);  InputStreamReader isr = new InputStreamReader(fis, "UTF-8"); //"ISO-8859-1"
                   BufferedReader bfr = new BufferedReader(isr)) {
@@ -36,7 +36,7 @@ public class FileReader {
     }
 
     public void imprimircesta() {
-        try ( FileOutputStream fos = new FileOutputStream("C:\\Users\\a22davidma\\Downloads\\imprimircesta.txt", true);  OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8"); //"ISO-8859-1"
+        try ( FileOutputStream fos = new FileOutputStream("imprimircesta.txt", true);  OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8"); //"ISO-8859-1"
                   BufferedWriter bfw = new BufferedWriter(osw)) {
             bfw.write("Esto es una prueba");// Ejemplo
             /*
