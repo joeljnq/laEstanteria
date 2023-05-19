@@ -19,6 +19,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        
     }
 
     /**
@@ -44,6 +45,7 @@ public class Main extends javax.swing.JFrame {
 
     }
 
+  
     private boolean comprobarUsuario() {
         boolean toret = false;
         Dao comprobar = new Dao();
@@ -97,6 +99,27 @@ public class Main extends javax.swing.JFrame {
         }
         tablaComponentes.setModel(modelo);
     }
+    
+    private void mostrarCesta(){
+       Dao dao = new Dao();
+       String dni;
+          DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+        if (campoNombre.getText().length()>0) {
+              dni = dao.obtenerDniUsuario(campoNombre.getText());
+           
+        for (int i = 0; i < dao.mostrarUltimaCesta(dni).size(); i++) {
+            modelo.addRow((Object[]) dao.mostrarUltimaCesta(dni).get(i));
+        }
+        
+        }else if (campoUsuario.getText().length() >0) {
+           dni = dao.obtenerDniUsuario(campoUsuario.getText());
+           for (int i = 0; i < dao.mostrarUltimaCesta(dni).size(); i++) {
+            modelo.addRow((Object[]) dao.mostrarUltimaCesta(dni).get(i));
+        }
+           jTable2.setModel(modelo);
+            
+        }      
+    }
 
     private void consultarPc() {
         Dao dao = new Dao();
@@ -138,6 +161,19 @@ public class Main extends javax.swing.JFrame {
         }
 
     }
+    
+    private void cestaCompra(int producto){
+        Dao dao = new Dao();
+        String usuario ;
+        if (campoUsuario.getText().length() >0) {
+            usuario = dao.obtenerDniUsuario(campoUsuario.getText());
+           
+           dao.añadirCesta(usuario, 1, producto);  
+        }else if(campoNombre.getText().length() >0){
+            usuario = dao.obtenerDniUsuario(campoNombre.getText());
+           dao.añadirCesta(usuario, 1, producto);
+        }
+    }
 
     private void showError(String text) {
         JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
@@ -159,13 +195,6 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
-        loginPanel = new javax.swing.JPanel();
-        usuario = new javax.swing.JLabel();
-        campoUsuario = new javax.swing.JTextField();
-        contraseña = new javax.swing.JLabel();
-        botonLogin = new javax.swing.JButton();
-        campoContraseña = new javax.swing.JPasswordField();
-        logInLabel = new javax.swing.JLabel();
         crearCuentaPanel = new javax.swing.JPanel();
         correoUsu = new javax.swing.JLabel();
         campoNombre = new javax.swing.JTextField();
@@ -256,6 +285,13 @@ public class Main extends javax.swing.JFrame {
         jTable3 = new javax.swing.JTable();
         volverButton12 = new javax.swing.JButton();
         pedidosLabel = new javax.swing.JLabel();
+        loginPanel = new javax.swing.JPanel();
+        usuario = new javax.swing.JLabel();
+        campoUsuario = new javax.swing.JTextField();
+        contraseña = new javax.swing.JLabel();
+        botonLogin = new javax.swing.JButton();
+        campoContraseña = new javax.swing.JPasswordField();
+        logInLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         accesoPrograma = new javax.swing.JMenu();
         login = new javax.swing.JMenuItem();
@@ -265,72 +301,6 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         mainPanel.setLayout(new java.awt.CardLayout());
-
-        usuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        usuario.setText("Usuario");
-
-        campoUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoUsuarioActionPerformed(evt);
-            }
-        });
-
-        contraseña.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        contraseña.setText("Contraseña");
-
-        botonLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        botonLogin.setText("Enviar");
-        botonLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonLoginActionPerformed(evt);
-            }
-        });
-
-        logInLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        logInLabel.setText("LOG IN:");
-
-        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
-        loginPanel.setLayout(loginPanelLayout);
-        loginPanelLayout.setHorizontalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
-                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoContraseña)
-                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(logInLabel))
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(botonLogin)))
-                .addContainerGap(178, Short.MAX_VALUE))
-        );
-        loginPanelLayout.setVerticalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(logInLabel)
-                .addGap(29, 29, 29)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(botonLogin)
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
-
-        mainPanel.add(loginPanel, "loginPanel");
 
         correoUsu.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         correoUsu.setText("Correo");
@@ -763,6 +733,12 @@ public class Main extends javax.swing.JFrame {
 
         celularBuscadorLabel.setText("Escriba el ID del producto que quiere añadir");
 
+        celularBuscadorText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                celularBuscadorTextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout celularesPanelLayout = new javax.swing.GroupLayout(celularesPanel);
         celularesPanel.setLayout(celularesPanelLayout);
         celularesPanelLayout.setHorizontalGroup(
@@ -844,6 +820,12 @@ public class Main extends javax.swing.JFrame {
 
         buscadorAlmacenamientoLabel.setText("Introduzca el ID del producto que quiere añadir");
 
+        almacenamientoBuscadorText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                almacenamientoBuscadorTextActionPerformed(evt);
+            }
+        });
+
         añadirCestaButton02.setText("Añadir a cesta");
         añadirCestaButton02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -923,6 +905,12 @@ public class Main extends javax.swing.JFrame {
         pcLabel.setText("Ordenadores Personales");
 
         pcBuscadorLabel.setText("Introduzca el ID del producto que quiere añadir");
+
+        pcBuscadorText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pcBuscadorTextActionPerformed(evt);
+            }
+        });
 
         añadirCestaButton03.setText("Añadir a cesta");
         añadirCestaButton03.addActionListener(new java.awt.event.ActionListener() {
@@ -1251,6 +1239,72 @@ public class Main extends javax.swing.JFrame {
 
         mainPanel.add(pedidosPanel, "pedidosPanel");
 
+        usuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        usuario.setText("Usuario");
+
+        campoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoUsuarioActionPerformed(evt);
+            }
+        });
+
+        contraseña.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        contraseña.setText("Contraseña");
+
+        botonLogin.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        botonLogin.setText("Enviar");
+        botonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonLoginActionPerformed(evt);
+            }
+        });
+
+        logInLabel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        logInLabel.setText("LOG IN:");
+
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47)
+                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(campoContraseña)
+                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(logInLabel))
+                    .addGroup(loginPanelLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(botonLogin)))
+                .addContainerGap(178, Short.MAX_VALUE))
+        );
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(logInLabel)
+                .addGap(29, 29, 29)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(botonLogin)
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(loginPanel, "loginPanel");
+
         accesoPrograma.setText("Acceso");
 
         login.setText("Login");
@@ -1404,6 +1458,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_pcButtonActionPerformed
 
     private void cestaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cestaButtonActionPerformed
+       mostrarCesta();
         cambiarPanel("cestaPanel");
     }//GEN-LAST:event_cestaButtonActionPerformed
 
@@ -1436,28 +1491,42 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_volverButton12ActionPerformed
 
     private void añadirCestaButton01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCestaButton01ActionPerformed
+        int producto = Integer.parseInt(celularBuscadorText.getText());
+        cestaCompra(producto);
         añadirCesta();
     }//GEN-LAST:event_añadirCestaButton01ActionPerformed
 
     private void añadirCestaButton02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCestaButton02ActionPerformed
+       int producto = Integer.parseInt(almacenamientoBuscadorText.getText());
+        cestaCompra(producto);
         añadirCesta();
     }//GEN-LAST:event_añadirCestaButton02ActionPerformed
 
     private void añadirCestaButton03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCestaButton03ActionPerformed
+       int producto = Integer.parseInt(pcBuscadorText.getText()); 
+        cestaCompra(producto);
         añadirCesta();
     }//GEN-LAST:event_añadirCestaButton03ActionPerformed
 
     private void añadirCestaButton04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirCestaButton04ActionPerformed
+        
+        int producto = Integer.parseInt(hardwareBuscadorText.getText());
+        cestaCompra(producto);
         añadirCesta();
     }//GEN-LAST:event_añadirCestaButton04ActionPerformed
 
-    private void imprimircestaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimircestaButtonActionPerformed
-        // Imprimir la cesta en un .txt
-    }//GEN-LAST:event_imprimircestaButtonActionPerformed
+    private void celularBuscadorTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularBuscadorTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_celularBuscadorTextActionPerformed
 
-    private void pasarcestaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasarcestaButtonActionPerformed
-        // Pasarle la cesta de un .txt situado en descargas
-    }//GEN-LAST:event_pasarcestaButtonActionPerformed
+    private void almacenamientoBuscadorTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_almacenamientoBuscadorTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_almacenamientoBuscadorTextActionPerformed
+
+    private void pcBuscadorTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pcBuscadorTextActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_pcBuscadorTextActionPerformed
 
     /**
      * @param args the command line arguments

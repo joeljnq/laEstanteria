@@ -73,7 +73,7 @@ on delete restrict
 
 create table cesta
 (
-idCesta integer not null,
+idCesta integer auto_increment not null,
 producto integer not null,
 cantidad integer,
 usuario varchar(9),
@@ -87,8 +87,8 @@ on delete restrict
 )engine = InnoDB;
 
 
-INSERT INTO pedido (idPedido, factura, estado) VALUES
-    (1, 123, 'confirmado');
+INSERT INTO pedido (factura, estado) VALUES
+    (123, 'confirmado');
 INSERT INTO usuario (dni, nombre, pago, tipo, contraseña,idPedido) VALUES
     ('12345678A', 'Ana García', 'mensual', 'usuario', '123456',1);
 
