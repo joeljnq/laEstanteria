@@ -252,7 +252,7 @@ public class Dao {
         return toret;
     }
     public ArrayList mostrarUltimaCesta(String dni){
-        String consulta ="select pr.idProducto,pr.precio from producto as pr join cesta as ces on(pr.idProducto= ces.producto) where ces.usuario = ? order by ces.idCesta desc limit 1;";
+        String consulta ="select pr.idProducto,pr.precio from producto as pr join cesta as ces on(pr.idProducto= ces.producto) where ces.usuario = ? order by ces.idCesta desc";
        ArrayList<Object> lista = new ArrayList<>();
         try (Connection conexion = DriverManager.getConnection(cadenaConexion, "estanteria", "root");PreparedStatement ps = conexion.prepareStatement(consulta);){
             ps.setString(1, dni);
