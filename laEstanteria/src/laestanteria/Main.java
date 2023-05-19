@@ -5,6 +5,7 @@
 package laestanteria;
 
 import java.awt.CardLayout;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -56,6 +57,26 @@ public class Main extends javax.swing.JFrame {
             showMessage("USUARIO NO ENCONTRADO, VUELVA A INTRODUCIR LOS VALORES");
         }
         return toret;
+    }
+   
+    private void showError(String text) {
+        JOptionPane.showMessageDialog(this, text, "ERRO", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public void error() {
+        boolean numCorrecto = false;
+        while (!numCorrecto) {
+            try {
+                //escribir el valor e igualarlo o comprobar que es el que se pide
+                //A partir de aquí se ejecuta solo si no da error, si no,  en cuanto de error salta al catch
+                numCorrecto = true;
+            } catch (Exception e) {//Si se pone solo Exception te recoje cualquier excepción
+                //Si hay varios catch, en cuanto se ejecuta una, las otras no saltan, para meter varios catch, consultar el zeal con lo q veas(en este caso, nextInt)
+                String text = "Datos introducidos no válidos\n" + e.toString();
+                showError(text);
+            }
+
+        }
     }
     
     private void añadirCesta(){
@@ -175,9 +196,7 @@ public class Main extends javax.swing.JFrame {
         }
     }
 
-    private void showError(String text) {
-        JOptionPane.showMessageDialog(this, text, "error", JOptionPane.ERROR_MESSAGE);
-    }
+
 
     private void showMessage(String text) {
         JOptionPane.showMessageDialog(this, text, "information", JOptionPane.INFORMATION_MESSAGE);
